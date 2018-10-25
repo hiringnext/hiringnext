@@ -1,0 +1,15 @@
+CANDIDATE_FEEDBACK_CHOICES = (
+    ("Resume Submitted", "Resume Submitted"),
+    ("profile shared", "profile shared"),
+    ("Shortlisted", "Shortlisted"),
+    ("Screening Rejected", "Screening Rejected"),
+    ("Interview Attended", "Interview Attended"),
+    ("Interview not attended", "Interview not attended"),
+    ("Selected", "Selected"),
+    ("Rejected", "Rejected"),
+    ("Salary Offered", "Salary Offered"),
+    ("Offered Accepted", "Offered Accepted"),
+    ("Offer rejected", "Offer rejected"),
+    ("Submit Documents", "Submit Documents"),
+    ("Joined", "Joined"),
+)

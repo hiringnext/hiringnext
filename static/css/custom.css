@@ -1,0 +1,132 @@
+.glyphicon {
+    margin-right: 5px;
+}
+
+.thumbnail {
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item {
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.item.list-group-item:nth-of-type(odd):hover, .item.list-group-item:hover {
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image {
+    margin-right: 10px;
+}
+
+.item.list-group-item .thumbnail {
+    margin-bottom: 0px;
+}
+
+.item.list-group-item .caption {
+    padding: 9px 9px 0px 9px;
+}
+
+.item.list-group-item:nth-of-type(odd) {
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after {
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img {
+    float: left;
+}
+
+.item.list-group-item:after {
+    clear: both;
+}
+
+.list-group-item-text {
+    margin: 0 0 11px;
+}
+
+.tips-info {
+    width: 70%;
+}
+.crane-listing {
+    margin-bottom: 2.7em;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+.crane-img-size {
+    float: left;
+    width: 40%;
+    position: relative;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+span.sticker {
+    background-color: #349e11;
+    color: #FFF;
+    display: block;
+    font-size: 14px;
+    padding: 7px 15px;
+    position: absolute;
+    left: 0px;
+    text-align: right;
+    top: -1px;
+    z-index: 2;
+    line-height: 1;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.crane-text.size {
+    float: right;
+    width: 56%;
+}
+.crane-text h3 {
+    font-size: 1.4em;
+    color: #333333;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+.crane-text h5 {
+    font-size: 1.1em;
+    color: #333333;
+    font-weight: 600;
+}
+
+.crane-text h6 {
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+ul.p-t li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+a.list-group-item {
+    height:auto;
+    min-height:220px;
+}
+a.list-group-item.active small {
+    color:#fff;
+}
+.stars {
+    margin:20px auto 1px;
+}

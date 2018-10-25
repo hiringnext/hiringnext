@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+{% block content %}
+    <html lang="en">
+
+    <body>
+    <!-- wrapper page -->
+    <div class="wrapper">
+        <!-- main-header -->
+        <header class="main-header">
+
+
+            <!-- main navbar -->
+
+            <!-- mobile navbar -->
+
+            <div class="container">
+                <div class="text-center logo"><h1 style="color: white; font-size: 40px;"> Post a Job </h1></div>
+            </div>
+
+        </header><!-- end main-header -->
+
+
+        <!-- body-content -->
+        <div class="body-content clearfix">
+
+            <div class="bg-color1 block-section line-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+
+                            <!-- form post a job -->
+                            <form method="POST" role="form">
+                                <legend>Job Opening Form</legend>
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end body-content -->
+
+    </div><!-- end wrapper page -->
+
+    </body>
+    </html>
+
+{% endblock %}

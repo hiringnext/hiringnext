@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="wrapper">
+        <!-- main-header -->
+        <header class="main-header">
+            <!-- mobile navbar -->
+            <div class="container">
+                <nav class="mobile-nav hidden-md hidden-lg">
+                    <a href="#" class="btn-nav-toogle first">
+                        <span class="bars"></span>
+                        Menu
+                    </a>
+                    <div class="mobile-nav-block">
+                        <h4>Navigation</h4>
+                        <a href="#" class="btn-nav-toogle">
+                            <span class="barsclose"></span>
+                            Close
+                        </a>
+
+                        <ul class="nav navbar-nav">
+                            <li class=""><a href="job_list.html"><strong>Find a Job</strong></a></li>
+                            <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
+                            <li class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
+                            <li><a href="login.html"><strong>Login</strong></a></li>
+                            <li><a href="register.html"><strong>Register</strong></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Pages <span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="blog.html">Articles &amp; Blog</a></li>
+                                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
+                                    <li><a href="error_404.html">Error 404</a></li>
+                                    <li><a href="shortcode.html">Short Code</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Features <span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="job_list.html">Find a Job</a></li>
+                                    <li><a href="job_details.html">Job Details</a></li>
+                                    <li><a href="resume_list.html">Find Resumes</a></li>
+                                    <li><a href="resume_details.html">Resume Details</a></li>
+                                    <li><a href="job_post_2.html">Post a Job</a></li>
+                                    <li><a href="company_page.html">Company Profile</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div><!-- mobile navbar -->
+
+            <div class="hero-header">
+                <div class="inner-hero-header">
+                    <div class="container">
+                        <div class="text-center logo"><h1 style="color: white; font-size: 50px; font-weight: lighter">
+                            Welcome To Preferefer !!</h1>
+                            <p style="color: white; font-size: 20px; font-weight: lighter">
+                                Where Everyone Wins,
+                                <span><a href="{% url 'about' %}" style="color: white; font-size: 20px; font-weight: lighter"> learn how?</a> </span>
+                            </p></div>
+                        <div class="relative">
+                            <i class="fa fa-globe ic-fade-globe"></i>
+                            <!-- form search -->
+                            <form class="form-search-home" method="get" action="{% url 'jobopening-list' %}">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>What</label>
+                                            <input class="form-control  input-lg"
+                                                   type="text" name="q" value="{{ request.get.q }}" placeholder="job title, keywords or company name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Where</label>
+                                            <input class="form-control input-lg"
+                                                   placeholder="city, province, or region">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block">Find a Jobs
+                                    </button>
+                                </div>
+                                <div class="text-center">
+                                    <a href="#modal-advanced" data-toggle="modal">Advanced Job Search</a>
+                                </div>
+                            </form> <!-- end form search -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- modal Advanced search -->
+                <div class="modal fade" id="modal-advanced">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <form>
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Advanced Job Search</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>Find Jobs</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>With all of these words</label>
+                                                <input type="text" class="form-control " name="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>With the exact phrase</label>
+                                                <input type="text" class="form-control " name="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Show jobs of type</label>
+                                        <select class="form-control">
+                                            <option value="all">All job types</option>
+                                            <option value="fulltime">Full-time</option>
+                                            <option value="parttime">Part-time</option>
+                                            <option value="contract">Contract</option>
+                                            <option value="internship">Internship</option>
+                                            <option value="temporary">Temporary</option>
+                                        </select>
+                                    </div>
+                                    <div class="white-space-10"></div>
+                                    <h5>Where and When</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Radius </label>
+                                                <select id="radius" class="form-control">
+                                                    <option value="0">only in</option>
+                                                    <option value="5">within 5 kilometers</option>
+                                                    <option value="10">within 10 kilometers</option>
+                                                    <option value="15">within 15 kilometers</option>
+                                                    <option selected="" value="25">within 25 kilometers</option>
+                                                    <option value="50">within 50 kilometers</option>
+                                                    <option value="100">within 100 kilometers</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Of </label>
+                                                <input type="text" class="form-control" maxlength="250"
+                                                       value="United States">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Age - Jobs published </label>
+                                                <select class="form-control">
+                                                    <option value="any">anytime</option>
+                                                    <option value="15">within 15 days</option>
+                                                    <option value="7">within 7 days</option>
+                                                    <option value="3">within 3 days</option>
+                                                    <option value="1">since yesterday</option>
+                                                    <option value="last">since my last visit</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Display</label>
+                                                <label>
+                                                    <select class="form-control">
+                                                        <option selected="" value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="30">30</option>
+                                                        <option value="50">50</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close
+                                    </button>
+                                    <button type="submit" class="btn btn-success btn-theme">Find Jobs</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- end modal forgot password -->
+
+            </div>
+        </header><!-- end main-header -->
+
+
+        <!-- body-content -->
+        <div class="body-content clearfix">
+
+            <!-- box simple static -->
+            <div class="block-section bg-color1">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <h3 class="font-2x ">{{ total_profiles.count }}</h3>
+                            <h4 class="color-text">Registered JobSeekers</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font-2x ">{{ total_opening.count }}</h3>
+                            <h4 class="color-text">Active Jobs Posted</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font-2x ">{{ total_companies.count }}</h3>
+                            <h4 class="color-text">Awesome Company</h4>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end box simple static -->
+        </div><!--end body-content -->
+    </div><!-- end wrapper page -->
+{% endblock %}

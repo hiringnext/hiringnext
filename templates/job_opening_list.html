@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <!--
+    	The codes are free, but we require linking to our web site.
+    	Why to Link?
+    	A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google!
+    	Where to Put the Link?
+    	home, about, credits... or in a good page that you want
+    	THANK YOU MY FRIEND!
+    -->
+    <title>Bootdey post lists - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            margin-top: 20px;
+        }
+
+        .post-list {
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .post-list .picture {
+            max-width: 400px;
+            overflow: hidden;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .post-list .label {
+            font-weight: normal;
+        }
+
+        .post-list .picture {
+            max-width: 210px;
+        }
+
+        .post-list .picture img {
+            width: 100%;
+        }
+
+        .post-list h4 {
+            font-size: 20px;
+        }
+
+        .post-list h5 {
+            color: #888;
+        }
+
+        .post-list p {
+            float: left;
+        }
+
+        .post-list:after {
+            height: 1px;
+            background: #EEEEEE;
+            width: 83.3333%;
+            bottom: 0;
+            right: 0;
+            content: "";
+            display: block;
+            position: absolute;
+        }
+
+        .post-list .btn-download {
+            margin-top: 45px;
+        }
+
+        .btn-info {
+            color: #1084FF;
+            border-color: #269abc;
+        }
+
+        .btn-round {
+            border-width: 1px;
+            border-radius: 30px !important;
+            opacity: 0.79;
+            padding: 9px 18px;
+        }
+
+        .btn {
+            border-width: 2px;
+            background-color: rgba(0, 0, 0, 0);
+            font-weight: 400;
+            opacity: 0.8;
+            padding: 7px 16px;
+        }
+    </style>
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-2 text-center">Job Openings</h1>
+    </div>
+</div>
+
+{% for job in object_list %}
+    <div class="container bootstrap snippet">
+        <div class="row">
+            <div class="post-list">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="picture">
+                            <img alt="Opt wizard thumbnail" src="https://bootdey.com/img/Content/user_1.jpg">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>
+                            <a href="#" class="username">{{ job.job_title }}</a>
+                            <label class="label label-info">urgent hiring</label>
+                        </h4>
+                        <h5>
+                            <i class="fa fa-industry" aria-hidden="true"></i>
+                            <strong> {{ job.company_name }} </strong> |
+
+                            <i class="fa" aria-hidden="true"></i>
+                            Exp: {{ job.experience }} Years |
+
+                            <i class="fa fa-money" aria-hidden="true"></i>
+                            Rs. {{ job.salary_budget }} |
+
+                            <i class="fa fa-calendar"></i>
+                            {{ job.job_created }}
+
+                        </h5>
+                        <p class="description">{{ job.job_description | slice:'300' }}</p>
+                    </div>
+                    <div class="col-sm-4" data-no-turbolink="">
+                        <a class="btn btn-info btn-download btn-round pull-right makeLoading" href="#">
+                            <i class="fa fa-share"></i> Apply
+                        </a>
+                        <a class="btn btn-info btn-download btn-round pull-right makeLoading" href="#">
+                            <i class="fa fa-share"></i> Refer
+                        </a>
+                    </div>
+                    {#                    <div class="row">#}
+                    {#                        <a class="btn btn-primary btn-outline">Primary Button</a>#}
+                    {#                        <a class="btn btn-success btn-outline">Success Button</a>#}
+                    {#                        <a class="btn btn-warning btn-outline">Warning Button</a>#}
+                    {#                        <a class="btn btn-danger btn-outline">Danger Button</a>#}
+                    {#                        <a class="btn btn-default btn-outline">Default Button</a>#}
+                    {#                        <a class="btn btn-primary btn-outline btn-lg">Large Button</a>#}
+                    {#                        <a class="btn btn-success btn-outline btn-sm">Small Button</a>#}
+                    {#                        <a class="btn btn-danger btn-outline btn-xs">Extra Small Button</a>#}
+
+                    {#                </div>#}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
