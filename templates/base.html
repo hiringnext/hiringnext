@@ -41,109 +41,122 @@
 
 {% block navbar %}
 
-    <header class="main-header">
-        <!-- main navbar -->
-        <nav class="navbar navbar-default main-navbar hidden-sm hidden-xs">
-            <div class="container">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                    <ul class="nav navbar-nav">
-                        <li class=""><a href="{% url 'jobopening-list' %}"><strong>Search Jobs</strong></a></li>
-                        <li class=""><a href="#"><strong>Support</strong></a></li>
-                        <li class=""><a href="#"><strong>Blog</strong></a></li>
-                        <li class=""><a href="{% url 'contact' %}"><strong>Contact</strong></a></li>
+    <!-- main navbar -->
+    <nav class="navbar navbar-default main-navbar hidden-sm hidden-xs">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-{#                        <li class="dropdown">#}
-{#                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Pages <span#}
-{#                                    class="caret"></span></a>#}
-{#                            <ul class="dropdown-menu" role="menu">#}
-{#                                <li><a href="about.html">About Us</a></li>#}
-{#                                <li><a href="contact.html">Contact Us</a></li>#}
-{#                                <li><a href="blog.html">Articles &amp; Blog</a></li>#}
-{#                                <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>#}
-{#                                <li><a href="error_404.html">Error 404</a></li>#}
-{#                                <li><a href="shortcode.html">Short Code</a></li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{#                        <li class="dropdown">#}
-{#                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Features <span#}
-{#                                    class="caret"></span></a>#}
-{#                            <ul class="dropdown-menu" role="menu">#}
-{#                                <li><a href="job_list.html">Find a Job</a></li>#}
-{#                                <li><a href="job_details.html">Job Details</a></li>#}
-{#                                <li><a href="resume_list.html">Find Resumes</a></li>#}
-{#                                <li><a href="resume_details.html">Resume Details</a></li>#}
-{#                                <li><a href="job_post_2.html">Post a Job</a></li>#}
-{#                                <li><a href="company_page.html">Company Profile</a></li>#}
-{#                            </ul>#}
-{#                        </li>#}
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="link-btn"><a href="{% url 'dashboard-jobseeker-index' %}"><span class="btn btn-theme btn-pill btn-xs btn-line">Login As Jobseeker</span></a>
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="{% url 'jobopening-list' %}"><strong>Search Jobs</strong></a></li>
+                    <li class=""><a href="#"><strong>Support</strong></a></li>
+                    <li class=""><a href="#"><strong>Blog</strong></a></li>
+                    <li class=""><a href="{% url 'contact' %}"><strong>Contact</strong></a></li>
+
+                    {#                        <li class="dropdown">#}
+                    {#                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Pages <span#}
+                    {#                                    class="caret"></span></a>#}
+                    {#                            <ul class="dropdown-menu" role="menu">#}
+                    {#                                <li><a href="about.html">About Us</a></li>#}
+                    {#                                <li><a href="contact.html">Contact Us</a></li>#}
+                    {#                                <li><a href="blog.html">Articles &amp; Blog</a></li>#}
+                    {#                                <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>#}
+                    {#                                <li><a href="error_404.html">Error 404</a></li>#}
+                    {#                                <li><a href="shortcode.html">Short Code</a></li>#}
+                    {#                            </ul>#}
+                    {#                        </li>#}
+                    {#                        <li class="dropdown">#}
+                    {#                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Features <span#}
+                    {#                                    class="caret"></span></a>#}
+                    {#                            <ul class="dropdown-menu" role="menu">#}
+                    {#                                <li><a href="job_list.html">Find a Job</a></li>#}
+                    {#                                <li><a href="job_details.html">Job Details</a></li>#}
+                    {#                                <li><a href="resume_list.html">Find Resumes</a></li>#}
+                    {#                                <li><a href="resume_details.html">Resume Details</a></li>#}
+                    {#                                <li><a href="job_post_2.html">Post a Job</a></li>#}
+                    {#                                <li><a href="company_page.html">Company Profile</a></li>#}
+                    {#                            </ul>#}
+                    {#                        </li>#}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {#                        <li class="link-btn"><a href="{% url 'dashboard-jobseeker-index' %}"><span class="btn btn-theme btn-pill btn-xs btn-line">Login As Jobseeker</span></a>#}
+                    {#                        </li>#}
+                    {#                        <li class="link-btn"><a href="{% url 'client-refer' %}"><span class="btn btn-theme btn-pill btn-xs btn-line">For Client Referer</span></a>#}
+                    {#                        </li>#}
+                    {% if request.user.is_authenticated %}
+                        <li class="link-btn"><a><span
+                                class="btn btn-theme btn-pill btn-xs" style="font-size: 15px; ">Hi, {{ user | capfirst }}</span></a>
                         </li>
-                        <li class="link-btn"><a href="{% url 'client-refer' %}"><span class="btn btn-theme btn-pill btn-xs btn-line">For Client Referer</span></a>
+
+                        <li class="link-btn"><a href="{% url 'account_logout' %}"><span
+                                class="btn btn-theme btn-pill btn-xs btn-line">Logout</span></a>
+
+                    {% else %}
+                        <li class="link-btn"><a href="{% url 'account_login' %}"><span
+                                class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a>
                         </li>
-                        <li class="link-btn"><a href="{% url 'dashboard-referer-index' %}"><span class="btn btn-theme btn-pill btn-xs btn-line">For Jobseeker Referer</span></a>
-{#                        </li>#}
-{#                        <li class="link-btn"><a href="{% url 'account_login' %}"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a>#}
-{#                        </li>#}
                         <li class="link-btn"><a href="{% url 'account_signup' %}"><span
                                 class="btn btn-theme  btn-pill btn-xs btn-line">Sign Up</span></a></li>
-                    </ul>
-                </div>
+
+                    {% endif %}
+                    <li class="link-btn"><a href="{% url 'client-refer' %}"><span
+                            class="btn btn-theme btn-pill btn-xs btn-line">Refer Client</span></a>
+                    </li>
+                </ul>
             </div>
-        </nav><!-- end main navbar -->
+        </div>
+    </nav><!-- end main navbar -->
 
-        <!-- mobile navbar -->
-        <div class="container">
-            <nav class="mobile-nav hidden-md hidden-lg">
-                <a href="#" class="btn-nav-toogle first">
-                    <span class="bars"></span>
-                    Menu
+    <!-- mobile navbar -->
+    <div class="container">
+        <nav class="mobile-nav hidden-md hidden-lg">
+            <a href="#" class="btn-nav-toogle first">
+                <span class="bars"></span>
+                Menu
+            </a>
+            <div class="mobile-nav-block">
+                <h4>Navigation</h4>
+                <a href="#" class="btn-nav-toogle">
+                    <span class="barsclose"></span>
+                    Close
                 </a>
-                <div class="mobile-nav-block">
-                    <h4>Navigation</h4>
-                    <a href="#" class="btn-nav-toogle">
-                        <span class="barsclose"></span>
-                        Close
-                    </a>
 
-                    <ul class="nav navbar-nav">
-                        <li class=""><a href="http://127.0.0.1:8000/job-list/"><strong>Find a Job</strong></a></li>
-                        <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
-                        <li class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
-                        <li><a href="login.html"><strong>Login</strong></a></li>
-                        <li><a href="register.html"><strong>Register</strong></a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Pages <span
-                                    class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                                <li><a href="blog.html">Articles &amp; Blog</a></li>
-                                <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
-                                <li><a href="error_404.html">Error 404</a></li>
-                                <li><a href="shortcode.html">Short Code</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Features <span
-                                    class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="job_list.html">Find a Job</a></li>
-                                <li><a href="job_details.html">Job Details</a></li>
-                                <li><a href="resume_list.html">Find Resumes</a></li>
-                                <li><a href="resume_details.html">Resume Details</a></li>
-                                <li><a href="job_post_2.html">Post a Job</a></li>
-                                <li><a href="company_page.html">Company Profile</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div><!-- mobile navbar -->
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="http://127.0.0.1:8000/job-list/"><strong>Find a Job</strong></a></li>
+                    <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
+                    <li class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
+                    <li><a href="login.html"><strong>Login</strong></a></li>
+                    <li><a href="register.html"><strong>Register</strong></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Pages <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="blog.html">Articles &amp; Blog</a></li>
+                            <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
+                            <li><a href="error_404.html">Error 404</a></li>
+                            <li><a href="shortcode.html">Short Code</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Features <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="job_list.html">Find a Job</a></li>
+                            <li><a href="job_details.html">Job Details</a></li>
+                            <li><a href="resume_list.html">Find Resumes</a></li>
+                            <li><a href="resume_details.html">Resume Details</a></li>
+                            <li><a href="job_post_2.html">Post a Job</a></li>
+                            <li><a href="company_page.html">Company Profile</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div><!-- mobile navbar -->
 
-    </header><!-- end main-header -->
+
 
 {% endblock %}
 

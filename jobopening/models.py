@@ -77,7 +77,6 @@ class JobLocation(models.Model):
         return reverse('location', kwargs={'slug': self.slug})
 
 
-
 class JobOpeningManager(models.Manager):
     def get_queryset(self):
         return JobOpeningQueryset(self.model, using=self._db)
