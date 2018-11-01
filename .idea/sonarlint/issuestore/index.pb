@@ -37,3 +37,11 @@ D
 jobopening/models.py,5/7/57ac5ea61357654c03ebf172c9a7beb7a740370e
 c
 3dashboard/templates/dashboard_admin/table-data.html,b/0/b00c977313adde71d5b9af54eacb7755ce3209f3
+@
+requirements.txt,1/9/19359a61ae2446b51b549167b014da2fcf265768
+9
+	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
+E
+ecommerce/settings.py,b/9/b946b6e774b5f890b5c3fc162963da2a0950483f
+B
+jobseeker/admin.py,f/f/ff0db8056ddc2df7bc1d9dfa2bc541571a485fa2

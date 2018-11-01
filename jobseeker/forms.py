@@ -1,6 +1,4 @@
 from django import forms
-from django.conf.global_settings import AUTH_USER_MODEL
-from django.contrib.auth.models import User
 
 from .models import Jobseeker, ReferCandidate
 

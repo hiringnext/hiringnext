@@ -231,6 +231,7 @@
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
+                                                <th>Sr. No</th>
                                                 <th>Job Position</th>
                                                 <th>Company Name</th>
                                                 <th>Job Location</th>
@@ -241,10 +242,11 @@
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
+                                                <th>Sr. No</th>
+                                                <th>Job Position</th>
+                                                <th>Company Name</th>
+                                                <th>Job Location</th>
+                                                <th>Experience</th>
                                                 <th>Start date</th>
                                                 <th>Salary</th>
                                             </tr>
@@ -253,6 +255,7 @@
                                     {% for act in job_opening_list %}
                                         <tbody>
                                             <tr>
+                                                <td> {{ act.id }}</td>
                                                 <td>{{ act.job_title }}</td>
                                                 <td>{{ act.company_name }}</td>
                                                 <td>{{ act.job_location }}</td>

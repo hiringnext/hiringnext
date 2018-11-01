@@ -1,6 +1,6 @@
 from django.conf.global_settings import AUTH_USER_MODEL
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 # Create your models here.
 from ecommerce.choice.functional_area import FUNCTIONAL_AREA_CHOICES
 from ecommerce.choice.job_location import JOB_LOCATION_CHOICES
@@ -12,6 +12,7 @@ from jobopening.models import Jobopening
 
 
 class Jobseeker(models.Model):
+
     name = models.CharField(max_length=50)
     contact_number = models.IntegerField(null=False, unique=True)
     alternate_number = models.IntegerField(blank=True)
@@ -44,14 +45,16 @@ class Jobseeker(models.Model):
 
 
 class ReferCandidate(models.Model):
+
     candidate_referrer = models.ForeignKey(
         AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
+        on_delete=models.CASCADE,
         related_name="referred_candidate_by",
         null=True,
         blank=True
+
     )
-    refer_for_the_post_of = models.ForeignKey(Jobopening, verbose_name='Referred for the post of')
+    refer_for_the_post_of = models.ForeignKey(Jobopening, on_delete=models.CASCADE, verbose_name='Referred for the post of')
     candidate_name = models.CharField(max_length=50, verbose_name='Candidate Name')
     contact_number = models.IntegerField(null=False, unique=True, verbose_name='Primary Contact Number')
     alternate_number = models.IntegerField(blank=True, verbose_name='Secondary Contact Number')

@@ -18,7 +18,6 @@ admin.site.register(Jobseeker, JobseekerAdmin)
 class ReferCandidateAdmin(admin.ModelAdmin):
     list_display = ['candidate_referrer', 'refer_for_the_post_of', 'candidate_name', 'current_designation',
                     'contact_number', 'present_location']
-    search_fields = ['candidate_referrer', 'refer_for_the_post_of', 'present_location']
 
 
 admin.site.register(ReferCandidate, ReferCandidateAdmin)

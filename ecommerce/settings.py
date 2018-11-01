@@ -24,7 +24,15 @@ SECRET_KEY = '^h@yqbb3oa-_5(hy9diiun&mycjpx_noalp_#6th81b4^j4x9b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', ]
+
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'automail.empower@gmail.com'
+EMAIL_HOST_PASSWORD = 'samsungS3'
 
 # Application definition
 
@@ -129,7 +137,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -175,5 +182,3 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

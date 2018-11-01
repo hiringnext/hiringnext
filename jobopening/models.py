@@ -103,7 +103,7 @@ class JobOpeningManager(models.Manager):
 
 
 class Jobopening(models.Model):
-    job_title = models.CharField(max_length=50, verbose_name='Designation')
+    job_title = models.CharField(max_length=50, verbose_name='Designation', editable=True)
     slug = models.SlugField(max_length=40)
     company_name = models.ForeignKey(CompanyProfile, on_delete=models.CASCADE, verbose_name='Company Name')
     job_location = models.ForeignKey(JobLocation, on_delete=models.CASCADE, verbose_name='Job Location')
@@ -145,7 +145,7 @@ class Jobopening(models.Model):
 
 
 class JobApply(models.Model):
-    title = models.ForeignKey(Jobopening, max_length=100, default=True)
+    title = models.ForeignKey(Jobopening, max_length=100, default=True, on_delete=models.CASCADE)
     apply_for = models.CharField(max_length=50, default=True)
     question_one = models.CharField(max_length=100, default=True)
     question_two = models.CharField(max_length=100, default=True)

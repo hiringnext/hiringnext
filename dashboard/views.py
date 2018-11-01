@@ -7,11 +7,14 @@ from employer.models import CompanyProfile
 from jobopening.models import Jobopening
 
 # Create your views here.
-from jobseeker.models import Jobseeker
+from jobseeker.models import Jobseeker, ReferCandidate
 
 
 @login_required()
 def admin_dashboard(request):
+    total_jobseekers = Jobseeker.objects.count(),
+    total_job_reffer = ReferCandidate.objects.count(),
+    all_seekers_profiles = total_jobseekers + total_job_reffer
     context = {
         'admin_dash': Jobopening.objects.all(),
         'total_opening': Jobopening.objects.all(),
@@ -20,8 +23,10 @@ def admin_dashboard(request):
         'total_revenues': '11111111',
         'monthly_revenues': '11111',
         'total_closed_positions': '1111',
+        'all_finders' : all_seekers_profiles,
 
     }
+
     return render(request, 'dashboard_admin/index.html', context)
 
 
