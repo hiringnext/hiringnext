@@ -12,7 +12,7 @@ from jobopening.models import Jobopening
 
 
 class Jobseeker(models.Model):
-
+    apply_for_the_post_of = models.ForeignKey(Jobopening, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50)
     contact_number = models.IntegerField(null=False, unique=True)
     alternate_number = models.IntegerField(blank=True)

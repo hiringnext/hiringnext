@@ -24,6 +24,7 @@ def admin_dashboard(request):
         'monthly_revenues': '11111',
         'total_closed_positions': '1111',
         'all_finders' : all_seekers_profiles,
+        'assign_recruiter': Jobopening.objects.all(),
 
     }
 
@@ -35,4 +36,12 @@ def total_job_opening_list(request):
     context = {
         'job_opening_list': Jobopening.objects.all(),
     }
-    return render(request, 'dashboard_admin/table-data.html', context)
+    return render(request, 'dashboard_admin/active_openings.html', context)
+
+
+@login_required()
+def total_resume_list(request):
+    context = {
+        'job_resume_list': Jobseeker.objects.all(),
+    }
+    return render(request, 'dashboard_admin/active_resumes.html', context)

@@ -15,3 +15,4 @@ admin.site.register(Jobopening, JobopeningAdmin)
 admin.site.register(ApplicationQuestions)
 admin.site.register(JobLocation)
 admin.site.register(JobApply)
+

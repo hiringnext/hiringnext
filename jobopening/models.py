@@ -1,3 +1,4 @@
+from django.conf.global_settings import AUTH_USER_MODEL
 from django.db import models
 from django.db.models import Q
 from django.urls import reverse
@@ -103,6 +104,13 @@ class JobOpeningManager(models.Manager):
 
 
 class Jobopening(models.Model):
+    assign_recruiter = models.ForeignKey(
+        AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="Recruiter_Handling",
+        null=True,
+        blank=True,
+    )
     job_title = models.CharField(max_length=50, verbose_name='Designation', editable=True)
     slug = models.SlugField(max_length=40)
     company_name = models.ForeignKey(CompanyProfile, on_delete=models.CASCADE, verbose_name='Company Name')
@@ -111,10 +119,8 @@ class Jobopening(models.Model):
                                            verbose_name='Sample Job Location')
     experience = models.DecimalField(decimal_places=1, max_digits=5, null=True, verbose_name='Experience')
     skill = models.CharField(max_length=100, verbose_name='Skills')
-    # qualification = models.CharField(max_length=50)
     qualification = models.CharField(choices=QUALIFICATION_CHOICES, max_length=100, verbose_name='Qualification')
     salary_budget = models.DecimalField(decimal_places=0, max_digits=10, null=True, verbose_name='Salary Criteria')
-    # company_profile = models.TextField()
     referral_reward = models.DecimalField(decimal_places=0, max_digits=10, null=True, verbose_name='Referral Amount')
     industry = models.CharField(max_length=50, verbose_name='Industry')
     functional_area = models.CharField(choices=FUNCTIONAL_AREA_CHOICES, max_length=100, verbose_name='Functional Area')
