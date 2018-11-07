@@ -17,6 +17,7 @@ class JobopeningListView(FormMixin, ListView):
     model = Jobopening
     form_class = ReferCandidateForm
     context_object_name = 'opening'
+    object = 'job_object'
     template_name = "job_list.html"
     ordering = ['-job_created']
 

@@ -1,1 +1,25 @@
 http://xidea.online/servers.html
+
+Features of HiringNext
+
+> Job Posting - By recruiters & Admin Only
+> Employee - Job Seeker - Dashboard
+> Referrer - Dashboard
+> Staff Dashboard
+> Admin Dashboard
+> User Management
+> Email Management
+> Email Updates - Mass Mailing - Email Marketing Management
+> SEO Friendly
+
+> Refer Module
+> Refer Employee & Earn
+> Referrer Dashboard
+
+
+> User Type:
+    Employee
+    Referrer
+
+> Assign Job to Recruiter:
+    Every updates get email notification & display on Dashboard

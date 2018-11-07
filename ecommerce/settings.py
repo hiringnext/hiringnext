@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'pinax.referrals',
+    'whitenoise'
 
     # our apps
     'products',
@@ -66,6 +67,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # 'referral.middleware.ReferrerMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -171,6 +173,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -182,3 +185,7 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
+
+ACCOUNT_LOGOUT_ON_GET = True
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

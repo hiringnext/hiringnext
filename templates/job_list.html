@@ -6,7 +6,7 @@
 
 <body>
 <!-- wrapper page -->
-<div class="wrapper">
+
     <!-- main-header -->
     <header class="main-header">
 
@@ -466,8 +466,8 @@
                                 {#                            </div>#}
 
                                 <div class="modal-body">
-                                    {% for question in questions %}
-                                        {% for que in question.all %}
+                                    {% for question in opening %}
+                                        {% for que in question.Questions.all %}
                                         <div class="form-group">
                                             <label>{{ que }}</label>
                                             <input type="text" class="form-control" placeholder="Answer here..">
@@ -522,5 +522,5 @@
         <!-- main-footer -->
 
     </header>
-</div><!-- end wrapper page -->
+<!-- end wrapper page -->
 </body>
