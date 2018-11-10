@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'pinax.referrals',
+    'taggit',
 
     # our apps
     'products',
@@ -188,3 +189,5 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 ACCOUNT_LOGOUT_ON_GET = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+TAGGIT_CASE_INSENSITIVE = True

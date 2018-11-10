@@ -37,6 +37,7 @@ urlpatterns = [
 
     url(r'^accounts/', include('allauth.urls')),
     url(r'^dashboard/', include('dashboard.urls')),
+
     url(r'^admin/', admin.site.urls),
     # other urls
     url(r"^referrals/", include("pinax.referrals.urls", namespace="pinax_referrals")),

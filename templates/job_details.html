@@ -94,8 +94,13 @@
 
                                 <h1 class="title text-info">{{ object.job_title }}</h1>
 
+
                                 <div class="job-meta">
                                     <ul class="list-inline">
+                                        <li><i class="fa fa-briefcase"></i><a href="{{ object.industry.get_absolute_url }}">
+                                            {{ object.industry }}</a></li>
+                                        <li><i class="fa fa-briefcase"></i>
+                                            <a href="{{ object.functional_area.get_absolute_url }}">{{ object.functional_area }}</a></li>
                                         <li><i class="fa fa-briefcase"></i> {{ object.employment_type }}</li>
                                         <li><i class="fa fa-empire"></i> {{ object.experience }} Yrs.</li>
                                         <li><i class="fa fa-map-marker"></i> {{ object.job_location }}</li>
@@ -104,7 +109,7 @@
                                 </div>
                                 <h4>Company Profile:</h4>
 
-                                    <p> {{ object.company_name.company_profile }} </p>
+                                <p> {{ object.company_name.company_profile }} </p>
 
                                 <hr>
                                 <h4>Job Description:</h4>
@@ -119,50 +124,50 @@
                                     {% endfor %}
                                 </ol>
 
-{##}
-{##}
-{#                                <p>Location: New York, NY Type: Contracted to Full Time Min. Experience: Experienced#}
-{#                                    Krossover is looking for a Web Application Developer to join our team of smart#}
-{#                                    developers. We build web and mobile applications and games for coaches, athletes and#}
-{#                                    fans. If you're a talented programmer, and like sports and sports analytics, this is#}
-{#                                    the position for you.</p>#}
-{#                                <p>Our ideal candidate is technically curious, has a solid understanding of OOP and web#}
-{#                                    development, and wants to build applications that improve people's lives.</p>#}
-{#                                <p>We're interested in filling this position on either a contract or full-time#}
-{#                                    basis. </p>#}
-{##}
-{#                                <h4>What you'll do:</h4>#}
-{#                                <ul>#}
-{#                                    <li>Build operations related applications for daily use</li>#}
-{#                                    <li>Create dashboards and daily / weekly reports</li>#}
-{#                                    <li>Architect features with the development team</li>#}
-{#                                    <li>PHP and/or JavaScript development. (We use Silex and AngularJS.)</li>#}
-{#                                </ul>#}
-{#                                <h4>What we're looking for:</h4>#}
-{#                                <ul>#}
-{#                                    <li>Experience with the web. Know your GET vs. POST</li>#}
-{#                                    <li>OOP concepts</li>#}
-{#                                    <li>Experience with at least one OOP language, such as:#}
-{#                                        <ul>#}
-{#                                            <li>PHP</li>#}
-{#                                            <li>Java</li>#}
-{#                                            <li>C#</li>#}
-{#                                            <li>Ruby</li>#}
-{#                                            <li>etc.</li>#}
-{#                                        </ul>#}
-{#                                    </li>#}
-{#                                    <li>A love of clean, understandable code and interface</li>#}
-{#                                    <li>You can SELECT, INSERT, UPDATE and DELETE in your SQL database all day</li>#}
-{#                                    <li>Experience working on a team</li>#}
-{#                                    <li>Smarts, humility, and the desire to teach and learn</li>#}
-{#                                </ul>#}
-{##}
-{#                                <p>Krossover is a sports media and analytics startup that brings easy video breakdown#}
-{#                                    and in-depth analytics to coaches and athletes at all levels. Think Friday Night#}
-{#                                    Lights meets Moneyball. We're located in New York's Chelsea neighborhood. It's a#}
-{#                                    spacious, sunny office with not a single grey wall anywhere. Our culture is one of#}
-{#                                    intelligence and collaboration. Every now and then we talk sports.</p>#}
-{#                                <p>We offer a competitive salary and benefits.</p>#}
+                                {##}
+                                {##}
+                                {#                                <p>Location: New York, NY Type: Contracted to Full Time Min. Experience: Experienced#}
+                                {#                                    Krossover is looking for a Web Application Developer to join our team of smart#}
+                                {#                                    developers. We build web and mobile applications and games for coaches, athletes and#}
+                                {#                                    fans. If you're a talented programmer, and like sports and sports analytics, this is#}
+                                {#                                    the position for you.</p>#}
+                                {#                                <p>Our ideal candidate is technically curious, has a solid understanding of OOP and web#}
+                                {#                                    development, and wants to build applications that improve people's lives.</p>#}
+                                {#                                <p>We're interested in filling this position on either a contract or full-time#}
+                                {#                                    basis. </p>#}
+                                {##}
+                                {#                                <h4>What you'll do:</h4>#}
+                                {#                                <ul>#}
+                                {#                                    <li>Build operations related applications for daily use</li>#}
+                                {#                                    <li>Create dashboards and daily / weekly reports</li>#}
+                                {#                                    <li>Architect features with the development team</li>#}
+                                {#                                    <li>PHP and/or JavaScript development. (We use Silex and AngularJS.)</li>#}
+                                {#                                </ul>#}
+                                {#                                <h4>What we're looking for:</h4>#}
+                                {#                                <ul>#}
+                                {#                                    <li>Experience with the web. Know your GET vs. POST</li>#}
+                                {#                                    <li>OOP concepts</li>#}
+                                {#                                    <li>Experience with at least one OOP language, such as:#}
+                                {#                                        <ul>#}
+                                {#                                            <li>PHP</li>#}
+                                {#                                            <li>Java</li>#}
+                                {#                                            <li>C#</li>#}
+                                {#                                            <li>Ruby</li>#}
+                                {#                                            <li>etc.</li>#}
+                                {#                                        </ul>#}
+                                {#                                    </li>#}
+                                {#                                    <li>A love of clean, understandable code and interface</li>#}
+                                {#                                    <li>You can SELECT, INSERT, UPDATE and DELETE in your SQL database all day</li>#}
+                                {#                                    <li>Experience working on a team</li>#}
+                                {#                                    <li>Smarts, humility, and the desire to teach and learn</li>#}
+                                {#                                </ul>#}
+                                {##}
+                                {#                                <p>Krossover is a sports media and analytics startup that brings easy video breakdown#}
+                                {#                                    and in-depth analytics to coaches and athletes at all levels. Think Friday Night#}
+                                {#                                    Lights meets Moneyball. We're located in New York's Chelsea neighborhood. It's a#}
+                                {#                                    spacious, sunny office with not a single grey wall anywhere. Our culture is one of#}
+                                {#                                    intelligence and collaboration. Every now and then we talk sports.</p>#}
+                                {#                                <p>We offer a competitive salary and benefits.</p>#}
                             </div><!-- end box item details -->
 
                         </div>
