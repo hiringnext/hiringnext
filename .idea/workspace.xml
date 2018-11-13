@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f045a7a9-2a3f-4765-a968-0c52787b1594" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/industry/industry_detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/tag/tag_detail.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/functional_area/functional_area_list.html" afterPath="$PROJECT_DIR$/templates/functional_area/functional_area.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ecommerce/urls.py" afterPath="$PROJECT_DIR$/ecommerce/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobopening/models.py" afterPath="$PROJECT_DIR$/jobopening/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobopening/urls.py" afterPath="$PROJECT_DIR$/jobopening/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobopening/views.py" afterPath="$PROJECT_DIR$/jobopening/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/custom.css" afterPath="$PROJECT_DIR$/static/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/industry/industry_list.html" afterPath="$PROJECT_DIR$/templates/industry/industry_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/job_details.html" afterPath="$PROJECT_DIR$/templates/job_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/job_list.html" afterPath="$PROJECT_DIR$/templates/job_list.html" />
-    </list>
+    <list default="true" id="f045a7a9-2a3f-4765-a968-0c52787b1594" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -980,7 +964,7 @@
         <entry file="file://$PROJECT_DIR$/jobopening/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="368">
-              <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+              <caret line="74" column="22" lean-forward="false" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -1003,7 +987,7 @@
         <entry file="file://$PROJECT_DIR$/jobopening/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
-              <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -1924,7 +1908,7 @@
     <entry file="file://$PROJECT_DIR$/jobopening/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
-          <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
@@ -1945,7 +1929,7 @@
     <entry file="file://$PROJECT_DIR$/jobopening/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
-          <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+          <caret line="74" column="22" lean-forward="false" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
           <folding />
         </state>
       </provider>
