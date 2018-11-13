@@ -82,7 +82,11 @@ class IndustryListView(DetailView):
             'function_area': FunctionalArea.objects.all(),
             # 'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
-             })
+            'industry': Industry.objects.all(),
+            'location': JobLocation.objects.all(),
+            'query': self.request.GET.get('q')
+
+        })
         return context
 
     def POST(self, request, form):
@@ -110,6 +114,10 @@ class FunctionalAreaListView(DetailView):
         context.update({
             'opening': Jobopening.objects.all(),
             'industry': Industry.objects.all(),
+            'function_area': FunctionalArea.objects.all(),
+            'location': JobLocation.objects.all(),
+            'questions': ApplicationQuestions.objects.all(),
+            'query': self.request.GET.get('q')
 
         })
         return context

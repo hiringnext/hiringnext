@@ -251,150 +251,53 @@
                                 </div>
 
                                 <div class="result-filter">
-                                    <h5 class="no-margin-top font-bold margin-b-20 "><a href="#s_collapse_1"
-                                                                                        data-toggle="collapse">By
-                                        Location:<i class="fa ic-arrow-toogle fa-angle-right pull-right"></i> </a>
-                                    </h5>
+                                    <h5 class="font-bold  margin-b-20"><a href="#s_collapse_1"
+                                                                          data-toggle="collapse">Industries: <i
+                                            class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a></h5>
                                     <div class="collapse in" id="s_collapse_1">
-
-
                                         <div class="list-area">
-                                            {% for by_location in location %}
-                                                {% for locations in by_location %}
-                                                    <ul class="list-unstyled">
-                                                        <li>
-                                                            <a href="#">{{ locations.job_location.title }}</a>
-                                                        </li>
-
-                                                    </ul>
-                                                {% endfor %}
+                                            {% for by_industry in industry %}
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <a href="{{ by_industry.get_absolute_url }}">{{ by_industry.industry }}</a>
+                                                    </li>
+                                                </ul>
                                             {% endfor %}
                                         </div>
-
-
                                     </div>
 
                                     <h5 class="font-bold  margin-b-20"><a href="#s_collapse_5"
-                                                                          data-toggle="collapse">Job
-                                        Type <i class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a></h5>
+                                                                          data-toggle="collapse">Functional Area: <i
+                                            class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a></h5>
                                     <div class="collapse in" id='s_collapse_5'>
                                         <div class="list-area">
-                                            <ul class="list-unstyled ">
-                                                <li>
-                                                    <a href="#">Full-time </a> (558)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Part-time </a> (438)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Contract </a> (313)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Internship</a> (169)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Temporary </a> (156)
-                                                </li>
-                                            </ul>
-
+                                            {% for by_functional_area in function_area %}
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <a href="{{ by_functional_area.get_absolute_url }}">{{ by_functional_area.functional_area }}</a>
+                                                    </li>
+                                                </ul>
+                                            {% endfor %}
                                         </div>
                                     </div>
 
 
                                     <h5 class="font-bold  margin-b-20"><a href="#s_collapse_2"
-                                                                          data-toggle="collapse">Title
+                                                                          data-toggle="collapse">Location:
                                         <i class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a></h5>
                                     <div class="collapse in" id="s_collapse_2">
                                         <div class="list-area">
-                                            <ul class="list-unstyled ">
-                                                <li>
-                                                    <a href="#">web developer</a> (558)
-                                                </li>
-                                                <li>
-                                                    <a href="#">PHP Developer</a> (438)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Software Engineer </a> (313)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Senior Software Engineer </a> (169)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Front End Developer </a> (156)
-                                                </li>
-                                                <li>
-                                                    <a href="#">More ... </a>
-                                                </li>
-                                            </ul>
-
+                                            {% for by_location in location %}
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <a href="{{ by_location.get_absolute_url }}">{{ by_location.job_location }}</a>
+                                                    </li>
+                                                </ul>
+                                            {% endfor %}
                                         </div>
                                     </div>
-
-
-                                    <h5 class="font-bold  margin-b-20"><a href="#s_collapse_3"
-                                                                          data-toggle="collapse">Company
-                                        <i class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a></h5>
-                                    <div class="collapse in" id="s_collapse_3">
-                                        <div class="list-area">
-                                            <ul class="list-unstyled ">
-                                                <li>
-                                                    <a href="#">Unlisted Company</a> (558)
-                                                </li>
-                                                <li>
-                                                    <a href="#">CyberCoders</a> (438)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Smith & Keller </a> (313)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Robert Half Technology </a> (169)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Jobspring Partners </a> (156)
-                                                </li>
-                                                <li>
-                                                    <a href="#">More ... </a>
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                    </div>
-
-
-                                    <h5 class="font-bold  margin-b-20"><a href="#s_collapse_4"
-                                                                          data-toggle="collapse"
-                                                                          class="collapsed">Location <i
-                                            class="fa ic-arrow-toogle fa-angle-right pull-right"></i> </a></h5>
-                                    <div class="collapse" id='s_collapse_4'>
-                                        <div class="list-area">
-                                            <ul class="list-unstyled ">
-                                                <li>
-                                                    <a href="#">New York, NY </a> (558)
-                                                </li>
-                                                <li>
-                                                    <a href="#">San Francisco, CA </a> (438)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Washington, DC </a> (313)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Chicago, IL</a> (169)
-                                                </li>
-                                                <li>
-                                                    <a href="#">Austin, TX </a> (156)
-                                                </li>
-                                                <li>
-                                                    <a href="#">More ... </a>
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -505,14 +408,14 @@
                             {#                                        aria-hidden="true">&times;</span></button>#}
                             {#                                <h4 class="modal-title">Apply</h4>#}
                             {#                            </div>#}
-{#                            <div class="modal-body">#}
-{#                                <form method="POST" role="form">#}
-{#                                    <legend>Form Title</legend>#}
-{#                                    {% csrf_token %}#}
-{#                                    {% bootstrap_form form %}#}
-{#                                    <button type="submit" class="btn btn-primary">Submit</button>#}
-{#                                </form>#}
-{#                            </div>#}
+                            {#                            <div class="modal-body">#}
+                            {#                                <form method="POST" role="form">#}
+                            {#                                    <legend>Form Title</legend>#}
+                            {#                                    {% csrf_token %}#}
+                            {#                                    {% bootstrap_form form %}#}
+                            {#                                    <button type="submit" class="btn btn-primary">Submit</button>#}
+                            {#                                </form>#}
+                            {#                            </div>#}
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close
                                 </button>
