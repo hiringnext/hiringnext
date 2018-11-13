@@ -29,7 +29,7 @@ class JobOpeningManager(models.Manager):
     def get_queryset(self):
         return JobOpeningQueryset(self.model, using=self._db)
 
-    def all(self, *args, **kwargs):
+    def all(self, **kwargs):
         return self.get_queryset().active()
 
     def get_related(self, instance):
@@ -48,6 +48,24 @@ class JobOpeningManager(models.Manager):
                          )
             qs = qs.filter(or_lookup).distinct()  # distinct() is often necessary with Q lookups
         return qs
+
+
+class DefaultIndustry(models.Model):
+    defindustry = models.CharField(max_length=50)
+    slug = models.SlugField()
+
+    def __str__(self):
+        return self.defindustry
+
+    def save(self, *args, **kwargs):
+        self.slug_field = slugify(self.defindustry)
+        super(DefaultIndustry, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("default-industry", kwargs={"slug": self.slug})
+
+    class Meta:
+        ordering = ["id"]
 
 
 class Industry(models.Model):

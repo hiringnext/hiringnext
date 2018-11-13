@@ -21,7 +21,6 @@ from django.contrib import admin
 from jobseeker.views import IndexListView
 from .views import home_page, about_page, contact_page
 
-
 urlpatterns = [
     url(r'^$', IndexListView.as_view(), name='index'),
     url(r'^home/$', home_page),

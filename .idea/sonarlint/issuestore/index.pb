@@ -99,3 +99,13 @@ A
 runtime,f/2/f2e18ffc17e2595362b5468aac34221e09934bf8
 A
 ecommerce/wsgi.py,f/e/fe1bf6f3c7fe2bab1247f1276af7e2c132581459
+U
+%templates/industry/industry_list.html,a/9/a932536d91f0f8c2f655a047b34bceb4f039282d
+c
+3templates/functional_area/functional_area_list.html,5/2/52d852400f95811b4f6404713aaabeb9420cbe05
+M
+templates/tag/tag_detail.html,1/6/16a21a78e604ce81a62388add90ef1a1aeda6dc1
+E
+static/css/custom.css,0/d/0d25b77cab8c0daf281f3949aaf2d595654b92eb
+W
+'templates/industry/industry_detail.html,2/8/286bc0febd690935283515374a6130cdaaef83cc

@@ -124,7 +124,8 @@
 
 
                                     <!-- Job Openings List View -->
-                                    {% for job in object_list %}
+                                    {% for joblist in object_list %}
+                                        {% for job in joblist.industry.MultipleObjectsReturned.all %}
                                         <div class="box-list">
                                             <div class="item">
                                                 <div class="row">
@@ -181,6 +182,7 @@
                                             </div><!-- end item list -->
 
                                         </div>
+                                         {% endfor %}
                                     {% endfor %}
 
 

@@ -1,4 +1,5 @@
-from jobopening.views import JobopeningListView, JobopeningDetailView, LocationListView, IndustryListView, FunctionalAreaListView
+from jobopening.views import JobopeningListView, JobopeningDetailView, IndustryListView, \
+    FunctionalAreaListView, TagIndexView, LocationListView
 from django.conf.urls import url
 from jobopening.views import job_submit, apply
 
@@ -11,5 +12,6 @@ urlpatterns = [
     url(r'^functional_area/(?P<slug>[-\w]+)/$', FunctionalAreaListView.as_view(), name='functional_area'),
     url(r'^location/(?P<slug>[-\w]+)/$', LocationListView.as_view(), name='location'),
     url(r'^job/(?P<slug>[-\w]+)/$', JobopeningDetailView.as_view(), name='job-detail'),
+    url(r'^tag/(?P<slug>[-\w]+)/$', TagIndexView.as_view(), name='tagged'),
 
 ]

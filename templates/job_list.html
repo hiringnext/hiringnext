@@ -151,16 +151,30 @@
                                                         <a href="{{ job.industry.get_absolute_url }}"><span
                                                                 class="color-black">{{ job.industry }}</span></a>
 
+                                                        | <span class="color-white-mute">Functional Area:</span>
+                                                        <a href="{{ job.functional_area.get_absolute_url }}"><span
+                                                                class="color-black">{{ job.functional_area }}</span></a>
+                                                        <br><br>
+
                                                         | <span class="color-white-mute">Salary: </span><span
                                                             class="color-black fa fa-rupee"> {{ job.salary_budget | intcomma }}</span>
                                                         | <span class="color-white-mute">Exp: </span><span
                                                             class="color-black">{{ job.experience }} yrs.</span>
                                                         |
                                                         <span class="color-white-mute">{{ job.job_created }}</span>
-
                                                     </h5>
+                                                    <div class="text-success tags"> Keyskills:
+                                                        {% for job_tag in job.tags.all %}
+                                                            <span style="font-size: 15px; font-weight: 120;">
+                                                            <a href="{% url 'tagged' job_tag.slug %}"><span>
+                                                            <span class="tag">{{ job_tag.name }},</span>
+                                                    </span>
+                                                        </a>
+                                                    </span>
+                                                        {% endfor %}
+                                                    </div>
 
-                                                    <p class="text">{{ job.job_description | slice:"200" | lower }}...</p>
+                                                    <p class="text">{{ job.job_description | slice:"300" | lower }}...</p>
 
                                                     <a href="#modal-apply" data-toggle="modal" type="button"
                                                        class="btn btn-theme btn-primary btn-sm">

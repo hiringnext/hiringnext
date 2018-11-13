@@ -97,15 +97,28 @@
 
                                 <div class="job-meta">
                                     <ul class="list-inline">
-                                        <li><i class="fa fa-briefcase"></i><a href="{{ object.industry.get_absolute_url }}">
+                                        <li><i class="fa fa-briefcase"></i><a
+                                                href="{{ object.industry.get_absolute_url }}">
                                             {{ object.industry }}</a></li>
                                         <li><i class="fa fa-briefcase"></i>
-                                            <a href="{{ object.functional_area.get_absolute_url }}">{{ object.functional_area }}</a></li>
+                                            <a href="{{ object.functional_area.get_absolute_url }}">{{ object.functional_area }}</a>
+                                        </li>
                                         <li><i class="fa fa-briefcase"></i> {{ object.employment_type }}</li>
                                         <li><i class="fa fa-empire"></i> {{ object.experience }} Yrs.</li>
                                         <li><i class="fa fa-map-marker"></i> {{ object.job_location }}</li>
                                         <li><i class="fa fa-money"></i> {{ object.salary_budget | intcomma }}</li>
                                     </ul>
+                                </div>
+
+                                <div class="text-success"> Keyskills:
+                                    {% for job_tag in object.tags.all %}
+                                        <span>
+                                                            <a href="{% url 'tagged' job_tag.slug %}"><span>
+                                                            <span class="wysiwyg-color-black">{{ job_tag.name }},</span>
+                                                    </span>
+                                                        </a>
+                                                    </span>
+                                    {% endfor %}
                                 </div>
                                 <h4>Company Profile:</h4>
 
