@@ -69,9 +69,9 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
         return queryset_list
 
 
-class IndustryListView(FormMixin, ListView):
+class IndustryListView(DetailView):
     model = Industry
-    form_class = ReferCandidateForm
+    queryset = Industry.objects.all()
     template_name = 'industry/industry_list.html'
 
     def get_context_data(self, **kwargs):
@@ -82,9 +82,7 @@ class IndustryListView(FormMixin, ListView):
             'function_area': FunctionalArea.objects.all(),
             # 'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
-            'form': self.get_form(),
-            'query': self.request.GET.get('q')
-        })
+             })
         return context
 
     def POST(self, request, form):
@@ -99,21 +97,6 @@ class IndustryListView(FormMixin, ListView):
 
             # if a GET (or any other method) we'll create a blank form
         return render(request, 'job_list.html', context)
-
-    def get_success_url(self):
-        return HttpResponseRedirect('/job/')
-
-    def get_queryset(self):
-        queryset_list = Jobopening.objects.all()
-        query = self.request.GET.get("q")
-        if query:
-            queryset_list = queryset_list.filter(
-                Q(job_title__icontains=query) |
-                Q(job_location__slug__icontains=query)
-
-            ).distinct()
-
-        return queryset_list
 
 
 class FunctionalAreaListView(DetailView):
@@ -146,7 +129,6 @@ class FunctionalAreaListView(DetailView):
 
     def get_success_url(self):
         return HttpResponseRedirect('/job/')
-
 
 
 class JobopeningDetailView(TagMixin, DetailView):

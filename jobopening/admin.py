@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea
+from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea, DefaultIndustry
 
 
 # Register your models here.
@@ -22,5 +22,6 @@ admin.site.register(Industry)
 admin.site.register(FunctionalArea)
 admin.site.register(ApplicationQuestions)
 admin.site.register(JobLocation)
+admin.site.register(DefaultIndustry)
 
 

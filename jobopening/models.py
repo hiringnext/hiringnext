@@ -145,6 +145,7 @@ class Jobopening(models.Model):
     referral_reward = models.DecimalField(decimal_places=0, max_digits=10, null=True, verbose_name='Referral Amount')
     industry = models.ForeignKey(Industry, null=True, blank=True)
     functional_area = models.ForeignKey(FunctionalArea, null=True, blank=True)
+    default_industry = models.ForeignKey(DefaultIndustry, null=True, blank=True)
     role_category = models.CharField(max_length=50, verbose_name='Role Category')
     employment_type = models.CharField(max_length=50, verbose_name='Employment Type')
     job_description = models.TextField(verbose_name='Job Description')
