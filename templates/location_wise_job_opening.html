@@ -80,7 +80,7 @@
                                 <div class="col-sm-5 col-xs-6 ">
                                     <div class="form-group">
                                         <label class="color-white">What</label>
-                                        <input class="form-control" type="text" name="q" value="{{ request.get.q }}"
+                                        <input class="form-control" type="text" name="q" value="#"
                                                placeholder="job title, keywords or company name">
                                     </div>
                                 </div>
@@ -124,7 +124,10 @@
 
 
                                 <!-- Job Openings List View -->
-                                {% for job in object_list %}
+
+
+                                {% for job in object.jobopening_set.all %}
+
                                     <div class="box-list">
                                         <div class="item">
                                             <div class="row">
@@ -157,19 +160,10 @@
                                                             class="color-black">{{ job.experience }} yrs.</span>
                                                         |
                                                         <span class="color-white-mute">{{ job.job_created }}</span>
-                                                    </h5>
-                                                    <div class="text-success tags"> Keyskills:
-                                                        {% for job_tag in job.tags.all %}
-                                                            <span style="font-size: 15px; font-weight: 120;">
-                                                            <a href="{% url 'tagged' job_tag.slug %}"><span>
-                                                            <span class="tag">{{ job_tag.name }},</span>
-                                                    </span>
-                                                        </a>
-                                                    </span>
-                                                        {% endfor %}
-                                                    </div>
 
-                                                    <p class="text">{{ job.job_description | slice:"300" | lower }}...</p>
+                                                    </h5>
+
+                                                    <p class="text">{{ job.job_description | slice:"200" | lower }}...</p>
 
                                                     <a href="#modal-apply" data-toggle="modal" type="button"
                                                        class="btn btn-theme btn-primary btn-sm">
@@ -191,8 +185,8 @@
                                         </div><!-- end item list -->
 
                                     </div>
-                                {% endfor %}
 
+                                {% endfor %}
 
                                 <!-- form get alert -->
                                 <div class="get_alert">
@@ -414,14 +408,14 @@
                             {#                                        aria-hidden="true">&times;</span></button>#}
                             {#                                <h4 class="modal-title">Apply</h4>#}
                             {#                            </div>#}
-{#                            <div class="modal-body">#}
-{#                                <form method="POST" role="form">#}
-{#                                    <legend>Form Title</legend>#}
-{#                                    {% csrf_token %}#}
-{#                                    {% bootstrap_form form %}#}
-{#                                    <button type="submit" class="btn btn-primary">Submit</button>#}
-{#                                </form>#}
-{#                            </div>#}
+                            {#                            <div class="modal-body">#}
+                            {#                                <form method="POST" role="form">#}
+                            {#                                    <legend>Form Title</legend>#}
+                            {#                                    {% csrf_token %}#}
+                            {#                                    {% bootstrap_form form %}#}
+                            {#                                    <button type="submit" class="btn btn-primary">Submit</button>#}
+                            {#                                </form>#}
+                            {#                            </div>#}
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close
                                 </button>

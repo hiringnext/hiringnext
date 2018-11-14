@@ -144,7 +144,8 @@
                                                             <span class="color-black"><a
                                                                     href="{{ job.company_name.get_absolute_url }}">{{ job.company_name.company }}</a></span>
                                                         | <span class="color-white-mute">Location: </span><span
-                                                            class="color-black">{{ job.job_location }}</span>
+                                                            class="color-black"><a
+                                                            href="{{ job.job_location.get_absolute_url }}">{{ job.job_location }}</a></span>
                                                         <span class="color-white-mute"> </span>
 
                                                         | <span class="color-white-mute">Industry:</span>
