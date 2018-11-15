@@ -4,7 +4,6 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 from django.shortcuts import render
 from django.views.generic import DetailView
-from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.list import ListView
 
 from employer.models import CompanyProfile

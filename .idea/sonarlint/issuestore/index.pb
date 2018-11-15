@@ -109,3 +109,9 @@ W
 'templates/industry/industry_detail.html,2/8/286bc0febd690935283515374a6130cdaaef83cc
 ^
 .templates/functional_area/functional_area.html,c/3/c3d5ce98ac374b5d16c53a5397d5ebf41d1a9e3b
+X
+(templates/location_wise_job_opening.html,6/0/60191323f130d7929daaa35e13b298869e56f059
+K
+templates/company_page.html,a/8/a8a01adb105c2f11f4137c864a592c91dc50ff10
+D
+templates/about.html,5/8/58893e517e4076b20838ca69fba7259ba475306a
