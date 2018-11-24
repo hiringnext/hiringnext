@@ -75,12 +75,12 @@
 
                     <div class="col-md-8">
                         <!-- form search -->
-                        <form class="form-search-list" method="get" action="">
+                        <form class="form-search-list" method="get" action="{% url 'search' %}">
                             <div class="row">
                                 <div class="col-sm-5 col-xs-6 ">
                                     <div class="form-group">
                                         <label class="color-white">What</label>
-                                        <input class="form-control" type="text" name="q" value="{{ request.get.q }}"
+                                        <input class="form-control" type="text" name="q"
                                                placeholder="job title, keywords or company name">
                                     </div>
                                 </div>
@@ -99,8 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-right"><a href="#modal-advanced" data-toggle="modal" class="link-white">Advanced
-                                Search</a></p>
+
                         </form>  <!-- form search -->
                     </div>
 

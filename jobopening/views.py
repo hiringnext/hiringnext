@@ -148,6 +148,7 @@ class JobopeningDetailView(TagMixin, DetailView):
             'company': CompanyProfile.objects.all(),
             'industry': Industry.objects.all(),
             'function_area': FunctionalArea.objects.all(),
+            'query': self.request.GET.get('q')
         })
         return context
 
@@ -240,3 +241,25 @@ class JobApplyListView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(JobApplyListView, self).get_context_data(**kwargs)
         return context
+
+
+def job_search(request):
+
+    if request.method == 'GET':
+        search_job_by_title = request.GET.get('q')
+        try:
+            status = Jobopening.objects.filter(job_title__icontains=search_job_by_title)
+        except Jobopening.DoesNotExist:
+            status = None
+
+        context = {
+            'jobs': status,
+            'industry': Industry.objects.all(),
+            'function_area': FunctionalArea.objects.all(),
+            'location': JobLocation.objects.all(),
+            'questions': ApplicationQuestions.objects.all(),
+        }
+        return render(request, "search_bar.html", context)
+
+    else:
+        return request(request, "search_bar.html", {})

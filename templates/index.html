@@ -18,14 +18,14 @@
                         <div class="relative">
                             <i class="fa fa-globe ic-fade-globe"></i>
                             <!-- form search -->
-                            <form class="form-search-home" method="GET" action="{% url 'jobopening-list' %}">
+                            <form class="form-search-home" method="GET" action="{% url 'search' %}">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>What</label>
 
                                             <input class="form-control  input-lg"
-                                                   type="text" name="q" value="{{ query }}" placeholder="job title, keywords or company name">
+                                                   type="text" name="q" placeholder="job title, keywords or company name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">

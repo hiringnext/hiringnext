@@ -1,6 +1,6 @@
 http://xidea.online/servers.html
 
-Features of HiringNext
+Features of HiringNext:
 
 > Job Posting - By recruiters & Admin Only
 > Employee - Job Seeker - Dashboard
@@ -23,3 +23,14 @@ Features of HiringNext
 
 > Assign Job to Recruiter:
     Every updates get email notification & display on Dashboard
+
+
+$$ Daily Work Lists: $$
+
+Tomorrow Morning >>
+> Fix Search Bar on Every Page >> Done >> https://www.djangosnippets.org/snippets/32/
+> Fix Apply & Refer Button
+> Add Social Share Button on Job Detail Page
+
+> Start Developing Candidate Dashboard
+> Add Mailing System
