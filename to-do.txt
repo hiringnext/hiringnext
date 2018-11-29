@@ -25,9 +25,9 @@ Features of HiringNext:
     Every updates get email notification & display on Dashboard
 
 
+
 $$ Daily Work Lists: $$
 
-Tomorrow Morning >>
 > Fix Search Bar on Every Page >> Done >> https://www.djangosnippets.org/snippets/32/
 > Fix Apply & Refer Button
 > Add Social Share Button on Job Detail Page

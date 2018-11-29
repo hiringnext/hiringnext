@@ -18,13 +18,11 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from jobseeker.views import IndexListView
-from .views import home_page, about_page, contact_page
+from .views import contact_page, IndexListView
 
 urlpatterns = [
     url(r'^$', IndexListView.as_view(), name='index'),
-    url(r'^home/$', home_page),
-    url(r'^about/$', about_page, name='about'),
+
     url(r'^contact/$', contact_page, name='contact'),
 
     # Employer URL

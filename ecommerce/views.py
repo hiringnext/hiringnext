@@ -1,28 +1,37 @@
 from django.contrib.auth import authenticate, login, get_user_model
+from django.db.models import Q
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.views.generic import ListView
 
+from employer.models import CompanyProfile
 from jobopening.models import Jobopening
+from jobseeker.models import Jobseeker
 from .forms import ContactForm, LoginForm, RegisterForm
 
 
-def home_page(request):
-    context = {
-        "title": "Hello World !!",
-        "content": "Welcome to Home Page."
-    }
-    if request.user.is_authenticated():
-        context["premium_content"] = "Premium Content start here !!"
-    return render(request, "home_page.html", context)
+class IndexListView(ListView):
+    model = Jobopening
+    template_name = 'new_theme/index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(IndexListView, self).get_context_data(**kwargs)
+        context['total_opening'] = Jobopening.objects.all()
+        context['total_companies'] = CompanyProfile.objects.all()
+        context['total_profiles'] = Jobseeker.objects.all()
+        return context
 
-def about_page(request):
-    context = {
-        "title": "About Page !!",
-        "content": "Welcome to About Page."
-    }
-    return render(request, "about.html", context)
+    def get_queryset(self):
+        queryset_list = Jobopening.objects.all()
+        query = self.request.GET.get("q")
+        if query:
+            queryset_list = queryset_list.filter(
+                Q(job_location__slug__icontains=query) |
+                Q(job_title__icontains=query) |
+                Q(company_name__company__icontains=query) |
+                Q(employment_type__icontains=query)
+            ).distinct()
+        return queryset_list
+
 
 
 def contact_page(request):

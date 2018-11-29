@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Jobseeker, ReferCandidate
+from .models import Jobseeker, ReferCandidate, Jobopening
 
 
 class ResumeSubmitForm(forms.ModelForm):
@@ -20,3 +20,5 @@ class ReferCandidateForm(forms.ModelForm):
                   'employment_type', ]
 
         exclude = ('resume_created',)
+
+

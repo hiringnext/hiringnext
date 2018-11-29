@@ -115,3 +115,5 @@ K
 templates/company_page.html,a/8/a8a01adb105c2f11f4137c864a592c91dc50ff10
 D
 templates/about.html,5/8/58893e517e4076b20838ca69fba7259ba475306a
+I
+templates/search_bar.html,7/e/7e750fb8975d51de88c2bb3f4954d97ecd2c57ee

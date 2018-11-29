@@ -253,10 +253,11 @@
                                 {#                                <h4 class="modal-title">Apply</h4>#}
                                 {#                            </div>#}
                                 <div class="modal-body">
+
                                     {% for question in object.Questions.all %}
                                         <div class="form-group">
                                             <label>{{ question }}</label>
-                                            <input type="text" class="form-control " placeholder="Answer here..">
+                                            <input type="text" class="form-control" placeholder="Answer here..">
                                         </div>
                                     {% endfor %}
 

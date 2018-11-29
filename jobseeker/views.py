@@ -35,30 +35,6 @@ def resume_submit(request):
     return render(request, 'resume_post.html', context)
 
 
-class IndexListView(ListView):
-    model = Jobopening
-    template_name = 'index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(IndexListView, self).get_context_data(**kwargs)
-        context['total_opening'] = Jobopening.objects.all()
-        context['total_companies'] = CompanyProfile.objects.all()
-        context['total_profiles'] = Jobseeker.objects.all()
-        return context
-
-    def get_queryset(self):
-        queryset_list = Jobopening.objects.all()
-        query = self.request.GET.get("q")
-        if query:
-            queryset_list = queryset_list.filter(
-                Q(job_location__slug__icontains=query) |
-                Q(job_title__icontains=query) |
-                Q(company_name__company__icontains=query) |
-                Q(employment_type__icontains=query)
-            ).distinct()
-        return queryset_list
-
-
 @login_required()
 def candidate_refer(request):
     candidate_refer_form = ReferCandidateForm(request.POST or None)

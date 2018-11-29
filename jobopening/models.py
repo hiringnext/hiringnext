@@ -18,12 +18,6 @@ class JobOpeningQueryset(models.query.QuerySet):
         return self.filter(active=True)
 
 
-class ApplicationQuestions(models.Model):
-    questions_for = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.questions_for
-
 
 class JobOpeningManager(models.Manager):
     def get_queryset(self):
@@ -124,6 +118,13 @@ class JobLocation(models.Model):
         ordering = ["id"]
 
 
+class ApplicationQuestions(models.Model):
+    questions_for = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.questions_for
+
+
 class Jobopening(models.Model):
     assign_recruiter = models.ForeignKey(
         AUTH_USER_MODEL,
@@ -173,4 +174,6 @@ class Jobopening(models.Model):
 
     def get_tag_url(self):
         return reverse("tagged", kwargs={"slug": self.slug})
+
+
 

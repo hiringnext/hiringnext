@@ -17,6 +17,7 @@ class JobopeningAdmin(admin.ModelAdmin):
         return u", ".join(o.name for o in obj.tags.all())
 
 
+
 admin.site.register(Jobopening, JobopeningAdmin)
 admin.site.register(Industry)
 admin.site.register(FunctionalArea)

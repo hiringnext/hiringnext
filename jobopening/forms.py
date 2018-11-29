@@ -10,12 +10,6 @@ class JobopeningForm(forms.ModelForm):
         exclude = ('job_created',)
 
 
-class ApplyForm(forms.ModelForm):
-    class Meta:
-        model = ApplicationQuestions
-        fields = '__all__'
-
-
 class ContactForm(forms.Form):
     fullname = forms.CharField(widget=forms.TextInput(
         attrs={"class": "form-control",
@@ -37,16 +31,16 @@ class ContactForm(forms.Form):
         return email
 
 
-class QuestionsForm(forms.Form):
-    fullname = forms.CharField(widget=forms.TextInput(
+class ApplyForm(forms.Form):
+    class Meta:
+        model = ApplicationQuestions
+        fields = '__all__'
+
+    resume_summary = forms.CharField(widget=forms.TextInput(
         attrs={"class": "form-control",
                "id": "form_full_name",
-               "placeholder": "Your Full Name"}))
-    email = forms.EmailField(widget=forms.EmailInput(
+               "placeholder": "Resume Summary"}))
+    detail_resume = forms.EmailField(widget=forms.TextInput(
         attrs={"class": "form-control",
                "id": "form_full_name",
-               "placeholder": "Your Email ID"}))
-    content = forms.CharField(widget=forms.Textarea(
-        attrs={"class": "form-control",
-               "id": "form_full_name",
-               "placeholder": "Your Content Here."}))
+               "placeholder": "Detail Resume"}))

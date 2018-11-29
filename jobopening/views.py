@@ -4,13 +4,14 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 from django.shortcuts import render
 from django.views.generic import DetailView
+from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.list import ListView
 
 from employer.models import CompanyProfile
 from jobseeker.forms import ReferCandidateForm
 from .forms import JobopeningForm, ApplyForm
 from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea
-from django.views.generic.edit import FormMixin
+from django.views.generic.edit import FormMixin, FormView
 from taggit.models import Tag
 
 
@@ -148,9 +149,28 @@ class JobopeningDetailView(TagMixin, DetailView):
             'company': CompanyProfile.objects.all(),
             'industry': Industry.objects.all(),
             'function_area': FunctionalArea.objects.all(),
-            'query': self.request.GET.get('q')
+            'job_apply': ApplyForm
+
         })
         return context
+
+    def apply(self, request, applyform):
+        applyform = ApplyForm(request.POST or None)
+        context = {
+            "apply_form": applyform,
+            }
+
+        if applyform.is_valid():
+            applyform.save()
+            return HttpResponseRedirect('/job/')
+
+        return render(request, 'job_details.html', context)
+
+
+class ApplyFormView(FormView):
+    form_class = ApplyForm
+    success_url = '/job/'
+
 
 
 class TagIndexView(TagMixin, ListView):
