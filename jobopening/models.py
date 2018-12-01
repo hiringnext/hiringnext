@@ -18,7 +18,6 @@ class JobOpeningQueryset(models.query.QuerySet):
         return self.filter(active=True)
 
 
-
 class JobOpeningManager(models.Manager):
     def get_queryset(self):
         return JobOpeningQueryset(self.model, using=self._db)

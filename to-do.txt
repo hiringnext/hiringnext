@@ -24,13 +24,15 @@ Features of HiringNext:
 > Assign Job to Recruiter:
     Every updates get email notification & display on Dashboard
 
+> Improve Tags in Job Listing Page > display duplicate tags. > Fix It
 
+$$ Add Some Details in Models:
 
-$$ Daily Work Lists: $$
+> Job Categories - Functional Area Models
+    > Add Image
+    > Add Some short information about functional area
+    > Add Min. 8 functional areas lists
 
-> Fix Search Bar on Every Page >> Done >> https://www.djangosnippets.org/snippets/32/
-> Fix Apply & Refer Button
-> Add Social Share Button on Job Detail Page
+> Add Choice Model or Fix row for Employment Type
+> Add Per Annul Salary only.
 
-> Start Developing Candidate Dashboard
-> Add Mailing System

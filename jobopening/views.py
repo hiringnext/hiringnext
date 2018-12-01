@@ -9,6 +9,7 @@ from django.views.generic.list import ListView
 
 from employer.models import CompanyProfile
 from jobseeker.forms import ReferCandidateForm
+from jobseeker.models import Jobseeker
 from .forms import JobopeningForm, ApplyForm
 from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea
 from django.views.generic.edit import FormMixin, FormView
@@ -18,15 +19,48 @@ from taggit.models import Tag
 class TagMixin(object):
     def get_context_data(self, kwargs):
         context = super(TagMixin, self).get_context_data(**kwargs)
-        context['tags'] = Tag.objects.all()
+        context['tags'] = Tag.objects.distinct()
         return context
+
+
+# Home Page
+class IndexListView(TagMixin, ListView):
+    model = Jobopening
+    template_name = 'new_theme/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexListView, self).get_context_data(kwargs)
+        context.update({
+            'total_opening': Jobopening.objects.all(),
+            'total_companies' : CompanyProfile.objects.all(),
+            'total_profiles' : Jobseeker.objects.all(),
+            'industry': Industry.objects.all(),
+            'function_area': FunctionalArea.objects.all(),
+            'location': JobLocation.objects.all(),
+            'questions': ApplicationQuestions.objects.all(),
+            'query': self.request.GET.get('q')
+        })
+
+        return context
+
+    def get_queryset(self):
+        queryset_list = Jobopening.objects.all()
+        query = self.request.GET.get("q")
+        if query:
+            queryset_list = queryset_list.filter(
+                Q(job_location__slug__icontains=query) |
+                Q(job_title__icontains=query) |
+                Q(company_name__company__icontains=query) |
+                Q(employment_type__icontains=query)
+            ).distinct()
+        return queryset_list
 
 
 class JobopeningListView(TagMixin, FormMixin, ListView):
     model = Jobopening
     form_class = ReferCandidateForm
     context_object_name = 'opening'
-    template_name = "job_list.html"
+    template_name = "new_theme/jobs-list-layout-2.html"
     ordering = ['-job_created']
 
     def get_context_data(self, **kwargs):
@@ -52,7 +86,7 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
             return HttpResponseRedirect('/job/')
 
             # if a GET (or any other method) we'll create a blank form
-        return render(request, 'job_list.html', context)
+        return render(request, 'new_theme/jobs-list-layout-2.html', context)
 
     def get_success_url(self):
         return HttpResponseRedirect('/job/')
@@ -141,7 +175,7 @@ class FunctionalAreaListView(DetailView):
 
 class JobopeningDetailView(TagMixin, DetailView):
     model = Jobopening
-    template_name = "job_details.html"
+    template_name = "new_theme/single-job-page.html"
 
     def get_context_data(self, **kwargs):
         context = super(JobopeningDetailView, self).get_context_data(kwargs)

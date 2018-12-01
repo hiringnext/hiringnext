@@ -117,3 +117,11 @@ D
 templates/about.html,5/8/58893e517e4076b20838ca69fba7259ba475306a
 I
 templates/search_bar.html,7/e/7e750fb8975d51de88c2bb3f4954d97ecd2c57ee
+N
+templates/new_theme/index.html,9/5/95a6e5c62defaf94fc01d40c7038a01e53b618ad
+Y
+)templates/new_theme/jobs-grid-layout.html,1/a/1a49867e891e627338257d9638e0ef9a761f6edd
+N
+static/new_theme/css/style.css,7/4/744493e5cd0d349685cdb82395fd4eec4abef4bf
+[
++templates/new_theme/jobs-list-layout-2.html,d/b/dba50c2892c56f0fc321886dd20c673a2ea8e6dc

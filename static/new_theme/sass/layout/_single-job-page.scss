@@ -82,6 +82,31 @@ a.apply-now-button {
   }
 }
 
+
+/* Apply Now Button */
+a.refer-now-button {
+  background-color: $primary-color;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  border-radius: $global-border-radius;
+  padding: 14px 20px;
+  margin-bottom: 35px;
+  box-shadow: 0 2px 8px rgba($primary-color, 0.15);
+  transition: 0.3s;
+  display: block;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 8px rgba($primary-color, 0.35);
+  }
+  i {
+    font-size: 22px;
+    position: relative;
+    line-height: 0;
+    top: 3px;
+    margin-left: 5px;
+  }
+}
 /* Single Job Map */
 
 #single-job-map-container {

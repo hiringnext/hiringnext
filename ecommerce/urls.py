@@ -18,10 +18,9 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from .views import contact_page, IndexListView
+from .views import contact_page
 
 urlpatterns = [
-    url(r'^$', IndexListView.as_view(), name='index'),
 
     url(r'^contact/$', contact_page, name='contact'),
 
