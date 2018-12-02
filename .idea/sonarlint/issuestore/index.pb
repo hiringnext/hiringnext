@@ -125,3 +125,11 @@ N
 static/new_theme/css/style.css,7/4/744493e5cd0d349685cdb82395fd4eec4abef4bf
 [
 +templates/new_theme/jobs-list-layout-2.html,d/b/dba50c2892c56f0fc321886dd20c673a2ea8e6dc
+Y
+)templates/new_theme/index-logged-out.html,7/b/7b208d02385dec1d7059e95a01d5433c38cb07f2
+X
+(templates/new_theme/single-job-page.html,2/a/2a6bd3869da2958c0fbc824a2c297eea5c1b3ea6
+T
+$templates/new_theme/pages-login.html,4/b/4bb03a4657a37466989fa5230a9520e98b541fda
+W
+'templates/new_theme/pages-register.html,8/e/8ea6d38a3d5cfeaeedaeb31caf6d988e92a224cb

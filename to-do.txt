@@ -34,5 +34,6 @@ $$ Add Some Details in Models:
     > Add Min. 8 functional areas lists
 
 > Add Choice Model or Fix row for Employment Type
+> Add Min & Max. Salay Budget
 > Add Per Annul Salary only.
 
