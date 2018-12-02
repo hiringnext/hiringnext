@@ -1,59 +1,62 @@
 {% extends 'base.html' %}
 {% load bootstrap3 %}
 {% load static %}
-<!DOCTYPE html>
+
 {% block content %}
-    <html lang="en">
 
-    <body>
-    <!-- wrapper page -->
-    <div class="wrapper">
-        <!-- main-header -->
-        <header class="main-header">
-
-
-            <!-- main navbar -->
-
-            <!-- mobile navbar -->
-
+    <div class="margin-top-50">
+        <div id="titlebar" class="gradient">
             <div class="container">
-                <div class="text-center logo"><h1 style="color: white; font-size: 40px;"> Post a Job </h1></div>
-            </div>
+                <div class="row">
 
-        </header><!-- end main-header -->
-
-
-        <!-- body-content -->
-        <div class="body-content clearfix">
-
-            <div class="bg-color1 block-section line-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-
-                            <!-- form post a job -->
+                    <div class="margin-top-100">
+                        <!-- wrapper page -->
+                        <div class="wrapper">
+                            <!-- main-header -->
+                            <header class="main-header">
 
 
-                                <form method="post" class="form">
-                                    {% csrf_token %}
-                                    {% bootstrap_form form %}
-                                    {% buttons %}
-                                        <button type="submit" class="btn btn-primary">
-                                            {% bootstrap_icon "star" %} Submit
-                                        </button>
-                                    {% endbuttons %}
-                                </form>
+                                <!-- main navbar -->
+
+                                <!-- mobile navbar -->
+
+                                <div class="headline">
+                                    <h3><i class="icon-feather-folder-plus"></i> Resume Submission Form</h3>
+                                </div>
 
 
-                        </div>
+                            </header><!-- end main-header -->
+
+
+                            <!-- body-content -->
+                            <div class="content with-padding padding-bottom-10">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="submit-field">
+
+                                            <!-- form post a job -->
+
+
+                                            <form method="post" class="form">
+                                                {% csrf_token %}
+                                                {% bootstrap_form form %}
+                                                <button class="button">
+                                                    <h5>Submit</h5>
+                                                </button>
+                                            </form>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div><!--end body-content -->
+                            <!-- main-footer -->
+                        </div><!-- end wrapper page -->
                     </div>
                 </div>
             </div>
-        </div><!--end body-content -->
-        <!-- main-footer -->
-    </div><!-- end wrapper page -->
-
-    </body>
-    </html>
+        </div>
+    </div>
 
 {% endblock %}

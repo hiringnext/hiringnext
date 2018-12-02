@@ -141,7 +141,7 @@ class FunctionalAreaListView(DetailView):
     model = FunctionalArea
     queryset = FunctionalArea.objects.all()
     form_class = ReferCandidateForm
-    template_name = 'functional_area/functional_area.html'
+    template_name = 'functional_area/jobs-list-functional-area.html'
 
     def get_context_data(self, **kwargs):
         context = super(FunctionalAreaListView, self).get_context_data(**kwargs)

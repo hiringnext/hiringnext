@@ -7,7 +7,7 @@ class ResumeSubmitForm(forms.ModelForm):
     class Meta:
         model = Jobseeker
         fields = '__all__'
-        exclude = ('resume_created',)
+        exclude = ('resume_created', 'feedback_update')
 
 
 class ReferCandidateForm(forms.ModelForm):
