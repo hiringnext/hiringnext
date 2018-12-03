@@ -183,6 +183,7 @@ class JobopeningDetailView(TagMixin, DetailView):
             'company': CompanyProfile.objects.all(),
             'industry': Industry.objects.all(),
             'function_area': FunctionalArea.objects.all(),
+            'question_list': ApplicationQuestions.objects.all(),
             'job_apply': ApplyForm
 
         })

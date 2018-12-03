@@ -173,11 +173,11 @@
                                                 <i class="icon-material-outline-business-center"></i>{{ job.employment_type }}
                                             </li>
                                             <li>
-                                                <i class="icon-material-outline-money"></i> {{ job.salary_budget| intcomma }}
+                                                <i class="icon-line-awesome-rupee"></i> {{ job.max_salary_budget }} Lac
                                             </li>
                                             <li><i class="icon-material-outline-business-center"></i>{{ job.industry }}
                                             </li>
-                                            <li><i class="icon-material-outline-access-time"></i> {{ job.job_created }}
+                                            <li><i class="icon-material-outline-access-time"></i> {{ job.job_created |date:"M d, Y"}}
                                             </li>
                                         </ul>
                                     </div>
