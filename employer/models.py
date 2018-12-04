@@ -17,6 +17,9 @@ class CompanyProfile(models.Model):
     company_profile = models.TextField()
     company_location = models.CharField(choices=JOB_LOCATION_CHOICES, max_length=50)
     company_website = models.URLField(verbose_name='Website', default=None)
+    founded_year = models.PositiveIntegerField(null=True, blank=True)
+    total_employees = models.PositiveIntegerField(null=True, blank=True)
+    company_review = models.DecimalField(decimal_places=1, max_digits=2, null=True, blank=True, help_text="Rate Company Out Of Five")
     company_date_created = models.DateTimeField(auto_created=True)
 
     def __str__(self):

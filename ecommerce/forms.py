@@ -18,11 +18,23 @@ class ContactForm(forms.Form):
                "id": "form_full_name",
                "placeholder": "Your Content Here."}))
 
+    def save(self, request):
+        form = ContactForm(request.POST or None)
+        if form.is_valid():
+            form.save(request)
+        return
+
     def clean_email(self):
         email = self.cleaned_data.get("email")
-        if not "gmail.com" in email:
-            raise forms.ValidationError("Email has to be 'gmail.com'")
         return email
+
+    def clean_fullname(self):
+        fullname = self.cleaned_data.get("fullname")
+        return fullname
+
+    def clean_contact(self):
+        contact = self.cleaned_data.get("contact")
+        return contact
 
 
 class LoginForm(forms.Form):

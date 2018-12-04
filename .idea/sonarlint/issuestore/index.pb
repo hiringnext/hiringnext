@@ -163,3 +163,13 @@ A
 -templates/new_theme/dashboard-post-a-job.html,1/7/170bc54fd985d8f4df255c756d60ebb00aa60d17
 J
 templates/resume_post.html,c/2/c23431cb57b9fe3f71794cb337bc6c541d91ac8c
+P
+ ecommerce/choice/job_location.py,7/f/7f27a16c4daf408de9f9c963d03145614328b941
+J
+ecommerce/choice/gender.py,7/2/725bc01a5913fed61062c7b6629f9327aa696c14
+L
+ecommerce/choice/industry.py,7/8/7804def6e834befca4ebe68bd71bffd64abdb18c
+B
+employer/models.py,1/5/15bff9a5bde753d09b3a4371e5979eec22ec7182
+a
+1static/new_theme/sass/gui/_copy-to-clipboard.scss,c/c/cc2f31ac00e02647f23a256c448c0a8d5069b07f

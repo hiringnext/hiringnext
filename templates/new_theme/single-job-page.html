@@ -32,7 +32,8 @@
                                                 class="icon-material-outline-business"></i> {{ object.company_name }}
                                         </a></li>
                                         <li>
-                                            <div class="star-rating" data-rating="4.9"></div>
+                                            <div class="star-rating"
+                                                 data-rating="{{ object.company_name.company_review }}"></div>
                                         </li>
                                         <li><img class="flag" src="{% static 'new_theme/images/flags/in.svg' %}"
                                                  alt=""> {{ object.job_location }}</li>
@@ -45,9 +46,7 @@
                             <div class="right-side">
                                 <div class="salary-box">
                                     <div class="salary-type">Annual Salary</div>
-                                    <h2><span
-                                            class="icon-line-awesome-rupee">{{ object.min_salary_budget }} to {{ object.max_salary_budget }} Lac</span>
-                                    </h2>
+                                    <div class="salary-amount icon-line-awesome-rupee">{{ object.referral_reward | intcomma }}</div>
                                 </div>
                             </div>
                         </div>
@@ -73,9 +72,15 @@
                     </div>
 
                     <div class="single-page-section">
+                        <h3 class="margin-bottom-25">Job Objective</h3>
+                        <p>{{ object.job_objective | linebreaks }}</p>
+                    </div>
+
+                    <div class="single-page-section">
                         <h3 class="margin-bottom-25">Job Description</h3>
                         <p>{{ object.job_description | linebreaks }}</p>
                     </div>
+
 
                     <div class="single-page-section">
                         <h3 class="margin-bottom-25">Questionnaires</h3>
@@ -212,8 +217,8 @@
                                     <ul>
                                         <li>
                                             <i class="icon-line-awesome-rupee"></i>
-                                            <span>Referral Amount</span>
-                                            <h5>{{ object.referral_reward | intcomma }}</h5>
+                                            <span>Experience </span>
+                                            <h5>{{ object.experience }} Years</h5>
                                         </li>
                                         <li>
                                             <i class="icon-material-outline-location-on"></i>

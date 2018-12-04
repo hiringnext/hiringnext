@@ -7,6 +7,7 @@ from django.views.generic import DetailView
 from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.list import ListView
 
+from ecommerce.forms import ContactForm
 from employer.models import CompanyProfile
 from jobseeker.forms import ReferCandidateForm
 from jobseeker.models import Jobseeker
@@ -207,7 +208,6 @@ class ApplyFormView(FormView):
     success_url = '/job/'
 
 
-
 class TagIndexView(TagMixin, ListView):
     model = Jobopening
     queryset = Jobopening.objects.all()
@@ -318,3 +318,17 @@ def job_search(request):
 
     else:
         return request(request, "search_bar.html", {})
+
+
+def contact_us(request):
+    contact_us_form = ContactForm(request.POST or None)
+    context = {
+        "form": contact_us_form,
+    }
+    # if this is a POST request we need to process the form data
+    if contact_us_form.is_valid():
+        contact_us_form.save(request)
+        return HttpResponseRedirect('/job/')
+
+    # if a GET (or any other method) we'll create a blank form
+    return render(request, 'new_theme/pages-contact.html', context)

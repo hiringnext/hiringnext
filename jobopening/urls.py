@@ -1,7 +1,7 @@
 from jobopening.views import JobopeningListView, JobopeningDetailView, IndustryListView, \
     FunctionalAreaListView, TagIndexView, LocationListView, IndexListView
 from django.conf.urls import url
-from jobopening.views import job_submit, apply, job_search
+from jobopening.views import job_submit, apply, job_search, contact_us
 
 urlpatterns = [
     url(r'^job/$', JobopeningListView.as_view(), name='jobopening-list'),
@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^apply/$', apply, name='apply'),
     url(r'^search/$', job_search, name='search'),
     url(r'^$', IndexListView.as_view(), name='index'),
+    url(r'^contact-us/$', contact_us, name='contact_us'),
 
     url(r'^industry/(?P<slug>[-\w]+)/$', IndustryListView.as_view(), name='industry'),
     url(r'^functional-area/(?P<slug>[-\w]+)/$', FunctionalAreaListView.as_view(), name='functional_area'),
