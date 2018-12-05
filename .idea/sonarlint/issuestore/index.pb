@@ -173,3 +173,9 @@ B
 employer/models.py,1/5/15bff9a5bde753d09b3a4371e5979eec22ec7182
 a
 1static/new_theme/sass/gui/_copy-to-clipboard.scss,c/c/cc2f31ac00e02647f23a256c448c0a8d5069b07f
+A
+employer/views.py,e/b/eb23e921569e3668c587cdc6e0f373afcec4a63b
+V
+&templates/new_theme/pages-contact.html,8/3/83485c32d264f954d1b7b3724515d2e0a81dc3a3
+B
+ecommerce/forms.py,3/1/31683aa97365bd60b91914880f56dc3904a8a8ab
