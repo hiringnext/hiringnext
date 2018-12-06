@@ -62,6 +62,7 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
     form_class = ReferCandidateForm
     context_object_name = 'opening'
     template_name = "new_theme/jobs-list-layout-2.html"
+    paginate_by = 3
     ordering = ['-job_created']
 
     def get_context_data(self, **kwargs):

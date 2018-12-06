@@ -204,27 +204,39 @@
                         {% endfor %}
 
                         <!-- Pagination -->
-                        <div class="clearfix"></div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <!-- Pagination -->
-                                <div class="pagination-container margin-top-30 margin-bottom-60">
-                                    <nav class="pagination">
-                                        <ul>
-                                            <li class="pagination-arrow"><a href="#"><i
-                                                    class="icon-material-outline-keyboard-arrow-left"></i></a></li>
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#" class="current-page">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li class="pagination-arrow"><a href="#"><i
-                                                    class="icon-material-outline-keyboard-arrow-right"></i></a></li>
-                                        </ul>
-                                    </nav>
+                        {% if is_paginated %}
+                            <div class="clearfix"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Pagination -->
+                                    <div class="pagination-container margin-top-30 margin-bottom-60">
+                                        <nav class="pagination">
+                                            <ul>
+                                                {% if page_obj.has_previous %}
+                                                    <li class="pagination-arrow"><a
+                                                            href="?page={{ page_obj.previous_page_number }}"><i
+                                                            class="icon-material-outline-keyboard-arrow-left"></i></a>
+                                                    </li>
+                                                {% endif %}
+
+                                                {% for i in paginator.page_range %}
+                                                    <li {% if page_obj.number == i %} class="current-page" {% endif %}>
+                                                        <a href="?page={{ i }}">{{ i }}</a></li>
+                                                {% endfor %}
+
+                                                {% if page_obj.has_next %}
+                                                    <li class="pagination-arrow"><a
+                                                            href="?page={{ page_obj.next_page_number }}"><i
+                                                            class="icon-material-outline-keyboard-arrow-right"></i></a>
+                                                    </li>
+                                                {% endif %}
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Pagination / End -->
+                            <!-- Pagination / End -->
+                        {% endif %}
 
                     </div>
 
