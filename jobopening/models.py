@@ -3,6 +3,7 @@ from django.db import models
 from django.db.models import Q
 from django.urls import reverse
 
+from ecommerce.choice.experience import EXPERIENCE_CHOICE
 from ecommerce.choice.job_location import JOB_LOCATION_CHOICES
 from ecommerce.choice.qualification import QUALIFICATION_CHOICES
 
@@ -100,7 +101,7 @@ class FunctionalArea(models.Model):
 
 
 class JobLocation(models.Model):
-    job_location = models.CharField(max_length=20)
+    job_location = models.CharField(choices=JOB_LOCATION_CHOICES, null=True, blank=True, max_length=20)
     slug = models.SlugField()
 
     def __str__(self):
@@ -139,10 +140,11 @@ class Jobopening(models.Model):
     job_location_sample = models.CharField(choices=JOB_LOCATION_CHOICES, max_length=20, null=True,
                                            verbose_name='Sample Job Location')
     experience = models.DecimalField(decimal_places=1, max_digits=5, null=True, verbose_name='Experience')
+    experience_choice = models.DecimalField(choices=EXPERIENCE_CHOICE, decimal_places=0, max_digits=3, null=True, blank=True)
     skill = models.CharField(max_length=100, verbose_name='Skills')
     qualification = models.CharField(choices=QUALIFICATION_CHOICES, max_length=100, verbose_name='Qualification')
-    min_salary_budget = models.DecimalField(decimal_places=1, max_digits=10, null=True, verbose_name='Min. Salary Criteria')
-    max_salary_budget = models.DecimalField(decimal_places=1, max_digits=10, null=True, verbose_name='Max. Salary Criteria')
+    min_salary_budget = models.DecimalField(decimal_places=2, max_digits=10, null=True, verbose_name='Min. Salary Criteria')
+    max_salary_budget = models.DecimalField(decimal_places=2, max_digits=10, null=True, verbose_name='Max. Salary Criteria')
     referral_reward = models.DecimalField(decimal_places=0, max_digits=10, null=True, verbose_name='Referral Amount')
     industry = models.ForeignKey(Industry, null=True, blank=True)
     functional_area = models.ForeignKey(FunctionalArea, null=True, blank=True)

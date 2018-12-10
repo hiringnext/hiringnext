@@ -36,6 +36,7 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     # other urls
+    url(r'^newsletter/', include('newsletter.urls')),
     url(r"^referrals/", include("pinax.referrals.urls", namespace="pinax_referrals")),
 
 ]

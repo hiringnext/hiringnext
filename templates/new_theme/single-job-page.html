@@ -194,7 +194,7 @@
                                 <div class="share-buttons-content">
                                     <span>Interesting? <strong>Share It!</strong></span>
                                     <ul class="share-buttons-icons">
-                                        <li><a href="#" data-button-color="#3b5998" title="Share on Facebook"
+                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" data-button-color="#3b5998" title="Share on Facebook"
                                                data-tippy-placement="top"><i class="icon-brand-facebook-f"></i></a></li>
                                         <li><a href="#" data-button-color="#1da1f2" title="Share on Twitter"
                                                data-tippy-placement="top"><i class="icon-brand-twitter"></i></a></li>
@@ -223,7 +223,11 @@
                                         <li>
                                             <i class="icon-material-outline-location-on"></i>
                                             <span>Location</span>
-                                            <h5>{{ object.job_location }}</h5>
+                                            <a href="{{ object.job_location.get_absolute_url }}">
+                                                <h5>
+                                                    {{ object.job_location }}
+                                                </h5>
+                                            </a>
                                         </li>
 
                                         <li>
@@ -282,37 +286,28 @@
 
                     <!-- Welcome Text -->
                     <div class="welcome-text">
-                        <h3>Attach File With CV</h3>
+                        <h3>Apply Form ({{ object.job_title }})</h3>
                     </div>
 
                     <!-- Form -->
-                    <form method="post" id="apply-now-form">
+                    <form method="post" id="apply-now-form">{% csrf_token %}
+                        {% for que in object.Questions.all %}
+                            <div>
+                                <i class="icon-material-outline-account-circle"></i>
+                                {{ que }}
+                                <input type="text" class="input-text with-border" name="name" id="name"
+                                       placeholder="Answer Here" required/>
+                            </div>
+                        {% endfor %}
 
-                        <div class="input-with-icon-left">
-                            <i class="icon-material-outline-account-circle"></i>
-                            <input type="text" class="input-text with-border" name="name" id="name"
-                                   placeholder="First and Last Name" required/>
-                        </div>
 
-                        <div class="input-with-icon-left">
-                            <i class="icon-material-baseline-mail-outline"></i>
-                            <input type="text" class="input-text with-border" name="emailaddress" id="emailaddress"
-                                   placeholder="Email Address" required/>
-                        </div>
-
-                        <div class="uploadButton">
-                            <input class="uploadButton-input" type="file" accept="image/*, application/pdf"
-                                   id="upload-cv"/>
-                            <label class="uploadButton-button ripple-effect" for="upload-cv">Select File</label>
-                            <span class="uploadButton-file-name">Upload your CV / resume relevant file. <br> Max. file size: 50 MB.</span>
-                        </div>
+                        <!-- Button -->
+                        <button class="button margin-top-35 full-width button-sliding-icon ripple-effect" type="submit"
+                                form="apply-now-form">Apply Now <i class="icon-material-outline-arrow-right-alt"></i>
+                        </button>
 
                     </form>
 
-                    <!-- Button -->
-                    <button class="button margin-top-35 full-width button-sliding-icon ripple-effect" type="submit"
-                            form="apply-now-form">Apply Now <i class="icon-material-outline-arrow-right-alt"></i>
-                    </button>
 
                 </div>
 

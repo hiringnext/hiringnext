@@ -5,7 +5,7 @@
 
 
 {% block content %}
-    <body class="gray">
+
 
     <!-- Wrapper -->
     <div id="wrapper">
@@ -220,7 +220,8 @@
                                                 {% endif %}
 
                                                 {% for i in paginator.page_range %}
-                                                    <li {% if page_obj.number == i %} class="current-page" {% endif %}>
+                                                    <li {% if page_obj.number == i %}
+                                                        class="current-page color" {% endif %}>
                                                         <a href="?page={{ i }}">{{ i }}</a></li>
                                                 {% endfor %}
 
@@ -235,15 +236,14 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
                             <!-- Pagination / End -->
                         {% endif %}
 
-                    </div>
-
                 </div>
+
             </div>
         </div>
-
     </div>
 
 

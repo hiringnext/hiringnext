@@ -7,6 +7,7 @@ from django.views.generic import DetailView
 from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.list import ListView
 
+from ecommerce.choice.job_location import JOB_LOCATION_CHOICES
 from ecommerce.forms import ContactForm
 from employer.models import CompanyProfile
 from jobseeker.forms import ReferCandidateForm
@@ -15,6 +16,7 @@ from .forms import JobopeningForm, ApplyForm
 from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea
 from django.views.generic.edit import FormMixin, FormView
 from taggit.models import Tag
+
 
 
 class TagMixin(object):
@@ -39,6 +41,7 @@ class IndexListView(TagMixin, ListView):
             'function_area': FunctionalArea.objects.all(),
             'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
+            'location_choice': JOB_LOCATION_CHOICES,
             'query': self.request.GET.get('q')
         })
 
@@ -62,7 +65,7 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
     form_class = ReferCandidateForm
     context_object_name = 'opening'
     template_name = "new_theme/jobs-list-layout-2.html"
-    paginate_by = 3
+    paginate_by = 10
     ordering = ['-job_created']
 
     def get_context_data(self, **kwargs):
@@ -72,6 +75,7 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
             'function_area': FunctionalArea.objects.all(),
             'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
+            'location_choice': JOB_LOCATION_CHOICES,
             'form': self.get_form(),
             'query': self.request.GET.get('q')
         })
@@ -98,9 +102,8 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
         query = self.request.GET.get("q")
         if query:
             queryset_list = queryset_list.filter(
-                Q(job_title__icontains=query) |
-                Q(job_location__slug__icontains=query)
-            ).distinct()
+                Q(job_title__icontains=query)
+            )
 
         return queryset_list
 

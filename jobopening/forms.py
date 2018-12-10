@@ -35,12 +35,3 @@ class ApplyForm(forms.Form):
     class Meta:
         model = ApplicationQuestions
         fields = '__all__'
-
-    resume_summary = forms.CharField(widget=forms.TextInput(
-        attrs={"class": "form-control",
-               "id": "form_full_name",
-               "placeholder": "Resume Summary"}))
-    detail_resume = forms.EmailField(widget=forms.TextInput(
-        attrs={"class": "form-control",
-               "id": "form_full_name",
-               "placeholder": "Detail Resume"}))

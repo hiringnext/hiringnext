@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'pinax.referrals',
     'taggit',
+    'newsletter',
 
     # our apps
     'products',

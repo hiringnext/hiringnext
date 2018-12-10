@@ -7,12 +7,9 @@
 
     <!-- Wrapper -->
     <div id="wrapper">
-
         <!-- Header Container
         ================================================== -->
-
         <div class="clearfix"></div>
-
         <!-- Intro Banner
         ================================================== -->
         <!-- add class "disable-gradient" to enable consistent background overlay -->
@@ -42,9 +39,18 @@
 
                             <!-- Search Field -->
                             <div class="intro-search-field with-autocomplete">
-                                <label for="autocomplete-input" class="field-title ripple-effect">Where?</label>
+                                <label class="field-title ripple-effect">Where?</label>
+                                {##}
+                                {#                                <select id="autocomplete-input" type="text" class="input-with-icon">#}
+                                {##}
+                                {#                                    {% for key,value in location_choice %}#}
+                                {#                                        <option value="key">{{ value }}</option>#}
+                                {#                                    {% endfor %}#}
+                                {##}
+                                {#                                </select>#}
+
                                 <div class="input-with-icon">
-                                    <input id="autocomplete-input" type="text" placeholder="Online Job">
+                                    <input type="text" placeholder="Location">
                                     <i class="icon-material-outline-location-on"></i>
                                 </div>
                             </div>
@@ -55,7 +61,6 @@
                                     want?</label>
 
                                 <input id="intro-keywords" type="text" name="q" placeholder="Job Title or Keywords">
-
                             </div>
 
                             <!-- Button -->
@@ -177,7 +182,8 @@
                                             </li>
                                             <li><i class="icon-material-outline-business-center"></i>{{ job.industry }}
                                             </li>
-                                            <li><i class="icon-material-outline-access-time"></i> {{ job.job_created |date:"M d, Y"}}
+                                            <li>
+                                                <i class="icon-material-outline-access-time"></i> {{ job.job_created |date:"M d, Y" }}
                                             </li>
                                         </ul>
                                     </div>

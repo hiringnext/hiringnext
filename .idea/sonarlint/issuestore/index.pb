@@ -179,3 +179,15 @@ V
 &templates/new_theme/pages-contact.html,8/3/83485c32d264f954d1b7b3724515d2e0a81dc3a3
 B
 ecommerce/forms.py,3/1/31683aa97365bd60b91914880f56dc3904a8a8ab
+J
+ecommerce/choice/salary.py,6/7/67c83f60e1dc9b78a142416dd6c4d747eb2f27a8
+Q
+!ecommerce/choice/qualification.py,9/5/958b449856bd280f95ae076b365c66b189b23225
+N
+ecommerce/choice/experience.py,4/d/4de6d065a637587c2e8aeda4b8e888a2573a3f37
+S
+#ecommerce/choice/employment_type.py,6/8/68118acbf3974821e53e41a00ccdc68d6cc7ff00
+Q
+!ecommerce/choice/notice_period.py,6/e/6ed59377c521408f3040e494dc5638bd174bd7b1
+P
+ templates/new_theme/index-2.html,7/1/71a5e5c68e55e367eeadf0754d1f05464df1e7c7

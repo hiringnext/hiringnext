@@ -1,4 +1,5 @@
 QUALIFICATION_CHOICES = (
-    ("graduate", "graduate"),
-    ("under graduate", "undergraduate"),
+    ("PG", "Post Graduate"),
+    ("Graduate", "Graduate"),
+    ("UG", "Under Graduate"),
 )
