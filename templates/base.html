@@ -61,62 +61,65 @@
 
 
                 {% if request.user.is_authenticated %}
-                <!-- Right Side Content / End -->
-                <!-- Right Side Content / End -->
-                <div class="right-side">
+                    <!-- Right Side Content / End -->
+                    <!-- Right Side Content / End -->
+                    <div class="right-side">
 
-                    <!--  User Notifications -->
+                        <!--  User Notifications -->
 
-                    <!--  User Notifications / End -->
+                        <!--  User Notifications / End -->
 
-                    <!-- User Menu -->
-                    <div class="header-widget">
+                        <!-- User Menu -->
+                        <div class="header-widget">
 
-                        <!-- Messages -->
-                        <div class="header-notifications user-menu">
-                            <div class="header-notifications-trigger">
-                                <a href="#">
-                                    <div class="user-avatar status-online"><img
-                                            src="{% static 'new_theme/images/user-avatar-small-01.jpg' %}"
-                                            alt=""></div>
-                                </a>
-                            </div>
-
-                            <!-- Dropdown -->
-                            <div class="header-notifications-dropdown">
-
-                                <!-- User Status -->
-                                <div class="user-status">
-
-                                    <!-- User Name / Avatar -->
-                                    <div class="user-details">
+                            <!-- Messages -->
+                            <div class="header-notifications user-menu">
+                                <div class="header-notifications-trigger">
+                                    <a href="#">
                                         <div class="user-avatar status-online"><img
-                                                src="{% static 'new_theme/images/user-avatar-small-01.jpg' %}" alt="">
-                                        </div>
-                                        <div class="user-name">
-                                            {{ user | capfirst }}<span> Admin </span>
-                                        </div>
-                                    </div>
-
+                                                src="{% static 'new_theme/images/user-avatar-small-01.jpg' %}"
+                                                alt=""></div>
+                                    </a>
                                 </div>
 
-                                <ul class="user-menu-small-nav">
-                                    <li><a href="{% url 'dashboard-admin' %}"><i class="icon-material-outline-dashboard"></i>
-                                        Dashboard</a></li>
-                                    <li><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i>
-                                        Settings</a></li>
-                                    <li><a href="{% url 'account_logout' %}"><i
-                                            class="icon-material-outline-power-settings-new"></i> Logout</a></li>
-                                </ul>
+                                <!-- Dropdown -->
+                                <div class="header-notifications-dropdown">
 
+                                    <!-- User Status -->
+                                    <div class="user-status">
+
+                                        <!-- User Name / Avatar -->
+                                        <div class="user-details">
+                                            <div class="user-avatar status-online"><img
+                                                    src="{% static 'new_theme/images/user-avatar-small-01.jpg' %}"
+                                                    alt="">
+                                            </div>
+                                            <div class="user-name">
+                                                {{ user | capfirst }}<span> Admin </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <ul class="user-menu-small-nav">
+                                        <li><a href="{% url 'dashboard-admin' %}"><i
+                                                class="icon-material-outline-dashboard"></i>
+                                            Dashboard</a></li>
+                                        <li><a href="dashboard-settings.html"><i
+                                                class="icon-material-outline-settings"></i>
+                                            Settings</a></li>
+                                        <li><a href="{% url 'account_logout' %}"><i
+                                                class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+                                    </ul>
+
+                                </div>
                             </div>
+
                         </div>
+                        <!-- User Menu / End -->
 
-                    </div>
-                    <!-- User Menu / End -->
-
-                    <!-- Mobile Navigation Button -->
-                    <span class="mmenu-trigger">
+                        <!-- Mobile Navigation Button -->
+                        <span class="mmenu-trigger">
                 					<button class="hamburger hamburger--collapse" type="button">
                 						<span class="hamburger-box">
                 							<span class="hamburger-inner"></span>
@@ -124,24 +127,24 @@
                 					</button>
                 				</span>
 
-                </div>
-                <!-- Right Side Content / End -->
+                    </div>
+                    <!-- Right Side Content / End -->
                 {% else %}
-                <!-- Right Side Content / End -->
-                <div class="right-side">
+                    <!-- Right Side Content / End -->
+                    <div class="right-side">
 
-                    <div class="header-widget">
-                        <a href="{% url 'account_login' %}" class="log-in-button"><i
-                                class="icon-feather-log-in"></i> <span>Log In </span></a>
-                    </div>
+                        <div class="header-widget">
+                            <a href="{% url 'account_login' %}" class="log-in-button"><i
+                                    class="icon-feather-log-in"></i> <span>Log In </span></a>
+                        </div>
 
-                    <div class="header-widget">
-                        <a href="{% url 'account_signup' %}" class="log-in-button">
-                            </i> <span>Register </span></a>
-                    </div>
+                        <div class="header-widget">
+                            <a href="{% url 'account_signup' %}" class="log-in-button">
+                                </i> <span>Register </span></a>
+                        </div>
 
-                    <!-- Mobile Navigation Button -->
-                    <span class="mmenu-trigger">
+                        <!-- Mobile Navigation Button -->
+                        <span class="mmenu-trigger">
 					<button class="hamburger hamburger--collapse" type="button">
 						<span class="hamburger-box">
 							<span class="hamburger-inner"></span>
@@ -149,142 +152,150 @@
 					</button>
 				</span>
 
-                </div>
-                <!-- Sign In Popup
-    ================================================== -->
-                <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+                    </div>
+                    <!-- Sign In Popup
+        ================================================== -->
+                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
 
-                    <!--Tabs -->
-                    <div class="sign-in-form">
+                        <!--Tabs -->
+                        <div class="sign-in-form">
 
-                        <ul class="popup-tabs-nav">
-                            <li><a href="#login">Log In</a></li>
-                            <li><a href="#register">Register</a></li>
-                        </ul>
+                            <ul class="popup-tabs-nav">
+                                <li><a href="#login">Log In</a></li>
+                                <li><a href="#register">Register</a></li>
+                            </ul>
 
-                        <div class="popup-tabs-container">
+                            <div class="popup-tabs-container">
 
-                            <!-- Login -->
-                            <div class="popup-tab-content" id="login">
+                                <!-- Login -->
+                                <div class="popup-tab-content" id="login">
 
-                                <!-- Welcome Text -->
-                                <div class="welcome-text">
-                                    <h3>We're glad to see you again!</h3>
-                                    <span>Don't have an account? <a href="#" class="register-tab">Sign Up!</a></span>
+                                    <!-- Welcome Text -->
+                                    <div class="welcome-text">
+                                        <h3>We're glad to see you again!</h3>
+                                        <span>Don't have an account? <a href="#"
+                                                                        class="register-tab">Sign Up!</a></span>
+                                    </div>
+
+                                    <!-- Form -->
+                                    <form method="post" id="login-form">
+                                        <div class="input-with-icon-left">
+                                            <i class="icon-material-baseline-mail-outline"></i>
+                                            <input type="text" class="input-text with-border" name="emailaddress"
+                                                   id="emailaddress"
+                                                   placeholder="Email Address" required/>
+                                        </div>
+
+                                        <div class="input-with-icon-left">
+                                            <i class="icon-material-outline-lock"></i>
+                                            <input type="password" class="input-text with-border" name="password"
+                                                   id="password"
+                                                   placeholder="Password" required/>
+                                        </div>
+                                        <a href="#" class="forgot-password">Forgot Password?</a>
+                                    </form>
+
+                                    <!-- Button -->
+                                    <button class="button full-width button-sliding-icon ripple-effect" type="submit"
+                                            form="login-form">
+                                        Log In <i class="icon-material-outline-arrow-right-alt"></i></button>
+
+                                    <!-- Social Login -->
+                                    <div class="social-login-separator"><span>or</span></div>
+                                    <div class="social-login-buttons">
+                                        <button class="facebook-login ripple-effect"><i
+                                                class="icon-brand-facebook-f"></i>
+                                            Log In via
+                                            Facebook
+                                        </button>
+                                        <button class="google-login ripple-effect"><i
+                                                class="icon-brand-google-plus-g"></i>
+                                            Log In via
+                                            Google+
+                                        </button>
+                                    </div>
+
                                 </div>
 
-                                <!-- Form -->
-                                <form method="post" id="login-form">
-                                    <div class="input-with-icon-left">
-                                        <i class="icon-material-baseline-mail-outline"></i>
-                                        <input type="text" class="input-text with-border" name="emailaddress"
-                                               id="emailaddress"
-                                               placeholder="Email Address" required/>
+                                <!-- Register -->
+                                <div class="popup-tab-content" id="register">
+
+                                    <!-- Welcome Text -->
+                                    <div class="welcome-text">
+                                        <h3>Let's create your account!</h3>
                                     </div>
 
-                                    <div class="input-with-icon-left">
-                                        <i class="icon-material-outline-lock"></i>
-                                        <input type="password" class="input-text with-border" name="password"
-                                               id="password"
-                                               placeholder="Password" required/>
+                                    <!-- Account Type -->
+                                    <div class="account-type">
+                                        <div>
+                                            <input type="radio" name="account-type-radio" id="freelancer-radio"
+                                                   class="account-type-radio" checked/>
+                                            <label for="freelancer-radio" class="ripple-effect-dark"><i
+                                                    class="icon-material-outline-account-circle"></i> Freelancer</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="radio" name="account-type-radio" id="employer-radio"
+                                                   class="account-type-radio"/>
+                                            <label for="employer-radio" class="ripple-effect-dark"><i
+                                                    class="icon-material-outline-business-center"></i> Employer</label>
+                                        </div>
                                     </div>
-                                    <a href="#" class="forgot-password">Forgot Password?</a>
-                                </form>
 
-                                <!-- Button -->
-                                <button class="button full-width button-sliding-icon ripple-effect" type="submit"
-                                        form="login-form">
-                                    Log In <i class="icon-material-outline-arrow-right-alt"></i></button>
+                                    <!-- Form -->
+                                    <form method="post" id="register-account-form">
+                                        <div class="input-with-icon-left">
+                                            <i class="icon-material-baseline-mail-outline"></i>
+                                            <input type="text" class="input-text with-border"
+                                                   name="emailaddress-register"
+                                                   id="emailaddress-register" placeholder="Email Address" required/>
+                                        </div>
 
-                                <!-- Social Login -->
-                                <div class="social-login-separator"><span>or</span></div>
-                                <div class="social-login-buttons">
-                                    <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i>
-                                        Log In via
-                                        Facebook
+                                        <div class="input-with-icon-left" title="Should be at least 8 characters long"
+                                             data-tippy-placement="bottom">
+                                            <i class="icon-material-outline-lock"></i>
+                                            <input type="password" class="input-text with-border"
+                                                   name="password-register"
+                                                   id="password-register" placeholder="Password" required/>
+                                        </div>
+
+                                        <div class="input-with-icon-left">
+                                            <i class="icon-material-outline-lock"></i>
+                                            <input type="password" class="input-text with-border"
+                                                   name="password-repeat-register"
+                                                   id="password-repeat-register" placeholder="Repeat Password"
+                                                   required/>
+                                        </div>
+                                    </form>
+
+                                    <!-- Button -->
+                                    <button class="margin-top-10 button full-width button-sliding-icon ripple-effect"
+                                            type="submit"
+                                            form="register-account-form">Register <i
+                                            class="icon-material-outline-arrow-right-alt"></i>
                                     </button>
-                                    <button class="google-login ripple-effect"><i class="icon-brand-google-plus-g"></i>
-                                        Log In via
-                                        Google+
-                                    </button>
+
+                                    <!-- Social Login -->
+                                    <div class="social-login-separator"><span>or</span></div>
+                                    <div class="social-login-buttons">
+                                        <button class="facebook-login ripple-effect"><i
+                                                class="icon-brand-facebook-f"></i>
+                                            Register via
+                                            Facebook
+                                        </button>
+                                        <button class="google-login ripple-effect"><i
+                                                class="icon-brand-google-plus-g"></i>
+                                            Register via
+                                            Google+
+                                        </button>
+                                    </div>
+
                                 </div>
 
                             </div>
-
-                            <!-- Register -->
-                            <div class="popup-tab-content" id="register">
-
-                                <!-- Welcome Text -->
-                                <div class="welcome-text">
-                                    <h3>Let's create your account!</h3>
-                                </div>
-
-                                <!-- Account Type -->
-                                <div class="account-type">
-                                    <div>
-                                        <input type="radio" name="account-type-radio" id="freelancer-radio"
-                                               class="account-type-radio" checked/>
-                                        <label for="freelancer-radio" class="ripple-effect-dark"><i
-                                                class="icon-material-outline-account-circle"></i> Freelancer</label>
-                                    </div>
-
-                                    <div>
-                                        <input type="radio" name="account-type-radio" id="employer-radio"
-                                               class="account-type-radio"/>
-                                        <label for="employer-radio" class="ripple-effect-dark"><i
-                                                class="icon-material-outline-business-center"></i> Employer</label>
-                                    </div>
-                                </div>
-
-                                <!-- Form -->
-                                <form method="post" id="register-account-form">
-                                    <div class="input-with-icon-left">
-                                        <i class="icon-material-baseline-mail-outline"></i>
-                                        <input type="text" class="input-text with-border" name="emailaddress-register"
-                                               id="emailaddress-register" placeholder="Email Address" required/>
-                                    </div>
-
-                                    <div class="input-with-icon-left" title="Should be at least 8 characters long"
-                                         data-tippy-placement="bottom">
-                                        <i class="icon-material-outline-lock"></i>
-                                        <input type="password" class="input-text with-border" name="password-register"
-                                               id="password-register" placeholder="Password" required/>
-                                    </div>
-
-                                    <div class="input-with-icon-left">
-                                        <i class="icon-material-outline-lock"></i>
-                                        <input type="password" class="input-text with-border"
-                                               name="password-repeat-register"
-                                               id="password-repeat-register" placeholder="Repeat Password" required/>
-                                    </div>
-                                </form>
-
-                                <!-- Button -->
-                                <button class="margin-top-10 button full-width button-sliding-icon ripple-effect"
-                                        type="submit"
-                                        form="register-account-form">Register <i
-                                        class="icon-material-outline-arrow-right-alt"></i>
-                                </button>
-
-                                <!-- Social Login -->
-                                <div class="social-login-separator"><span>or</span></div>
-                                <div class="social-login-buttons">
-                                    <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i>
-                                        Register via
-                                        Facebook
-                                    </button>
-                                    <button class="google-login ripple-effect"><i class="icon-brand-google-plus-g"></i>
-                                        Register via
-                                        Google+
-                                    </button>
-                                </div>
-
-                            </div>
-
                         </div>
                     </div>
-                </div>
-                <!-- Sign In Popup / End -->
+                    <!-- Sign In Popup / End -->
                 {% endif %}
             </div>
         </div>
@@ -331,7 +342,8 @@
                                     <div class="footer-row-inner">
                                         <ul class="footer-social-links">
                                             <li>
-                                                <a href="https://www.facebook.com/empowerconsultant22/" title="Facebook" data-tippy-placement="bottom"
+                                                <a href="https://www.facebook.com/empowerconsultant22/" title="Facebook"
+                                                   data-tippy-placement="bottom"
                                                    data-tippy-theme="light">
                                                     <i class="icon-brand-facebook-f"></i>
                                                 </a>
@@ -402,10 +414,8 @@
                         <div class="footer-links">
                             <h3>For Employers</h3>
                             <ul>
-                                <li><a href="#"><span>Browse Candidates</span></a></li>
-                                <li><a href="#"><span>Post a Job</span></a></li>
-                                <li><a href="#"><span>Post a Task</span></a></li>
-                                <li><a href="#"><span>Plans & Pricing</span></a></li>
+                                <li><a href="{% url 'post-job' %}"><span>Post a Job</span></a></li>
+                                <li><a href="{% url 'contact_us' %}"><span>Contact Us</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -427,7 +437,7 @@
                         <div class="footer-links">
                             <h3>Account</h3>
                             <ul>
-                                <li><a href="#"><span>Log In</span></a></li>
+                                <li><a href="{% url 'account_login' %}"><span>Log In</span></a></li>
                                 <li><a href="#"><span>My Account</span></a></li>
                             </ul>
                         </div>
@@ -437,6 +447,13 @@
                     <div class="col-xl-4 col-lg-4 col-md-12">
                         <h3><i class="icon-feather-mail"></i> Sign Up For a Newsletter</h3>
                         <p>Weekly breaking news, analysis and cutting edge advices on job searching.</p>
+                        <form enctype="multipart/form-data" method="post"
+                              action="/newsletter/new-jobopening/subscribe/">
+                            {% csrf_token %}
+                            <label for="id_email_field">E-mail:</label> <input type="email" name="email_field"
+                                                                               required="" id="id_email_field">
+                            <button id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>
+                        </form>
                         <form action="#" method="get" class="newsletter">
                             <input type="text" name="fname" placeholder="Enter your email address">
                             <button type="submit"><i class="icon-feather-arrow-right"></i></button>

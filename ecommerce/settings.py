@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from django.conf import settings
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -54,6 +56,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'pinax.referrals',
     'taggit',
+    'sorl.thumbnail',
     'newsletter',
 
     # our apps
@@ -192,3 +195,14 @@ ACCOUNT_LOGOUT_ON_GET = True
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TAGGIT_CASE_INSENSITIVE = True
+
+
+DEFAULT_SETTINGS = {
+    'DEFAULT_TEMPLATE': 'newsletters/default.html',
+    'ADVERTISEMENT_STORAGE': settings.DEFAULT_FILE_STORAGE,
+    'AUTO_CONFIRM': True,
+    'EMAIL_NOTIFICATION_SUBJECT': 'Newsletter Subscription Change',
+
+}
+
+NEWSLETTER_CONFIRM_EMAIL = True

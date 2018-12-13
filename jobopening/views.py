@@ -187,7 +187,7 @@ class JobopeningDetailView(TagMixin, DetailView):
         context.update({
             'company': CompanyProfile.objects.all(),
             'industry': Industry.objects.all(),
-            'function_area': FunctionalArea.objects.all(),
+            'function_area': FunctionalArea.objects.all().annotate(),
             'question_list': ApplicationQuestions.objects.all(),
             'job_apply': ApplyForm
 

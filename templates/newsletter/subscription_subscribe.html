@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="margin-top-30">
+        <!-- Titlebar
+        ================================================== -->
+        <div id="titlebar" class="gradient">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <p style="font-weight: 500; font-size: x-large;"
+                           class="col-sm-6 col-md-offset-4 text-primary">{% trans "Get Daily Updates for Free Courses & Books" %} </p>
+
+                        {% if error %}
+                            <p>{% trans "Due to a technical error we were not able to submit your confirmation email. This could be because your email address is invalid." %}</p>
+
+                            {% comment %} Replace the the following dummy with a valid email address and remove this comment.
+
+        <p>{% trans "If the error persists, please don't hesitate to contact us at the following email address:" %} <a href="mailto:info@foobar.com">info@foobar.com</a></p>
+
+        {% endcomment %}
+                        {% else %}
+                            <div class="col-md-offset-2">
+                                <form enctype="multipart/form-data" method="post" action=".">
+                                    <div class="row field-row">
+                                        <div class="col-xs-6 col-sm-6 col-md-offset-2">{% csrf_token %}
+                                            {% crispy form %}
+                                            <p><input class="btn btn-primary" id="id_submit" name="submit"
+                                                      value="{% trans "Subscribe" %}"
+                                                      type="submit"/></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

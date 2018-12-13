@@ -191,3 +191,15 @@ Q
 !ecommerce/choice/notice_period.py,6/e/6ed59377c521408f3040e494dc5638bd174bd7b1
 P
  templates/new_theme/index-2.html,7/1/71a5e5c68e55e367eeadf0754d1f05464df1e7c7
+K
+templates/base_allauth.html,7/a/7a5f74d778ad5b52819ca3d70689e23933e1da38
+W
+'templates/newsletter/message/update.txt,2/e/2e59259493c06957c7acc0709f1b1a53173afade
+`
+0templates/newsletter/subscription_subscribe.html,2/a/2a9ab8b48bd7fc4b168adff4eefbdf01ec5ceb4e
+[
++templates/newsletter/message/subscribe.html,9/b/9b068a4cd8dc76561e487ca31c2500ec016f7dfc
+[
++templates/newsletter/newsletter_detail.html,0/b/0b1ac8e0ee90d7ac9f0fb9354ff08e78c9cf99ea
+P
+ templates/newsletter/common.html,d/8/d839569133af6030954be6c5e71270170bb7f1f0

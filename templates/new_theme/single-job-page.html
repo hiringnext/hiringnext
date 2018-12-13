@@ -94,71 +94,48 @@
                     </div>
 
                     <div class="single-page-section">
-                        <h3 class="margin-bottom-25">Similar Jobs</h3>
+                        <h3 class="margin-bottom-25">Similar Jobs ({{ object.functional_area.jobopening_set.count }})</h3>
 
                         <!-- Listings Container -->
                         <div class="listings-container grid-layout">
+                            {% for by_function in object.functional_area.jobopening_set.all %}
 
-                            <!-- Job Listing -->
-                            <a href="#" class="job-listing">
+                                <!-- Job Listing -->
+                                <a href="{{ by_function.get_absolute_url }}" class="job-listing">
 
-                                <!-- Job Listing Details -->
-                                <div class="job-listing-details">
-                                    <!-- Logo -->
-                                    <div class="job-listing-company-logo">
-                                        <img src="{% static 'new_theme/images/company-logo-02.png' %}" alt="">
+                                    <!-- Job Listing Details -->
+                                    <div class="job-listing-details">
+                                        <!-- Logo -->
+                                        <div class="job-listing-company-logo">
+                                            <img src="{% static 'new_theme/images/company-logo-02.png' %}" alt="">
+                                        </div>
+
+                                        <!-- Details -->
+                                        <div class="job-listing-description">
+                                            <h4 class="job-listing-company">{{ by_function.company_name }}</h4>
+                                            <h3 class="job-listing-title">{{ by_function.job_title }}</h3>
+                                        </div>
                                     </div>
 
-                                    <!-- Details -->
-                                    <div class="job-listing-description">
-                                        <h4 class="job-listing-company">Coffee</h4>
-                                        <h3 class="job-listing-title">Barista and Cashier</h3>
+                                    <!-- Job Listing Footer -->
+                                    <div class="job-listing-footer">
+                                        <ul>
+                                            <li>
+                                                <i class="icon-material-outline-location-on"></i> {{ by_function.job_location }}
+                                            </li>
+                                            <li>
+                                                <i class="icon-material-outline-account-balance-wallet"></i> {{ by_function.max_salary_budget }}
+                                                lac
+                                            </li>
+                                            <li>
+                                                <i class="icon-material-outline-access-time"></i> {{ by_function.job_created | date:"M d, Y" }}
+                                            </li>
+                                        </ul>
                                     </div>
-                                </div>
+                                </a>
 
-                                <!-- Job Listing Footer -->
-                                <div class="job-listing-footer">
-                                    <ul>
-                                        <li><i class="icon-material-outline-location-on"></i> San Francisco</li>
-                                        <li><i class="icon-material-outline-business-center"></i> Full Time</li>
-                                        <li><i class="icon-material-outline-account-balance-wallet"></i> $35000-$38000
-                                        </li>
-                                        <li><i class="icon-material-outline-access-time"></i> 2 days ago</li>
-                                    </ul>
-                                </div>
-                            </a>
+                            {% endfor %}
 
-                            <!-- Job Listing -->
-                            <a href="#" class="job-listing">
-
-                                <!-- Job Listing Details -->
-                                <div class="job-listing-details">
-                                    <!-- Logo -->
-                                    <div class="job-listing-company-logo">
-                                        <img src="images/company-logo-03.png" alt="">
-                                    </div>
-
-                                    <!-- Details -->
-                                    <div class="job-listing-description">
-                                        <h4 class="job-listing-company">King <span class="verified-badge"
-                                                                                   title="Verified Employer"
-                                                                                   data-tippy-placement="top"></span>
-                                        </h4>
-                                        <h3 class="job-listing-title">Restaurant Manager</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Job Listing Footer -->
-                                <div class="job-listing-footer">
-                                    <ul>
-                                        <li><i class="icon-material-outline-location-on"></i> San Francisco</li>
-                                        <li><i class="icon-material-outline-business-center"></i> Full Time</li>
-                                        <li><i class="icon-material-outline-account-balance-wallet"></i> $35000-$38000
-                                        </li>
-                                        <li><i class="icon-material-outline-access-time"></i> 2 days ago</li>
-                                    </ul>
-                                </div>
-                            </a>
                         </div>
                         <!-- Listings Container / End -->
 
@@ -194,7 +171,9 @@
                                 <div class="share-buttons-content">
                                     <span>Interesting? <strong>Share It!</strong></span>
                                     <ul class="share-buttons-icons">
-                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" data-button-color="#3b5998" title="Share on Facebook"
+                                        <li>
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"
+                                               data-button-color="#3b5998" title="Share on Facebook"
                                                data-tippy-placement="top"><i class="icon-brand-facebook-f"></i></a></li>
                                         <li><a href="#" data-button-color="#1da1f2" title="Share on Twitter"
                                                data-tippy-placement="top"><i class="icon-brand-twitter"></i></a></li>

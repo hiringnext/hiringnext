@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title class="col-md-4">{% block title %}{% trans "Newsletter" %} {{ newsletter.title }} {{ action }}
+        {% trans "activate" %}{% endblock title %}</title>
+    {% block header %}
+    {% endblock header %}
+
+    </head>
+
+<body>
+{% block body %}
+    <h1 class="text-center">{% trans "Newsletter" %} {{ newsletter.title }} {{ action }} {% trans "activate" %}</h1>
+
+    <p class="text-center">{% trans "Your subscription has successfully been activated." %}</p>
+
+
+        <button class="btn center-block"><span class="text-info"><a href="{% url 'index' %}"> Go to Home Page</a></span></button>
+
+{% endblock body %}
+</body>
+</html>
+{% endblock %}
