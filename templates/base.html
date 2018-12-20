@@ -447,14 +447,14 @@
                     <div class="col-xl-4 col-lg-4 col-md-12">
                         <h3><i class="icon-feather-mail"></i> Sign Up For a Newsletter</h3>
                         <p>Weekly breaking news, analysis and cutting edge advices on job searching.</p>
-                        <form enctype="multipart/form-data" method="post"
-                              action="/newsletter/new-jobopening/subscribe/">
-                            {% csrf_token %}
-                            <label for="id_email_field">E-mail:</label> <input type="email" name="email_field"
-                                                                               required="" id="id_email_field">
-                            <button id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>
-                        </form>
-                        <form action="#" method="get" class="newsletter">
+{#                        <form enctype="multipart/form-data" method="post"#}
+{#                              action="/newsletter/new-jobopening/subscribe/">#}
+{#                            {% csrf_token %}#}
+{#                            <label for="id_email_field">E-mail:</label> <input type="email" name="email_field"#}
+{#                                                                               required="" id="id_email_field">#}
+{#                            <button id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>#}
+{#                        </form>#}
+                        <form action="/newsletter/new-jobopening/subscribe/" method="get" class="newsletter">
                             <input type="text" name="fname" placeholder="Enter your email address">
                             <button type="submit"><i class="icon-feather-arrow-right"></i></button>
                         </form>
