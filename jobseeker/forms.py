@@ -11,6 +11,10 @@ class ResumeSubmitForm(forms.ModelForm):
 
 
 class ReferCandidateForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super(ReferCandidateForm, self).__init__(*args, **kwargs)
+
     class Meta:
         model = ReferCandidate
         fields = ['refer_for_the_post_of', 'candidate_name', 'contact_number', 'alternate_number', 'email', 'gender',
@@ -21,4 +25,12 @@ class ReferCandidateForm(forms.ModelForm):
 
         exclude = ('resume_created',)
 
+    def save(self, commit=True):
+        obj = super(ReferCandidateForm, self).save(commit=False)
 
+        if obj.user is None:
+            obj.user = self.user
+
+        if commit:
+            obj.save()
+        return obj

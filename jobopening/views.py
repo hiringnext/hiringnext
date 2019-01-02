@@ -12,7 +12,7 @@ from ecommerce.forms import ContactForm
 from employer.models import CompanyProfile
 from jobseeker.forms import ReferCandidateForm
 from jobseeker.models import Jobseeker
-from .forms import JobopeningForm, ApplyForm
+from .forms import JobopeningForm, JobApplyForm
 from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea
 from django.views.generic.edit import FormMixin, FormView
 from taggit.models import Tag
@@ -178,8 +178,9 @@ class FunctionalAreaListView(DetailView):
         return HttpResponseRedirect('/job/')
 
 
-class JobopeningDetailView(TagMixin, DetailView):
+class JobopeningDetailView(TagMixin, FormMixin, DetailView):
     model = Jobopening
+    form_class = JobApplyForm
     template_name = "new_theme/single-job-page.html"
 
     def get_context_data(self, **kwargs):
@@ -189,27 +190,36 @@ class JobopeningDetailView(TagMixin, DetailView):
             'industry': Industry.objects.all(),
             'function_area': FunctionalArea.objects.all().annotate(),
             'question_list': ApplicationQuestions.objects.all(),
-            'job_apply': ApplyForm
 
         })
         return context
 
-    def apply(self, request, applyform):
-        applyform = ApplyForm(request.POST or None)
-        context = {
-            "apply_form": applyform,
-            }
+    def form_valid(self, form):
+        form.save(commit=True)
+        return super(JobopeningDetailView, self).form_valid(form)
 
-        if applyform.is_valid():
-            applyform.save()
-            return HttpResponseRedirect('/job/')
 
-        return render(request, 'job_details.html', context)
+    # def apply(self, request):
+    #     form = JobApplyForm(request.POST or None)
+    #     context = {
+    #         "form": form,
+    #         }
+    #
+    #     if form.is_valid():
+    #         form.save()
+    #         return HttpResponseRedirect('/job/')
+    #
+    #     return render(request, 'new_theme/single-job-page.html', context)
 
 
 class ApplyFormView(FormView):
-    form_class = ApplyForm
-    success_url = '/job/'
+    template_name = 'new_theme/single-job-page.html'
+    form_class = JobApplyForm
+    success_url = '/thanks/'
+
+    def form_valid(self, form):
+        form.save(commit=True)
+        return super(ApplyFormView, self).form_valid(form)
 
 
 class TagIndexView(TagMixin, ListView):

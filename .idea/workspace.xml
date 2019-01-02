@@ -2,9 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f045a7a9-2a3f-4765-a968-0c52787b1594" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/7/170bc54fd985d8f4df255c756d60ebb00aa60d17" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-bookmarks.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-bookmarks.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-manage-bidders.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-manage-bidders.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-manage-candidates.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-manage-candidates.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-manage-jobs.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-manage-jobs.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-manage-tasks.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-manage-tasks.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-messages.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-messages.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-my-active-bids.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-my-active-bids.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-post-a-job.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-post-a-job.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-post-a-task.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-post-a-task.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-reviews.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-reviews.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard-settings.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard-settings.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_theme/dashboard.html" afterPath="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/urls.py" afterPath="$PROJECT_DIR$/dashboard/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/views.py" afterPath="$PROJECT_DIR$/dashboard/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobopening/forms.py" afterPath="$PROJECT_DIR$/jobopening/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobopening/views.py" afterPath="$PROJECT_DIR$/jobopening/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobseeker/forms.py" afterPath="$PROJECT_DIR$/jobseeker/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobseeker/models.py" afterPath="$PROJECT_DIR$/jobseeker/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/candidate_refer_form.html" afterPath="$PROJECT_DIR$/templates/candidate_refer_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/browse-companies.html" afterPath="$PROJECT_DIR$/templates/new_theme/browse-companies.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/freelancers-grid-layout-full-page.html" afterPath="$PROJECT_DIR$/templates/new_theme/freelancers-grid-layout-full-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/freelancers-grid-layout.html" afterPath="$PROJECT_DIR$/templates/new_theme/freelancers-grid-layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/freelancers-list-layout-1.html" afterPath="$PROJECT_DIR$/templates/new_theme/freelancers-list-layout-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/freelancers-list-layout-2.html" afterPath="$PROJECT_DIR$/templates/new_theme/freelancers-list-layout-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/index-2.html" afterPath="$PROJECT_DIR$/templates/new_theme/index-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/index-3.html" afterPath="$PROJECT_DIR$/templates/new_theme/index-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/index-logged-out.html" afterPath="$PROJECT_DIR$/templates/new_theme/index-logged-out.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/jobs-grid-layout-full-page-map.html" afterPath="$PROJECT_DIR$/templates/new_theme/jobs-grid-layout-full-page-map.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/jobs-grid-layout-full-page.html" afterPath="$PROJECT_DIR$/templates/new_theme/jobs-grid-layout-full-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/jobs-grid-layout.html" afterPath="$PROJECT_DIR$/templates/new_theme/jobs-grid-layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/jobs-list-layout-1.html" afterPath="$PROJECT_DIR$/templates/new_theme/jobs-list-layout-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/jobs-list-layout-full-page-map.html" afterPath="$PROJECT_DIR$/templates/new_theme/jobs-list-layout-full-page-map.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-404.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-blog-post.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-blog-post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-blog.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-blog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-checkout-page.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-checkout-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-icons-cheatsheet.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-icons-cheatsheet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-login.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-order-confirmation.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-order-confirmation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-pricing-plans.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-pricing-plans.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-register.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/pages-user-interface-elements.html" afterPath="$PROJECT_DIR$/templates/new_theme/pages-user-interface-elements.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/single-company-profile.html" afterPath="$PROJECT_DIR$/templates/new_theme/single-company-profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/single-freelancer-profile.html" afterPath="$PROJECT_DIR$/templates/new_theme/single-freelancer-profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/single-job-page.html" afterPath="$PROJECT_DIR$/templates/new_theme/single-job-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/single-task-page.html" afterPath="$PROJECT_DIR$/templates/new_theme/single-task-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/tasks-grid-layout-full-page.html" afterPath="$PROJECT_DIR$/templates/new_theme/tasks-grid-layout-full-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/tasks-grid-layout.html" afterPath="$PROJECT_DIR$/templates/new_theme/tasks-grid-layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/tasks-list-layout-1.html" afterPath="$PROJECT_DIR$/templates/new_theme/tasks-list-layout-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_theme/tasks-list-layout-2.html" afterPath="$PROJECT_DIR$/templates/new_theme/tasks-list-layout-2.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -963,18 +1014,7 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="452" column="42" lean-forward="false" selection-start-line="452" selection-start-column="42" selection-end-line="452" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -988,20 +1028,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>catego</find>
-      <find>sala</find>
-      <find>listing</find>
-      <find>tag</find>
-      <find>form</find>
-      <find>register</find>
       <find>welcome</find>
       <find>disc</find>
       <find>english</find>
       <find>post</find>
-      <find>job</find>
       <find>desc</find>
       <find>des</find>
-      <find>refer</find>
       <find>inter</find>
       <find>intere</find>
       <find>job summ</find>
@@ -1009,7 +1041,6 @@
       <find>job desc</find>
       <find>contact</find>
       <find>2</find>
-      <find>apply</find>
       <find>ques</find>
       <find>location</find>
       <find>index</find>
@@ -1018,6 +1049,15 @@
       <find>singl</find>
       <find>date posted</find>
       <find>sub</find>
+      <find>job</find>
+      <find>refer</find>
+      <find>apply</find>
+      <find>ho</find>
+      <find>total</find>
+      <find>job see</find>
+      <find>start</find>
+      <find>table</find>
+      <find>active</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1026,12 +1066,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/tag/tag_detail.html" />
-        <option value="$PROJECT_DIR$/templates/location_wise_job_opening.html" />
-        <option value="$PROJECT_DIR$/templates/about.html" />
-        <option value="$PROJECT_DIR$/templates/search_bar.html" />
-        <option value="$PROJECT_DIR$/templates/job_list.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/runtime" />
         <option value="$PROJECT_DIR$/templates/job_details.html" />
         <option value="$PROJECT_DIR$/jobseeker/views.py" />
@@ -1052,7 +1086,6 @@
         <option value="$PROJECT_DIR$/templates/account/signup_closed.html" />
         <option value="$PROJECT_DIR$/templates/account/verification_sent.html" />
         <option value="$PROJECT_DIR$/templates/account/verified_email_required.html" />
-        <option value="$PROJECT_DIR$/jobseeker/forms.py" />
         <option value="$PROJECT_DIR$/templates/resume_post.html" />
         <option value="$PROJECT_DIR$/jobopening/admin.py" />
         <option value="$PROJECT_DIR$/employer/models.py" />
@@ -1061,22 +1094,29 @@
         <option value="$PROJECT_DIR$/templates/new_theme/pages-contact.html" />
         <option value="$PROJECT_DIR$/ecommerce/forms.py" />
         <option value="$PROJECT_DIR$/to-do.txt" />
-        <option value="$PROJECT_DIR$/jobopening/forms.py" />
         <option value="$PROJECT_DIR$/ecommerce/urls.py" />
         <option value="$PROJECT_DIR$/ecommerce/choices.py" />
         <option value="$PROJECT_DIR$/ecommerce/choice/experience.py" />
         <option value="$PROJECT_DIR$/ecommerce/choice/qualification.py" />
-        <option value="$PROJECT_DIR$/jobopening/models.py" />
         <option value="$PROJECT_DIR$/ecommerce/choice/job_location.py" />
         <option value="$PROJECT_DIR$/templates/new_theme/jobs-list-layout-2.html" />
         <option value="$PROJECT_DIR$/templates/new_theme/index.html" />
-        <option value="$PROJECT_DIR$/jobopening/views.py" />
-        <option value="$PROJECT_DIR$/templates/new_theme/single-job-page.html" />
         <option value="$PROJECT_DIR$/templates/newsletter/subscription_subscribe.html" />
         <option value="$PROJECT_DIR$/templates/newsletter/common.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/ecommerce/settings.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/jobopening/models.py" />
+        <option value="$PROJECT_DIR$/jobopening/forms.py" />
+        <option value="$PROJECT_DIR$/jobopening/views.py" />
+        <option value="$PROJECT_DIR$/templates/new_theme/single-job-page.html" />
+        <option value="$PROJECT_DIR$/templates/candidate_refer_form.html" />
+        <option value="$PROJECT_DIR$/jobseeker/forms.py" />
+        <option value="$PROJECT_DIR$/jobseeker/admin.py" />
+        <option value="$PROJECT_DIR$/jobseeker/models.py" />
+        <option value="$PROJECT_DIR$/dashboard/urls.py" />
+        <option value="$PROJECT_DIR$/dashboard/views.py" />
+        <option value="$PROJECT_DIR$/templates/new_theme/dashboard/dashboard.html" />
       </list>
     </option>
   </component>
@@ -1126,24 +1166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Extensions" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.intellij.database" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1153,20 +1175,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ecommerce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecommerce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecommerce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1190,6 +1198,24 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Extensions" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.intellij.database" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1207,19 +1233,19 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/jobopening/templates/jobopening" />
-      <recent name="$PROJECT_DIR$/jobopening/templates" />
-      <recent name="$PROJECT_DIR$/templates/hiringnext/jobopening" />
-      <recent name="$PROJECT_DIR$/templates/hiringnext" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/templates/functional_area" />
       <recent name="$PROJECT_DIR$/templates/new_theme" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/templates/" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/new_theme/dashboard" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/jobopening/templates/jobopening" />
+      <recent name="$PROJECT_DIR$/jobopening/templates" />
+      <recent name="$PROJECT_DIR$/templates/hiringnext/jobopening" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1476,7 +1502,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1484,18 +1509,18 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27722773" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23432343" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19090909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18712121" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32682925" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940991" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296617" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296617" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32520324" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1520,151 +1545,11 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/new_theme/jobs-list-functional-area.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobseeker/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/logout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="48" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="12" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/new_theme/dashboard-post-a-job.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11235">
-          <caret line="535" column="46" lean-forward="false" selection-start-line="531" selection-start-column="40" selection-end-line="535" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobopening/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobseeker/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobseeker/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/resume_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobseeker/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/new_theme/sass/gui/_copy-to-clipboard.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/new_theme/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="6548" column="0" lean-forward="true" selection-start-line="6548" selection-start-column="0" selection-end-line="6548" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/functional_area/jobs-list-functional-area.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="194" column="125" lean-forward="false" selection-start-line="194" selection-start-column="125" selection-end-line="194" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/employer/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/employer/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1232">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecommerce/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-882">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobopening/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecommerce/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/new_theme/pages-contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="95" column="54" lean-forward="false" selection-start-line="95" selection-start-column="54" selection-end-line="95" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobopening/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecommerce/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ecommerce/choice/salary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1684,13 +1569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecommerce/choice/notice_period.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1722,52 +1600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ecommerce/choice/experience.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/new_theme/index-2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecommerce/choice/job_location.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/new_theme/jobs-list-layout-2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-do.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="17" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobopening/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/new_theme/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="62" column="116" lean-forward="false" selection-start-line="62" selection-start-column="116" selection-end-line="62" selection-end-column="116" />
         </state>
       </provider>
     </entry>
@@ -1778,24 +1614,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/new_theme/single-job-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="96" column="117" lean-forward="false" selection-start-line="96" selection-start-column="117" selection-end-line="96" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/newsletter/message/update.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="43" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="15" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1856,27 +1678,227 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobopening/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="67" column="20" lean-forward="true" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="39" column="85" lean-forward="false" selection-start-line="39" selection-start-column="85" selection-end-line="39" selection-end-column="85" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-do.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecommerce/choice/experience.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecommerce/choice/job_location.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecommerce/choice/notice_period.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new_theme/single-job-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5985">
+          <caret line="285" column="33" lean-forward="false" selection-start-line="283" selection-start-column="23" selection-end-line="285" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobopening/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/candidate_refer_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobopening/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobseeker/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobseeker/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobopening/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="139" column="71" lean-forward="false" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobopening/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2393">
+          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard/index1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard/dashboard-staff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="398" column="56" lean-forward="false" selection-start-line="398" selection-start-column="55" selection-end-line="398" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobseeker/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobseeker/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobopening/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="452" column="42" lean-forward="false" selection-start-line="452" selection-start-column="42" selection-end-line="452" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="339">
+          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new_theme/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056">
+          <caret line="398" column="58" lean-forward="false" selection-start-line="398" selection-start-column="53" selection-end-line="398" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="37" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard_admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard_admin/employee_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new_theme/dashboard/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="25" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobseeker/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="69" column="20" lean-forward="false" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new_theme/jobs-list-layout-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard_admin/active_openings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="50" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
         </state>
       </provider>
     </entry>

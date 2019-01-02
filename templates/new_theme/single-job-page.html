@@ -150,7 +150,7 @@
                         <a href="#small-dialog" class="apply-now-button popup-with-zoom-anim">Apply Now <i
                                 class="icon-material-outline-arrow-right-alt"></i></a>
 
-                        <a href="#small-dialog" class="apply-now-button">Refer & Earn <i
+                        <a href="{% url 'candidate-refer' %}" class="apply-now-button">Refer & Earn <i
                                 class="icon-material-outline-arrow-right-alt"></i></a>
 
                         <!-- Sidebar Widget -->
@@ -269,17 +269,17 @@
                     </div>
 
                     <!-- Form -->
-                    <form method="post" id="apply-now-form">{% csrf_token %}
-                        {% for que in object.Questions.all %}
-                            <div>
-                                <i class="icon-material-outline-account-circle"></i>
-                                {{ que }}
-                                <input type="text" class="input-text with-border" name="name" id="name"
-                                       placeholder="Answer Here" required/>
-                            </div>
-                        {% endfor %}
-
-
+                    <form method="post" id="apply-now-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+{#                        {% for que in object.Questions.all %}#}
+{#                            <div>#}
+{#                                <i class="icon-material-outline-account-circle"></i>#}
+{#                                {{ que }}#}
+{#                                <input type="text" class="input-text with-border" name="name" id="name"#}
+{#                                       placeholder="Answer Here" required/>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
                         <!-- Button -->
                         <button class="button margin-top-35 full-width button-sliding-icon ripple-effect" type="submit"
                                 form="apply-now-form">Apply Now <i class="icon-material-outline-arrow-right-alt"></i>
@@ -295,6 +295,53 @@
     </div>
     <!-- Apply for a job popup / End -->
 
+
+        <!-- Apply for a job popup
+    ================================================== -->
+    <div id="small-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+
+        <!--Tabs -->
+        <div class="sign-in-form">
+
+            <ul class="popup-tabs-nav">
+                <li><a href="#tab">Apply Now</a></li>
+            </ul>
+
+            <div class="popup-tabs-container">
+
+                <!-- Tab -->
+                <div class="popup-tab-content" id="tab">
+
+                    <!-- Welcome Text -->
+                    <div class="welcome-text">
+                        <h3>Apply Form ({{ object.job_title }})</h3>
+                    </div>
+
+                    <!-- Form -->
+                    <form method="post" id="apply-now-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+{#                        {% for que in object.Questions.all %}#}
+{#                            <div>#}
+{#                                <i class="icon-material-outline-account-circle"></i>#}
+{#                                {{ que }}#}
+{#                                <input type="text" class="input-text with-border" name="name" id="name"#}
+{#                                       placeholder="Answer Here" required/>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+                        <!-- Button -->
+                        <button class="button margin-top-35 full-width button-sliding-icon ripple-effect" type="submit"
+                                form="apply-now-form">Apply Now <i class="icon-material-outline-arrow-right-alt"></i>
+                        </button>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 

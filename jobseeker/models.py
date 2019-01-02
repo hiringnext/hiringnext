@@ -12,6 +12,13 @@ from jobopening.models import Jobopening
 
 
 class Jobseeker(models.Model):
+    candidate_user = models.ForeignKey(
+        AUTH_USER_MODEL,
+        related_name="candidate_user",
+        null=True,
+        blank=True
+
+    )
     apply_for_the_post_of = models.ForeignKey(Jobopening, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50)
     contact_number = models.IntegerField(null=False, unique=True)
@@ -43,18 +50,20 @@ class Jobseeker(models.Model):
     def __str__(self):
         return self.name
 
+from django.contrib.auth import get_user_model
+
 
 class ReferCandidate(models.Model):
-
     candidate_referrer = models.ForeignKey(
-        AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
+        get_user_model(),
         related_name="referred_candidate_by",
         null=True,
         blank=True
 
     )
-    refer_for_the_post_of = models.ForeignKey(Jobopening, on_delete=models.CASCADE, verbose_name='Referred for the post of')
+    user = models.ForeignKey(User, null=True)
+    refer_for_the_post_of = models.ForeignKey(Jobopening, on_delete=models.CASCADE,
+                                              verbose_name='Referred for the post of')
     candidate_name = models.CharField(max_length=50, verbose_name='Candidate Name')
     contact_number = models.IntegerField(null=False, unique=True, verbose_name='Primary Contact Number')
     alternate_number = models.IntegerField(blank=True, verbose_name='Secondary Contact Number')
@@ -63,7 +72,8 @@ class ReferCandidate(models.Model):
     current_designation = models.CharField(max_length=50, verbose_name='Present Designation')
     current_company_name = models.CharField(max_length=50, verbose_name='Current Company')
     present_location = models.CharField(choices=JOB_LOCATION_CHOICES, max_length=50, verbose_name='Present Location')
-    preferred_location = models.CharField(choices=JOB_LOCATION_CHOICES, max_length=50, verbose_name='Preferred Location')
+    preferred_location = models.CharField(choices=JOB_LOCATION_CHOICES, max_length=50,
+                                          verbose_name='Preferred Location')
     experience = models.DecimalField(decimal_places=1, max_digits=5, null=True, verbose_name='Experience')
     notice_period = models.CharField(choices=NOTICE_PERIOD_CHOICES, max_length=15, verbose_name='Notice Period')
     skill = models.CharField(max_length=100)

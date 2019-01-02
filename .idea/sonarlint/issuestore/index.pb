@@ -159,8 +159,6 @@ h
 8templates/functional_area/jobs-list-functional-area.html,2/c/2cf9898cb45b2810e74213ba0caf2f668f6f0b85
 A
 jobseeker/urls.py,4/4/44d6b4aeb7dcbb4fbb4fd6a2650f30fd69789b49
-]
--templates/new_theme/dashboard-post-a-job.html,1/7/170bc54fd985d8f4df255c756d60ebb00aa60d17
 J
 templates/resume_post.html,c/2/c23431cb57b9fe3f71794cb337bc6c541d91ac8c
 P
@@ -203,3 +201,15 @@ W
 +templates/newsletter/newsletter_detail.html,0/b/0b1ac8e0ee90d7ac9f0fb9354ff08e78c9cf99ea
 P
  templates/newsletter/common.html,d/8/d839569133af6030954be6c5e71270170bb7f1f0
+L
+templates/account/email.html,c/d/cd87a7fd90ae9d9a6eced960014107cc1c942b98
+S
+#templates/candidate_refer_form.html,b/c/bca18185e9db860935c59f840e96afd823426bee
+O
+templates/dashboard/index1.html,9/f/9f28c570668e4f865d1db6db1742de13282795bc
+N
+templates/dashboard/index.html,3/c/3c2fdb973b27b486f69af5deff88f58332e7f88f
+X
+(templates/dashboard/dashboard-staff.html,6/1/61c75ab600701e9200606c155e311ec2a4fec5f5
+\
+,templates/new_theme/dashboard/dashboard.html,9/1/91dc06a1665f82ce6c00e6a819e82c5f279ba03e
