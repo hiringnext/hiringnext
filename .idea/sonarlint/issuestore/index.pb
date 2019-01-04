@@ -213,3 +213,5 @@ X
 (templates/dashboard/dashboard-staff.html,6/1/61c75ab600701e9200606c155e311ec2a4fec5f5
 \
 ,templates/new_theme/dashboard/dashboard.html,9/1/91dc06a1665f82ce6c00e6a819e82c5f279ba03e
+a
+1templates/new_theme/dashboard/dashboard_base.html,e/d/ed9ba2e5593d1c6e2ca53660e7defb02d3a1d88e
