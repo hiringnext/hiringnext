@@ -99,6 +99,7 @@
                                             <li><a href="dashboard-settings.html"><i
                                                     class="icon-material-outline-settings"></i>
                                                 Settings</a></li>
+
                                             <li><a href="{% url 'account_logout' %}"><i
                                                     class="icon-material-outline-power-settings-new"></i> Logout</a>
                                             </li>
@@ -327,8 +328,10 @@
                             <div class="dashboard-nav-inner">
 
                                 <ul data-submenu-title="Start">
-                                    <li class="active"><a href="dashboard.html"><i
+                                    <li><a href="{% url 'dashboard-admin' %}"><i
                                             class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+                                    <li><a href="dashboard.html"><i
+                                            class="icon-material-outline-dashboard"></i> Active Openings</a></li>
                                     <li><a href="dashboard-messages.html"><i
                                             class="icon-material-outline-question-answer"></i> Messages <span
                                             class="nav-tag">2</span></a></li>
@@ -385,14 +388,15 @@
 
                     <!-- Dashboard Headline -->
                     <div class="dashboard-headline">
-                        <h3>Howdy, Tom!</h3>
+                        <h3>Howdy, {{ user }} ! <br><br>
+                            Welcome to Admin Dashboard</h3>
                         <span>We are glad to see you again!</span>
 
                         <!-- Breadcrumbs -->
                         <nav id="breadcrumbs" class="dark">
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li>Dashboard</li>
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li>Admin Dashboard</li>
                             </ul>
                         </nav>
                     </div>
@@ -401,22 +405,22 @@
                     <div class="fun-facts-container">
                         <div class="fun-fact" data-fun-fact-color="#36bd78">
                             <div class="fun-fact-text">
-                                <span>Task Bids Won</span>
-                                <h4>22</h4>
+                                <span>Total Openings</span>
+                                <h4>{{ total_opening.count }}</h4>
                             </div>
                             <div class="fun-fact-icon"><i class="icon-material-outline-gavel"></i></div>
                         </div>
                         <div class="fun-fact" data-fun-fact-color="#b81b7f">
                             <div class="fun-fact-text">
-                                <span>Jobs Applied</span>
-                                <h4>4</h4>
+                                <span>Total Companies</span>
+                                <h4>{{ total_companies.count }}</h4>
                             </div>
                             <div class="fun-fact-icon"><i class="icon-material-outline-business-center"></i></div>
                         </div>
                         <div class="fun-fact" data-fun-fact-color="#efa80f">
                             <div class="fun-fact-text">
-                                <span>Reviews</span>
-                                <h4>28</h4>
+                                <span>Total JobSeekers</span>
+                                <h4>{{ all_finders }}</h4>
                             </div>
                             <div class="fun-fact-icon"><i class="icon-material-outline-rate-review"></i></div>
                         </div>
@@ -433,92 +437,51 @@
 
                     <!-- Row -->
                     <div class="row">
-
-                        <div class="col-xl-8">
+                        <div class="col-xl-12">
                             <!-- Dashboard Box -->
                             <div class="dashboard-box main-box-in-row">
                                 <div class="headline">
-                                    <h3><i class="icon-feather-bar-chart-2"></i> Your Profile Views</h3>
-                                    <div class="sort-by">
-                                        <select class="selectpicker hide-tick">
-                                            <option>Last 6 Months</option>
-                                            <option>This Year</option>
-                                            <option>This Month</option>
-                                        </select>
-                                    </div>
+                                    <h3><i class="icon-feather-bar-chart-2"></i> Active Job Openings
+                                        ({{ total_opening.count }})</h3>
+
                                 </div>
                                 <div class="content">
                                     <!-- Chart -->
-                                    <div class="chart">
-                                        <canvas id="chart" width="100" height="45"></canvas>
-                                    </div>
+                                    <table class="basic-table">
+
+                                        <tbody>
+                                        <tr>
+                                            <th>Job Title</th>
+                                            <th>Company Name</th>
+                                            <th>Location</th>
+                                            <th>Experience</th>
+                                            <th>Salary</th>
+                                            <th>Created Date</th>
+                                            <th>Recruiter</th>
+                                        </tr>
+                                        {% for details in active_opening %}
+
+                                            <tr>
+                                                <td data-label="Column 1">{{ details.job_title }}</td>
+                                                <td data-label="Column 2">{{ details.company_name }}</td>
+                                                <td data-label="Column 3">{{ details.job_location }}</td>
+                                                <td data-label="Column 4">{{ details.experience }}</td>
+                                                <td data-label="Column 5">{{ details.max_salary_budget }}</td>
+                                                <td data-label="Column 6">{{ details.job_created }}</td>
+                                                <td data-label="Column 7">{{ details.assign_recruiter }}</td>
+                                            </tr>
+                                        {% endfor %}
+
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <!-- Dashboard Box / End -->
+                              <!-- Dashboard Box / End -->
                         </div>
-                        <div class="col-xl-4">
 
-                            <!-- Dashboard Box -->
-                            <!-- If you want adjust height of two boxes
-                                 add to the lower box 'main-box-in-row'
-                                 and 'child-box-in-row' to the higher box -->
-                            <div class="dashboard-box child-box-in-row">
-                                <div class="headline">
-                                    <h3><i class="icon-material-outline-note-add"></i> Notes</h3>
-                                </div>
-
-                                <div class="content with-padding">
-                                    <!-- Note -->
-                                    <div class="dashboard-note">
-                                        <p>Meeting with candidate at 3pm who applied for Bilingual Event Support
-                                            Specialist</p>
-                                        <div class="note-footer">
-                                            <span class="note-priority high">High Priority</span>
-                                            <div class="note-buttons">
-                                                <a href="#" title="Edit" data-tippy-placement="top"><i
-                                                        class="icon-feather-edit"></i></a>
-                                                <a href="#" title="Remove" data-tippy-placement="top"><i
-                                                        class="icon-feather-trash-2"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Note -->
-                                    <div class="dashboard-note">
-                                        <p>Extend premium plan for next month</p>
-                                        <div class="note-footer">
-                                            <span class="note-priority low">Low Priority</span>
-                                            <div class="note-buttons">
-                                                <a href="#" title="Edit" data-tippy-placement="top"><i
-                                                        class="icon-feather-edit"></i></a>
-                                                <a href="#" title="Remove" data-tippy-placement="top"><i
-                                                        class="icon-feather-trash-2"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Note -->
-                                    <div class="dashboard-note">
-                                        <p>Send payment to David Peterson</p>
-                                        <div class="note-footer">
-                                            <span class="note-priority medium">Medium Priority</span>
-                                            <div class="note-buttons">
-                                                <a href="#" title="Edit" data-tippy-placement="top"><i
-                                                        class="icon-feather-edit"></i></a>
-                                                <a href="#" title="Remove" data-tippy-placement="top"><i
-                                                        class="icon-feather-trash-2"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="add-note-button">
-                                    <a href="#small-dialog"
-                                       class="popup-with-zoom-anim button full-width button-sliding-icon">Add Note <i
-                                            class="icon-material-outline-arrow-right-alt"></i></a>
-                                </div>
-                            </div>
-                            <!-- Dashboard Box / End -->
-                        </div>
                     </div>
                     <!-- Row / End -->
+<h4 class="col-xl-offset-3 col-xl-6"><a href="#">Browse All Jobs</a></h4>
 
                     <!-- Row -->
                     <div class="row">

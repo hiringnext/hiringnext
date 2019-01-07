@@ -33,12 +33,14 @@ from jobseeker.models import Jobseeker, ReferCandidate
 class AdminDashboard(ListView):
     model = Jobseeker
     template_name = 'new_theme/dashboard/dashboard.html'
+    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         context = super(AdminDashboard, self).get_context_data(**kwargs)
         context.update({
             'admin_dash': Jobopening.objects.all(),
-            'total_opening': Jobopening.objects.all(),
+            'total_opening': Jobopening.objects.all().order_by('-job_created'),
+            'active_opening': Jobopening.objects.all().order_by('-job_created').distinct()[:5],
             'total_companies': CompanyProfile.objects.all(),
             'total_profiles': Jobseeker.objects.all(),
             'total_revenues': '11111111',
