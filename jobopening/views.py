@@ -31,6 +31,7 @@ class IndexListView(TagMixin, ListView):
     model = Jobopening
     template_name = 'new_theme/index.html'
 
+
     def get_context_data(self, **kwargs):
         context = super(IndexListView, self).get_context_data(kwargs)
         context.update({
@@ -42,6 +43,7 @@ class IndexListView(TagMixin, ListView):
             'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
             'location_choice': JOB_LOCATION_CHOICES,
+            'new_jobs': Jobopening.objects.all().order_by('-job_created').distinct()[:6],
             'query': self.request.GET.get('q')
         })
 
@@ -65,7 +67,7 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
     form_class = ReferCandidateForm
     context_object_name = 'opening'
     template_name = "new_theme/jobs-list-layout-2.html"
-    paginate_by = 10
+    paginate_by = 5
     ordering = ['-job_created']
 
     def get_context_data(self, **kwargs):

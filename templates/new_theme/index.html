@@ -141,12 +141,12 @@
 
                         <!-- Section Headline -->
                         <div class="section-headline margin-top-0 margin-bottom-35">
-                            <h3>Featured Jobs</h3>
+                            <h3>New Jobs</h3>
                             <a href="{% url 'jobopening-list' %}" class="headline-link">Browse All Jobs</a>
                         </div>
 
                         <div class="listings-container grid-layout margin-top-35">
-                            {% for job in object_list %}
+                            {% for job in new_jobs %}
                                 <!-- Job Listing -->
                                 <a href="{{ job.get_absolute_url }}" class="job-listing">
 
