@@ -33,27 +33,27 @@
                 <!-- Search Bar -->
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-9">
                         <form class="intro-banner-search-form margin-top-95" method="get"
                               action="{% url 'jobopening-list' %}">
 
                             <!-- Search Field -->
-                            <div class="intro-search-field with-autocomplete">
-                                <label class="field-title ripple-effect">Where?</label>
-                                {##}
-                                {#                                <select id="autocomplete-input" type="text" class="input-with-icon">#}
-                                {##}
-                                {#                                    {% for key,value in location_choice %}#}
-                                {#                                        <option value="key">{{ value }}</option>#}
-                                {#                                    {% endfor %}#}
-                                {##}
-                                {#                                </select>#}
-
-                                <div class="input-with-icon">
-                                    <input type="text" placeholder="Location">
-                                    <i class="icon-material-outline-location-on"></i>
-                                </div>
-                            </div>
+{#                            <div class="intro-search-field with-autocomplete">#}
+{#                                <label class="field-title ripple-effect">Where?</label>#}
+{##}
+{#                                                                <select id="autocomplete-input" type="text" class="input-with-icon">#}
+{##}
+{#                                                                    {% for key,value in location_choice %}#}
+{#                                                                        <option value="key">{{ value }}</option>#}
+{#                                                                    {% endfor %}#}
+{##}
+{#                                                                </select>#}
+{##}
+{#                                <div class="input-with-icon">#}
+{#                                    <input type="text" placeholder="Location">#}
+{#                                    <i class="icon-material-outline-location-on"></i>#}
+{#                                </div>#}
+{#                            </div>#}
 
                             <!-- Search Field -->
                             <div class="intro-search-field">
@@ -104,25 +104,24 @@
                     <div class="col-xl-12">
 
                         <div class="section-headline centered margin-bottom-15">
-                            <h3>Popular Job Categories</h3>
+                            <h3>Jobs By Industry </h3>
                         </div>
 
                         <!-- Category Boxes Container -->
                         <div class="categories-container">
-                            {% for by_functional_area in function_area %}
+                            {% for by_industry in industry %}
                                 <!-- Category Box -->
-                                <a href="{{ by_functional_area.get_absolute_url }}" class="category-box">
+                                <a href="{{ by_industry.get_absolute_url }}" class="category-box">
                                     <div class="category-box-icon">
                                         <i class="icon-line-awesome-file-code-o"></i>
                                     </div>
-                                    <div class="category-box-counter">{{ by_functional_area.jobopening_set.count }}</div>
+                                    <div class="category-box-counter">{{ by_industry.jobopening_set.count }}</div>
                                     <div class="category-box-content">
-                                        <h3>{{ by_functional_area.functional_area }}</h3>
+                                        <h3>{{ by_industry.industry }}</h3>
                                         <p>Software Engineer, Web / Mobile Developer & More</p>
                                     </div>
                                 </a>
                             {% endfor %}
-
 
                         </div>
 

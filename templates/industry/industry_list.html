@@ -4,433 +4,236 @@
 {% load humanize %}
 
 
-<body>
-<!-- wrapper page -->
+{% block content %}
+    <body class="gray">
 
-<!-- main-header -->
-<header class="main-header">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-    {% block content %}
-        <!-- form search area-->
-        <header class="main-header">
+        <!-- Header Container
+        ================================================== -->
 
-            <!-- mobile navbar -->
-            <div class="container">
-                <nav class="mobile-nav hidden-md hidden-lg">
-                    <a href="#" class="btn-nav-toogle first">
-                        <span class="bars"></span>
-                        Menu
-                    </a>
-                    <div class="mobile-nav-block">
-                        <h4>Navigation</h4>
-                        <a href="#" class="btn-nav-toogle">
-                            <span class="barsclose"></span>
-                            Close
-                        </a>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
 
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="job_list.html"><strong>Find a Job</strong></a></li>
-                            <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
-                            <li class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
-                            <li><a href="#"><strong>Login</strong></a></li>
-                            <li><a href="register.html"><strong>Register</strong></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Pages <span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                    <li><a href="blog.html">Articles &amp; Blog</a></li>
-                                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
-                                    <li><a href="error_404.html">Error 404</a></li>
-                                    <li><a href="shortcode.html">Short Code</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Features
-                                    <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="job_list.html">Find a Job</a></li>
-                                    <li><a href="job_details.html">Job Details</a></li>
-                                    <li><a href="resume_list.html">Find Resumes</a></li>
-                                    <li><a href="resume_details.html">Resume Details</a></li>
-                                    <li><a href="job_post_2.html">Post a Job</a></li>
-                                    <li><a href="company_page.html">Company Profile</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div><!-- mobile navbar -->
+        <!-- Spacer -->
+        <div class="margin-top-90"></div>
+        <!-- Spacer / End-->
 
-            <!-- form search area-->
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-4">
-                        <!-- logo -->
-                        <div class="logo text-center-sm"><a href="{% url 'index' %}"><h1 style="color: white">
-                            HiringNext</h1></a></div>
-                    </div>
-
-                    <div class="col-md-8">
-                        <!-- form search -->
-                        <form class="form-search-list" method="get" action="">
-                            <div class="row">
-                                <div class="col-sm-5 col-xs-6 ">
-                                    <div class="form-group">
-                                        <label class="color-white">What</label>
-                                        <input class="form-control" type="text" name="q" value="{{ request.get.q }}"
-                                               placeholder="job title, keywords or company name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-5 col-xs-6 ">
-                                    <div class="form-group">
-                                        <label class="color-white">Where</label>
-                                        <input class="form-control" placeholder="city, province, or region">
-                                    </div>
-                                </div>
-                                <div class="col-sm-2 col-xs-12 ">
-                                    <div class="form-group">
-                                        <label class="hidden-xs">&nbsp;</label>
-                                        <button class="btn btn-block btn-theme  btn-success" type="submit"
-                                                value="search">Search
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-right"><a href="#modal-advanced" data-toggle="modal" class="link-white">Advanced
-                                Search</a></p>
-                        </form>  <!-- form search -->
-                    </div>
-
-                </div>
-
-                <!-- modal Advanced search -->
-
-            </div><!-- end form search area-->
-        </header><!-- end main-header -->
-
-        <div class="body-content clearfix">
-
-            <div class="bg-color2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <!-- box listing -->
-                            <div class="block-section-sm box-list-area">
-
-                                <!-- desc top -->
+        <!-- Page Content
+        ================================================== -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="sidebar-container">
 
 
-                                <!-- Job Openings List View -->
-                                {% for job in object.jobopening_set.all %}
+                        <!-- Keywords -->
+                        <div class="sidebar-widget">
+                            <h3>Keywords</h3>
 
-                                    <div class="box-list">
-                                        <div class="item">
-                                            <div class="row">
-                                                <div class="col-md-1 hidden-sm hidden-xs">
-                                                    <div class="img-item"><img
-                                                            src="{% static '/assets/theme/images/company-logo/1.jpg' %}"
-                                                            alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-11">
-                                                    <h3 class="no-margin-top"><a href="{{ job.get_absolute_url }}"
-                                                                                 class="">{{ job.job_title }}<i
-                                                            class="fa fa-link color-white-mute font-1x"></i></a>
-                                                    </h3>
-                                                    <h5>
+                            <form class="keyword-input-container">
+                                <input type="text" name="q" placeholder="e.g. job title"/>
+                                <button class="keyword-input-button"><i
+                                        class="icon-material-outline-arrow-right-alt"></i></button>
+                            </form>
+                            <div class="keywords-list"><!-- keywords go here --></div>
+                            <div class="clearfix"></div>
 
-                                                            <span class="color-black"><a
-                                                                    href="{{ job.company_name.get_absolute_url }}">{{ job.company_name.company }}</a></span>
-                                                        | <span class="color-white-mute">Location: </span><span
-                                                            class="color-black">{{ job.job_location }}</span>
-                                                        <span class="color-white-mute"> </span>
+                        </div>
 
-                                                        | <span class="color-white-mute">Industry:</span>
-                                                        <a href="{{ job.industry.get_absolute_url }}"><span
-                                                                class="color-black">{{ job.industry }}</span></a>
 
-                                                        | <span class="color-white-mute">Salary: </span><span
-                                                            class="color-black fa fa-rupee"> {{ job.salary_budget | intcomma }}</span>
-                                                        | <span class="color-white-mute">Exp: </span><span
-                                                            class="color-black">{{ job.experience }} yrs.</span>
-                                                        |
-                                                        <span class="color-white-mute">{{ job.job_created }}</span>
+                        <!-- Location -->
+                        <div class="sidebar-widget">
+                            <h3>Location</h3>
 
-                                                    </h5>
-
-                                                    <p class="text">{{ job.job_description | slice:"200" | lower }}...</p>
-
-                                                    <a href="#modal-apply" data-toggle="modal" type="button"
-                                                       class="btn btn-theme btn-primary btn-sm">
-                                                        Apply
-                                                    </a>
-                                                    <a href="#modal-refer" data-toggle="modal"
-                                                       type="button"
-                                                       class="btn btn-theme btn-success btn-sm">
-                                                        Refer & Earn
-                                                    </a>
-
-                                                    {#                                                        <button type="button" class="btn btn-theme btn-success btn-sm">#}
-                                                    {#                                                            Refer & Earn#}
-                                                    {#                                                        </button>#}
-                                                    Referral Rewards: <span style="font-size: medium"
-                                                                            class="color-black fa fa-rupee"> {{ job.referral_reward | intcomma }} </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- end item list -->
-
-                                    </div>
-
+                            <select class="selectpicker default" multiple data-selected-text-format="count"
+                                    data-size="7" title="All Categories">
+                                {% for by_location in location %}
+                                    <option>{{ by_location.job_location }}</option>
                                 {% endfor %}
-
-
-                                <!-- form get alert -->
-                                <div class="get_alert">
-                                    <h4>Get email updates for the latest <span
-                                            class=" ">PHP jobs in United States</span>
-                                    </h4>
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-md-9">
-                                                <div class="form-group">
-                                                    <label>My Email</label>
-                                                    <input class="form-control" placeholder="Enter Email">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="hidden-sm hidden-xs ">&nbsp;</label>
-                                                    <button class="btn btn-theme btn-success btn-block">Activate
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <small>You can cancel email alerts at any time.</small>
-                                    </form>
-                                </div><!-- end form get alert -->
-
-                                <!-- pagination -->
-                                <nav>
-                                    <ul class="pagination pagination-theme  no-margin">
-                                        <li>
-                                            <a href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&larr;</span>
-                                            </a>
-                                        </li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><span>...</span></li>
-                                        <li><a href="#">50</a></li>
-                                        <li>
-                                            <a href="#" aria-label="Next">
-                                                <span aria-hidden="true">&rarr;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav><!-- pagination -->
-
-                            </div><!-- end box listing -->
+                            </select>
 
                         </div>
-                        <div class="col-md-3">
-                            <div class="block-section-sm side-right">
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <p><strong>Sort by: </strong></p>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <p class="text-right">
-                                            <strong>Relevance</strong> - <a href="#"
-                                                                            class="link-black"><strong>Date</strong></a>
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="result-filter">
-                                    <h5 class="font-bold  margin-b-20"><a href="#s_collapse_1"
-                                                                          data-toggle="collapse">Industries: <i
-                                            class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a></h5>
-                                    <div class="collapse in" id="s_collapse_1">
-                                        <div class="list-area">
-                                            {% for by_industry in industry %}
-                                                <ul class="list-unstyled">
-                                                    <li>
-                                                        <a href="{{ by_industry.get_absolute_url }}">{{ by_industry.industry }}</a>
-                                                    </li>
-                                                </ul>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <h5 class="font-bold  margin-b-20"><a href="#s_collapse_5"
-                                                                          data-toggle="collapse">Functional Area: <i
-                                            class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a></h5>
-                                    <div class="collapse in" id='s_collapse_5'>
-                                        <div class="list-area">
-                                            {% for by_functional_area in function_area %}
-                                                <ul class="list-unstyled">
-                                                    <li>
-                                                        <a href="{{ by_functional_area.get_absolute_url }}">{{ by_functional_area.functional_area }}</a>
-                                                    </li>
-                                                </ul>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
 
 
-                                    <h5 class="font-bold  margin-b-20"><a href="#s_collapse_2"
-                                                                          data-toggle="collapse">Location:
-                                        <i class="fa ic-arrow-toogle fa-angle-right pull-right"></i></a></h5>
-                                    <div class="collapse in" id="s_collapse_2">
-                                        <div class="list-area">
-                                            {% for by_location in location %}
-                                                <ul class="list-unstyled">
-                                                    <li>
-                                                        <a href="{{ by_location.get_absolute_url }}">{{ by_location.job_location }}</a>
-                                                    </li>
-                                                </ul>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <!-- Category -->
+                        <div class="sidebar-widget">
+                            <h3>Category</h3>
 
+                            <select class="selectpicker default" multiple data-selected-text-format="count"
+                                    data-size="7" title="All Categories">
+                                {% for by_industry in industry %}
+                                    <option>{{ by_industry.industry }}</option>
+                                {% endfor %}
+                            </select>
 
-            <!-- modal need login -->
-            <div class="modal fade" id="need-login">
-                <div class="modal-dialog modal-md">
-                    <div class="modal-content">
-
-                        <div class="modal-header text-center">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">You must login to save jobs</h4>
-                        </div>
-                        <div class="modal-footer text-center">
-                            <a href="#" class="btn btn-default btn-theme">Login</a>
-                            <a href="#" class="btn btn-success btn-theme">Create account (it's free)</a>
                         </div>
 
-                    </div>
-                </div>
-            </div><!-- end modal  need login -->
+                        <!-- Job Types -->
+                        <div class="sidebar-widget">
+                            <h3>Job Type</h3>
 
-
-            <!-- modal need login -->
-            <div class="modal fade" id="modal-email">
-                <div class="modal-dialog modal-md">
-                    <div class="modal-content">
-                        <form>
-                            <div class="modal-header ">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title">Send this job to yourself or a friend:</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label>From my email address</label>
-                                    <input type="email" class="form-control " placeholder="Enter Email">
-                                </div>
-                                <div class="form-group">
-                                    <label>To email address</label>
-                                    <input type="email" class="form-control " placeholder="Enter Email">
+                            <div class="switches-list">
+                                <div class="switch-container">
+                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
+                                        Freelance</label>
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Comment (optional)</label>
-                                    <textarea class="form-control" rows="6"
-                                              placeholder="Something Comment"></textarea>
+                                <div class="switch-container">
+                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
+                                        Full Time</label>
                                 </div>
-                                <div class="checkbox flat-checkbox">
-                                    <label>
-                                        <input type="checkbox">
-                                        <span class="fa fa-check"></span>
-                                        Send a copy to my email address?
-                                    </label>
+
+                                <div class="switch-container">
+                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
+                                        Part Time</label>
+                                </div>
+
+                                <div class="switch-container">
+                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
+                                        Internship</label>
+                                </div>
+                                <div class="switch-container">
+                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
+                                        Temporary</label>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close
-                                </button>
-                                <button type="submit" class="btn btn-success btn-theme">Send</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div><!-- end modal  need login -->
-            <div class="modal fade" id="modal-apply">
-                <div class="modal-dialog ">
-                    <div class="modal-content">
-                        <form>
-                            {#                            <div class="modal-header ">#}
-                            {#                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span#}
-                            {#                                        aria-hidden="true">&times;</span></button>#}
-                            {#                                <h4 class="modal-title">Apply</h4>#}
-                            {#                            </div>#}
 
-                            <div class="modal-body">
-                                {% for question in opening %}
-                                    {% for que in question.Questions.all %}
-                                        <div class="form-group">c
-                                            <label>{{ que }}</label>
-                                            <input type="text" class="form-control" placeholder="Answer here..">
+                        </div>
+
+                        <!-- Salary -->
+                        <div class="sidebar-widget">
+                            <h3>Salary</h3>
+                            <div class="margin-top-55"></div>
+
+                            <!-- Range Slider -->
+                            <input class="range-slider" type="text" value="" data-slider-currency="$"
+                                   data-slider-min="1500" data-slider-max="15000" data-slider-step="100"
+                                   data-slider-value="[1500,15000]"/>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="sidebar-widget">
+                            <h3>Tags</h3>
+
+                            <div class="tags-container">
+                                {% for job in object_list %}
+                                    {% for job_tag in job.tags.all %}
+                                        <div class="tag">
+                                            <input type="checkbox"/>
+                                            <label>{{ job_tag.name }}</label>
                                         </div>
                                     {% endfor %}
                                 {% endfor %}
-
                             </div>
+                            <div class="clearfix"></div>
+                        </div>
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close
-                                </button>
-                                <button type="submit" class="btn btn-success btn-theme">Send Application</button>
-                            </div>
-                        </form>
                     </div>
                 </div>
-            </div><!-- end modal  apply -->
+                <div class="col-xl-9 col-lg-8 content-left-offset">
 
-            <!-- start modal refer -->
-            <div class="modal fade" id="modal-refer">
-                <div class="modal-dialog ">
-                    <div class="modal-content">
-                        <form>
-                            {#                            <div class="modal-header ">#}
-                            {#                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span#}
-                            {#                                        aria-hidden="true">&times;</span></button>#}
-                            {#                                <h4 class="modal-title">Apply</h4>#}
-                            {#                            </div>#}
-                            {#                                <div class="modal-body">#}
-                            {#                                    <form method="POST" role="form">#}
-                            {#                                        <legend>Form Title</legend>#}
-                            {#                                        {% csrf_token %}#}
-                            {#                                        {% bootstrap_form form %}#}
-                            {#                                        <button type="submit" class="btn btn-primary">Submit</button>#}
-                            {#                                    </form>#}
-                            {#                                </div>#}
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close
-                                </button>
-                                <button type="submit" class="btn btn-success btn-theme">Send Application</button>
-                            </div>
-                        </form>
+                    <h3 class="page-title">Search Results</h3>
+
+                    <div class="notify-box margin-top-15">
+                        <div class="switch-container">
+                            <label class="switch"><input type="checkbox"><span class="switch-button"></span><span
+                                    class="switch-text">Turn on email alerts for this search</span></label>
+                        </div>
+
+                        <div class="sort-by">
+                            <span>Sort by: <strong>Freshness</strong></span>
+                        </div>
                     </div>
+
+                    <div class="listings-container margin-top-35">
+                        {% for job in object.jobopening_set.all %}
+                            <!-- Job Listing -->
+                            <a href="{{ job.get_absolute_url }}" class="job-listing">
+
+                                <!-- Job Listing Details -->
+                                <div class="job-listing-details">
+                                    <!-- Logo -->
+                                    <div class="job-listing-company-logo">
+                                        <img src="{% static 'new_theme/images/company-logo-05.png' %}" alt="">
+                                    </div>
+
+                                    <!-- Details -->
+                                    <div class="job-listing-description">
+                                        <h4 class="job-listing-company">{{ job.company_name }} <span
+                                                class="verified-badge"
+                                                title="Verified Employer"
+                                                data-tippy-placement="top"></span>
+                                        </h4>
+                                        <h3 class="job-listing-title">{{ job.job_title }}</h3>
+                                        <p class="job-listing-text">{{ job.job_description | truncatechars:300 }}</p>
+                                        <div class="tags-container margin-top-8">
+                                            {% for job_tag in job.tags.all %}
+                                                <div class="tag">
+                                                    <input type="checkbox"/>
+                                                    <label>{{ job_tag.name }}</label>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+                                    <!-- Bookmark -->
+                                    <span class="bookmark-icon"></span>
+                                </div>
+
+                                <!-- Job Listing Footer -->
+                                <div class="job-listing-footer">
+                                    <ul>
+                                        <li style="color: #43A047"><strong>Referral Reward:<i
+                                                class="icon-line-awesome-rupee"></i>{{ job.referral_reward | intcomma }}
+                                        </strong>
+                                        </li>
+                                        <li><i class="icon-material-outline-location-on"></i> {{ job.job_location }}
+                                        </li>
+                                        <li>Salary:<i
+                                                class="icon-line-awesome-rupee"></i>{{ job.max_salary_budget | intcomma }}Lac
+                                        </li>
+                                        <li><i class="icon-material-outline-business"></i>{{ job.industry }}</li>
+                                        <li>
+                                            <i class="icon-material-outline-access-time"></i> {{ job.job_created|date:"M d, Y" }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+
+                        {% endfor %}
+
+                        <!-- Pagination -->
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Pagination -->
+                                <div class="pagination-container margin-top-30 margin-bottom-60">
+                                    <nav class="pagination">
+                                        <ul>
+                                            <li class="pagination-arrow"><a href="#"><i
+                                                    class="icon-material-outline-keyboard-arrow-left"></i></a></li>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#" class="current-page">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li class="pagination-arrow"><a href="#"><i
+                                                    class="icon-material-outline-keyboard-arrow-right"></i></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pagination / End -->
+
+                    </div>
+
                 </div>
-            </div><!-- end modal  apply -->
+            </div>
         </div>
 
+    </div>
 
-    {% endblock %}
 
-    <!-- main-footer -->
-
-</header>
-<!-- end wrapper page -->
-</body>
+{% endblock %}

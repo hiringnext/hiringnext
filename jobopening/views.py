@@ -38,7 +38,7 @@ class IndexListView(TagMixin, ListView):
             'total_opening': Jobopening.objects.all(),
             'total_companies' : CompanyProfile.objects.all(),
             'total_profiles' : Jobseeker.objects.all(),
-            'industry': Industry.objects.all(),
+            'industry': Industry.objects.filter(jobopening__functional_area__industry__isnull=False).distinct(),
             'function_area': FunctionalArea.objects.all(),
             'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
@@ -145,7 +145,7 @@ class IndustryListView(DetailView):
 
 
 class FunctionalAreaListView(DetailView):
-    model = FunctionalArea
+    model = Industry
     queryset = FunctionalArea.objects.all()
     form_class = ReferCandidateForm
     template_name = 'functional_area/jobs-list-functional-area.html'
