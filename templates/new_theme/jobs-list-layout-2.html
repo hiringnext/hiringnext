@@ -71,47 +71,47 @@
                         </div>
 
                         <!-- Job Types -->
-                        <div class="sidebar-widget">
-                            <h3>Job Type</h3>
-
-                            <div class="switches-list">
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
-                                        Freelance</label>
-                                </div>
-
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
-                                        Full Time</label>
-                                </div>
-
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
-                                        Part Time</label>
-                                </div>
-
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
-                                        Internship</label>
-                                </div>
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>
-                                        Temporary</label>
-                                </div>
-                            </div>
-
-                        </div>
+                        {#                        <div class="sidebar-widget">#}
+                        {#                            <h3>Job Type</h3>#}
+                        {##}
+                        {#                            <div class="switches-list">#}
+                        {#                                <div class="switch-container">#}
+                        {#                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>#}
+                        {#                                        Freelance</label>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                                <div class="switch-container">#}
+                        {#                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>#}
+                        {#                                        Full Time</label>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                                <div class="switch-container">#}
+                        {#                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>#}
+                        {#                                        Part Time</label>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                                <div class="switch-container">#}
+                        {#                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>#}
+                        {#                                        Internship</label>#}
+                        {#                                </div>#}
+                        {#                                <div class="switch-container">#}
+                        {#                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span>#}
+                        {#                                        Temporary</label>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {##}
+                        {#                        </div>#}
 
                         <!-- Salary -->
-                        <div class="sidebar-widget">
-                            <h3>Salary</h3>
-                            <div class="margin-top-55"></div>
-
-                            <!-- Range Slider -->
-                            <input class="range-slider" type="text" value="" data-slider-currency="$"
-                                   data-slider-min="1500" data-slider-max="15000" data-slider-step="100"
-                                   data-slider-value="[1500,15000]"/>
-                        </div>
+                        {#                        <div class="sidebar-widget">#}
+                        {#                            <h3>Salary</h3>#}
+                        {#                            <div class="margin-top-55"></div>#}
+                        {##}
+                        {#                            <!-- Range Slider -->#}
+                        {#                            <input class="range-slider" type="text" value="" data-slider-currency="$"#}
+                        {#                                   data-slider-min="1500" data-slider-max="15000" data-slider-step="100"#}
+                        {#                                   data-slider-value="[1500,15000]"/>#}
+                        {#                        </div>#}
 
                         <!-- Tags -->
                         <div class="sidebar-widget">
@@ -203,6 +203,7 @@
 
                         {% endfor %}
 
+
                         <!-- Pagination -->
                         {% if is_paginated %}
                             <div class="clearfix"></div>
@@ -221,8 +222,9 @@
 
                                                 {% for i in paginator.page_range %}
                                                     <li {% if page_obj.number == i %}
-                                                        class="current-page green" {% endif %}>
-                                                        <a href="?page={{ i }}">{{ i }}</a></li>
+                                                    {% endif %}>
+                                                        <a href="?page={{ i }}">{{ i }}</a>
+                                                    </li>
                                                 {% endfor %}
 
                                                 {% if page_obj.has_next %}
