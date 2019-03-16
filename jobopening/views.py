@@ -192,6 +192,7 @@ class JobopeningDetailView(TagMixin, FormMixin, DetailView):
             'industry': Industry.objects.all(),
             'function_area': FunctionalArea.objects.all().annotate(),
             'question_list': ApplicationQuestions.objects.all(),
+            'similar_job': FunctionalArea.objects.all().distinct()[:5].annotate(),
 
         })
         return context

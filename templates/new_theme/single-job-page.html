@@ -94,11 +94,11 @@
                     </div>
 
                     <div class="single-page-section">
-                        <h3 class="margin-bottom-25">Similar Jobs ({{ object.functional_area.jobopening_set.count }})</h3>
+                        <h3 class="margin-bottom-25">Similar Jobs ({{ object.industry.jobopening_set.count }})</h3>
 
                         <!-- Listings Container -->
                         <div class="listings-container grid-layout">
-                            {% for by_function in object.functional_area.jobopening_set.all %}
+                            {% for by_function in object.industry.jobopening_set.all  %}
 
                                 <!-- Job Listing -->
                                 <a href="{{ by_function.get_absolute_url }}" class="job-listing">

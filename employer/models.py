@@ -8,10 +8,11 @@ from ecommerce.choice.job_location import JOB_LOCATION_CHOICES
 AUTH_USER_MODEL = getattr(settings, "AUTH_USER_MODEL", "auth.User")
 
 
-# Create your models here.
+# Create your models here.wa
 
 
 class CompanyProfile(models.Model):
+    relevant_industry = models.CharField(max_length=50)
     company = models.CharField(max_length=50)
     slug = models.SlugField(max_length=40)
     company_profile = models.TextField()

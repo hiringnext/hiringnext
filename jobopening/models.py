@@ -6,6 +6,8 @@ from django.urls import reverse
 from ecommerce.choice.experience import EXPERIENCE_CHOICE
 from ecommerce.choice.job_location import JOB_LOCATION_CHOICES
 from ecommerce.choice.qualification import QUALIFICATION_CHOICES
+from ecommerce.choice.bond_security_issue import BOND_OR_SECURITY
+from ecommerce.choice.employment_type import EMPLOYMENT_TYPE
 
 from django.template.defaultfilters import slugify
 from employer.models import CompanyProfile
@@ -150,10 +152,12 @@ class Jobopening(models.Model):
     functional_area = models.ForeignKey(FunctionalArea, null=True, blank=True)
     default_industry = models.ForeignKey(DefaultIndustry, null=True, blank=True)
     role_category = models.CharField(max_length=50, verbose_name='Role Category')
-    employment_type = models.CharField(max_length=50, verbose_name='Employment Type')
+    employment_type = models.CharField(choices=EMPLOYMENT_TYPE, max_length=100, verbose_name='Employment Type')
     job_description = models.TextField(verbose_name='Job Summary', null=True, blank=True)
     job_objective = models.TextField(verbose_name='Job Objectives', null=True, blank=True)
     must_have_skills = models.TextField(verbose_name='Must Have Skills', null=True, blank=True)
+    bond_or_security = models.CharField(choices=BOND_OR_SECURITY, null=True, max_length=20, blank=True,
+                                           verbose_name='Bond Or Security')
 
     nice_to_have = models.CharField(max_length=500, verbose_name='Nice To Have', null=True)
     job_created = models.DateTimeField(auto_created=True, null=True)
