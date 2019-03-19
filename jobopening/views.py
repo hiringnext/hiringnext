@@ -31,7 +31,6 @@ class IndexListView(TagMixin, ListView):
     model = Jobopening
     template_name = 'new_theme/index.html'
 
-
     def get_context_data(self, **kwargs):
         context = super(IndexListView, self).get_context_data(kwargs)
         context.update({
@@ -54,10 +53,8 @@ class IndexListView(TagMixin, ListView):
         query = self.request.GET.get("q")
         if query:
             queryset_list = queryset_list.filter(
-                Q(job_location__slug__icontains=query) |
                 Q(job_title__icontains=query) |
-                Q(company_name__company__icontains=query) |
-                Q(employment_type__icontains=query)
+                Q(company_name__company__icontains=query)
             ).distinct()
         return queryset_list
 

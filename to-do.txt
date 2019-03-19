@@ -37,3 +37,6 @@ $$ Add Some Details in Models:
 > Add Min & Max. Salay Budget
 > Add Per Annul Salary only.
 
+
+Priority:
+> Create Job Seeker / Referrer Dashboard > Profile.

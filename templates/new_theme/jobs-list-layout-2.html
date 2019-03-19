@@ -134,7 +134,11 @@
                 </div>
                 <div class="col-xl-9 col-lg-8 content-left-offset">
 
-                    <h3 class="page-title">Search Results</h3>
+                    {% if query %}
+                        <h3 class="page-title">Search Results by "{{ query | capfirst }}"</h3>
+                    {% else %}
+                          <h3 class="page-title">All Active Jobs</h3>
+                    {% endif %}
 
                     <div class="notify-box margin-top-15">
                         <div class="switch-container">

@@ -196,6 +196,41 @@
         </div>
         <!-- Featured Jobs / End -->
 
+         <!-- Jobs By Functional Area Boxes -->
+        <div class="section margin-top-65">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+
+                        <div class="section-headline centered margin-bottom-15">
+                            <h3>Jobs By Functional Area </h3>
+                        </div>
+
+                        <!-- Category Boxes Container -->
+                        <div class="categories-container">
+                            {% for by_functional in function_area %}
+                                <!-- Category Box -->
+                                <a href="{{ by_functional.get_absolute_url }}" class="category-box">
+                                    <div class="category-box-icon">
+                                        <i class="icon-line-awesome-industry"></i>
+                                    </div>
+                                    <div class="category-box-counter">{{ by_functional.jobopening_set.count }}</div>
+                                    <div class="category-box-content">
+                                        <h3>{{ by_functional.industry }}</h3>
+                                        <p>Software Engineer, Web / Mobile Developer & More</p>
+                                    </div>
+                                </a>
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Category Boxes / End -->
+
     </div>
     <!-- Wrapper / End -->
 

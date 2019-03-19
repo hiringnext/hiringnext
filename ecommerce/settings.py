@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # 3rd party apps
+    'django_filters',
     'crispy_forms',
     'bootstrap3',
     'allauth',

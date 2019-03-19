@@ -217,3 +217,5 @@ g
 7dashboard/templates/dashboard_admin/dashboard_base.html,c/c/cc511eec1fd7d186bc7e84d0bf36bf90dcf43bab
 W
 'ecommerce/choice/bond_security_issue.py,c/8/c8f9af8726a9bb8a43acefd2dcc3c609d40c7b93
+C
+jobopening/tests.py,c/a/cab41f2ecb5c5c6c19a7a80dfd268b9f67f1ff52
