@@ -30,7 +30,12 @@
 
                         <!-- Keywords -->
                         <div class="sidebar-widget">
+
                             <h3>Keywords</h3>
+
+                            <form method="get">
+                                {{ filter.form.as_p }}
+                            </form>
 
                             <form class="keyword-input-container">
                                 <input type="text" name="q" placeholder="e.g. job title"/>
@@ -137,7 +142,7 @@
                     {% if query %}
                         <h3 class="page-title">Search Results by "{{ query | capfirst }}"</h3>
                     {% else %}
-                          <h3 class="page-title">All Active Jobs</h3>
+                        <h3 class="page-title">All Active Jobs</h3>
                     {% endif %}
 
                     <div class="notify-box margin-top-15">
@@ -152,6 +157,8 @@
                     </div>
 
                     <div class="listings-container margin-top-35">
+{#                        {% for job in filter.qs %}#}
+{#                        #}
                         {% for job in object_list %}
                             <!-- Job Listing -->
                             <a href="{{ job.get_absolute_url }}" class="job-listing">

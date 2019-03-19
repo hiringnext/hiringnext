@@ -16,7 +16,8 @@ from .forms import JobopeningForm, JobApplyForm
 from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea
 from django.views.generic.edit import FormMixin, FormView
 from taggit.models import Tag
-
+from django.shortcuts import render
+from .filters import JobFilter
 
 
 class TagMixin(object):
@@ -25,8 +26,8 @@ class TagMixin(object):
         context['tags'] = Tag.objects.distinct()
         return context
 
-
 # Home Page
+
 class IndexListView(TagMixin, ListView):
     model = Jobopening
     template_name = 'new_theme/index.html'
@@ -105,6 +106,17 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
             )
 
         return queryset_list
+
+    def job_search_filter(request):
+        job_list = Jobopening.objects.all()
+        job_filter = JobFilter(request.GET, queryset=job_list)
+        return render(request, 'new_theme/jobs-list-layout-2.html', {'filter': job_filter})
+
+
+def job_search_filter(request):
+    job_list = Jobopening.objects.all()
+    job_filter = JobFilter(request.GET, queryset=job_list)
+    return render(request, 'new_theme/jobs-list-layout-2.html', {'filter': job_filter})
 
 
 class IndustryListView(DetailView):

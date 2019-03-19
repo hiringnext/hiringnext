@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'django_filters',
+    'widget_tweaks',
     'crispy_forms',
     'bootstrap3',
     'allauth',
