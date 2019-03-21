@@ -1,23 +1,22 @@
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.http import HttpResponseRedirect
-# Create your views here.
 from django.shortcuts import render
+# Create your views here.
 from django.views.generic import DetailView
-from django.views.generic.detail import SingleObjectMixin
+from django.views.generic.edit import FormMixin, FormView
 from django.views.generic.list import ListView
+from django_filters.views import FilterView
+from taggit.models import Tag
 
 from ecommerce.choice.job_location import JOB_LOCATION_CHOICES
 from ecommerce.forms import ContactForm
 from employer.models import CompanyProfile
 from jobseeker.forms import ReferCandidateForm
 from jobseeker.models import Jobseeker
+from .filters import JobFilter
 from .forms import JobopeningForm, JobApplyForm
 from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea
-from django.views.generic.edit import FormMixin, FormView
-from taggit.models import Tag
-from django.shortcuts import render
-from .filters import JobFilter
 
 
 class TagMixin(object):
@@ -25,6 +24,7 @@ class TagMixin(object):
         context = super(TagMixin, self).get_context_data(**kwargs)
         context['tags'] = Tag.objects.distinct()
         return context
+
 
 # Home Page
 
@@ -36,8 +36,8 @@ class IndexListView(TagMixin, ListView):
         context = super(IndexListView, self).get_context_data(kwargs)
         context.update({
             'total_opening': Jobopening.objects.all(),
-            'total_companies' : CompanyProfile.objects.all(),
-            'total_profiles' : Jobseeker.objects.all(),
+            'total_companies': CompanyProfile.objects.all(),
+            'total_profiles': Jobseeker.objects.all(),
             'industry': Industry.objects.filter(jobopening__functional_area__industry__isnull=False).distinct(),
             'function_area': FunctionalArea.objects.all(),
             'location': JobLocation.objects.all(),
@@ -76,6 +76,7 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
             'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
             'location_choice': JOB_LOCATION_CHOICES,
+            'filter': JobFilter(self.request.GET, queryset=self.get_queryset()),
             'form': self.get_form(),
             'query': self.request.GET.get('q')
         })
@@ -94,29 +95,20 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
             # if a GET (or any other method) we'll create a blank form
         return render(request, 'new_theme/jobs-list-layout-2.html', context)
 
-    def get_success_url(self):
-        return HttpResponseRedirect('/job/')
 
-    def get_queryset(self):
-        queryset_list = Jobopening.objects.all()
-        query = self.request.GET.get("q")
-        if query:
-            queryset_list = queryset_list.filter(
-                Q(job_title__icontains=query)
-            )
-
-        return queryset_list
-
-    def job_search_filter(request):
-        job_list = Jobopening.objects.all()
-        job_filter = JobFilter(request.GET, queryset=job_list)
-        return render(request, 'new_theme/jobs-list-layout-2.html', {'filter': job_filter})
-
+        # queryset_list = Jobopening.objects.all()
+        # query = self.request.GET.get("q")
+        # if query:
+        #     queryset_list = queryset_list.filter(
+        #         Q(job_title__icontains=query)
+        #     )
+        #
+        # return queryset_list
 
 def job_search_filter(request):
     job_list = Jobopening.objects.all()
     job_filter = JobFilter(request.GET, queryset=job_list)
-    return render(request, 'new_theme/jobs-list-layout-2.html', {'filter': job_filter})
+    return render(request, 'search_bar.html', {'filter': job_filter})
 
 
 class IndustryListView(DetailView):
@@ -211,17 +203,17 @@ class JobopeningDetailView(TagMixin, FormMixin, DetailView):
         return super(JobopeningDetailView, self).form_valid(form)
 
 
-    # def apply(self, request):
-    #     form = JobApplyForm(request.POST or None)
-    #     context = {
-    #         "form": form,
-    #         }
-    #
-    #     if form.is_valid():
-    #         form.save()
-    #         return HttpResponseRedirect('/job/')
-    #
-    #     return render(request, 'new_theme/single-job-page.html', context)
+        # def apply(self, request):
+        #     form = JobApplyForm(request.POST or None)
+        #     context = {
+        #         "form": form,
+        #         }
+        #
+        #     if form.is_valid():
+        #         form.save()
+        #         return HttpResponseRedirect('/job/')
+        #
+        #     return render(request, 'new_theme/single-job-page.html', context)
 
 
 class ApplyFormView(FormView):
@@ -325,7 +317,6 @@ class JobApplyListView(DetailView):
 
 
 def job_search(request):
-
     if request.method == 'GET':
         search_job_by_title = request.GET.get('q')
         try:

@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load bootstrap3 %}
+
 {% load humanize %}
+{% load widget_tweaks %}
 
 
 {% block content %}
@@ -27,55 +28,91 @@
                 <div class="col-xl-3 col-lg-4">
                     <div class="sidebar-container">
 
-
-                        <!-- Keywords -->
                         <div class="sidebar-widget">
-
-                            <h3>Keywords</h3>
+                            {#                            <form method="get" class="form">#}
+                            {#                                {% filter.form %}#}
+                            {#                                {% buttons %}#}
+                            {#                                    <button type="submit" class="btn btn-primary"> Search </button>#}
+                            {#                                {% endbuttons %}#}
+                            {#                            </form>#}
 
                             <form method="get">
-                                {{ filter.form.as_p }}
+                                <div class="well">
+                                    <div class="row">
+
+                                        <div class="form">
+                                            {{ filter.form.job_title.label_tag }}
+                                            {% render_field filter.form.job_title class="form-control" %}
+                                            <br>
+                                            {{ filter.form.job_location.label_tag }}
+                                            {% render_field filter.form.job_location class="form-control" %}
+                                            <br>
+                                            {{ filter.form.industry.label_tag }}
+                                            {% render_field filter.form.industry class="form-control" %}
+                                        </div>
+
+                                        <div class="form-group col-sm-8 col-md-6">
+                                            {{ filter.form.groups.label_tag }}
+                                            <div>
+                                                {% for choice in filter.form.groups %}
+                                                    <label class="checkbox-inline">
+                                                        {{ choice.tag }} {{ choice.choice_label }}
+                                                    </label>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-search"></span> Search
+                                    </button>
+                                </div>
                             </form>
-
-                            <form class="keyword-input-container">
-                                <input type="text" name="q" placeholder="e.g. job title"/>
-                                <button class="keyword-input-button"><i
-                                        class="icon-material-outline-arrow-right-alt"></i></button>
-                            </form>
-                            <div class="keywords-list"><!-- keywords go here --></div>
-                            <div class="clearfix"></div>
-
                         </div>
 
-
-                        <!-- Location -->
-                        <div class="sidebar-widget">
-                            <h3>Location</h3>
-
-                            <select class="selectpicker default" multiple data-selected-text-format="count"
-                                    data-size="7" title="All Categories">
-                                {% for by_location in location %}
-                                    <option>{{ by_location.job_location }}</option>
-                                {% endfor %}
-                            </select>
-
-                        </div>
-
-
-                        <!-- Category -->
-                        <div class="sidebar-widget">
-                            <h3>Category</h3>
-
-                            <select class="selectpicker default" multiple data-selected-text-format="count"
-                                    data-size="7" title="All Categories">
-                                {% for by_industry in industry %}
-                                    <option>{{ by_industry.industry }}</option>
-                                {% endfor %}
-                            </select>
-
-                        </div>
-
-                        <!-- Job Types -->
+                        {#                        <!-- Keywords -->#}
+                        {#                        <div class="sidebar-widget">#}
+                        {##}
+                        {#                            <h3>Keywords</h3>#}
+                        {##}
+                        {#                            <form class="keyword-input-container">#}
+                        {#                                <input type="text" name="q" placeholder="e.g. job title"/>#}
+                        {#                                <button class="keyword-input-button"><i#}
+                        {#                                        class="icon-material-outline-arrow-right-alt"></i></button>#}
+                        {#                            </form>#}
+                        {#                            <div class="keywords-list"><!-- keywords go here --></div>#}
+                        {#                            <div class="clearfix"></div>#}
+                        {##}
+                        {#                        </div>#}
+                        {##}
+                        {##}
+                        {#                        <!-- Location -->#}
+                        {#                        <div class="sidebar-widget">#}
+                        {#                            <h3>Location</h3>#}
+                        {##}
+                        {#                            <select class="selectpicker default" multiple data-selected-text-format="count"#}
+                        {#                                    data-size="7" title="All Categories">#}
+                        {#                                {% for by_location in location %}#}
+                        {#                                    <option>{{ by_location.job_location }}</option>#}
+                        {#                                {% endfor %}#}
+                        {#                            </select>#}
+                        {##}
+                        {#                        </div>#}
+                        {##}
+                        {##}
+                        {#                        <!-- Category -->#}
+                        {#                        <div class="sidebar-widget">#}
+                        {#                            <h3>Category</h3>#}
+                        {##}
+                        {#                            <select class="selectpicker default" multiple data-selected-text-format="count"#}
+                        {#                                    data-size="7" title="All Categories">#}
+                        {#                                {% for by_industry in industry %}#}
+                        {#                                    <option>{{ by_industry.industry }}</option>#}
+                        {#                                {% endfor %}#}
+                        {#                            </select>#}
+                        {##}
+                        {#                        </div>#}
+                        {##}
+                        {#                        <!-- Job Types -->#}
                         {#                        <div class="sidebar-widget">#}
                         {#                            <h3>Job Type</h3>#}
                         {##}
@@ -106,8 +143,8 @@
                         {#                            </div>#}
                         {##}
                         {#                        </div>#}
-
-                        <!-- Salary -->
+                        {##}
+                        {#                        <!-- Salary -->#}
                         {#                        <div class="sidebar-widget">#}
                         {#                            <h3>Salary</h3>#}
                         {#                            <div class="margin-top-55"></div>#}
@@ -157,9 +194,10 @@
                     </div>
 
                     <div class="listings-container margin-top-35">
-{#                        {% for job in filter.qs %}#}
-{#                        #}
-                        {% for job in object_list %}
+                        {#                        {% for job in filter.qs %}#}
+                        {#                        #}
+                        {% for job in filter.qs %}
+
                             <!-- Job Listing -->
                             <a href="{{ job.get_absolute_url }}" class="job-listing">
 
@@ -202,7 +240,8 @@
                                         </li>
                                         <li><i class="icon-material-outline-location-on"></i> {{ job.job_location }}
                                         </li>
-                                        <li>Salary:<i class="icon-line-awesome-rupee"></i>{{ job.max_salary_budget }}Lac
+                                        <li>Salary:<i
+                                                class="icon-line-awesome-rupee"></i>{{ job.max_salary_budget }}Lac
                                         </li>
                                         <li><i class="icon-material-outline-business"></i>{{ job.industry }}</li>
                                         <li>

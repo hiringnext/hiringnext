@@ -5,6 +5,7 @@ from jobopening.views import JobopeningListView, JobopeningDetailView, IndustryL
 from django.conf.urls import url
 from jobopening.views import job_submit, apply, job_search, contact_us
 
+
 urlpatterns = [
     url(r'^job/$', JobopeningListView.as_view(), name='jobopening-list'),
     url(r'^job-submit/$', job_submit, name='post-job'),
