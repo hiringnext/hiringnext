@@ -42,6 +42,7 @@ class IndexListView(TagMixin, ListView):
             'function_area': FunctionalArea.objects.all(),
             'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
+            'filter': JobFilter(self.request.GET, queryset=self.get_queryset()),
             'location_choice': JOB_LOCATION_CHOICES,
             'new_jobs': Jobopening.objects.all().order_by('-job_created').distinct()[:6],
             'query': self.request.GET.get('q')
@@ -104,6 +105,7 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
         #     )
         #
         # return queryset_list
+
 
 def job_search_filter(request):
     job_list = Jobopening.objects.all()
