@@ -64,7 +64,7 @@
                 {#                </div>#}
 
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <form class="intro-banner-search-form margin-top-95" method="get"
                               action="{% url 'jobopening-list' %}">
 
@@ -76,20 +76,24 @@
                                 {% render_field filter.form.job_title class="form-control" placeholder=filter.form.job_title.label %}
 
                             </div>
-                            <div class="intro-search-field selectpicker" data-selected-text-format="count" title="All Categories" >
+
+                            <div class="intro-search-field">
+
                                 <label for="intro-keywords" class="field-title ripple-effect">Where ?</label>
 
-                                {% render_field filter.form.job_location %}
+                                {% render_field filter.form.job_location class="selectpicker" %}
 
                             </div>
 
-                               <div class="intro-search-field selectpicker" data-selected-text-format="count" title="All Categories" >
-                                    <label for="intro-keywords" class="field-title ripple-effect">Industry</label>
+                            <div class="intro-search-field">
 
-                                    <option>{% render_field filter.form.industry %}</option>
+                                <label for="intro-keywords" class="field-title ripple-effect">Industry</label>
 
+                                {% render_field filter.form.industry class="selectpicker" %}
 
                             </div>
+
+
                             <!-- Button -->
                             <div class="intro-search-button">
                                 <button class="button ripple-effect">Search</button>
@@ -244,7 +248,7 @@
                                 </div>
                                 <div class="category-box-counter">{{ by_functional.jobopening_set.count }}</div>
                                 <div class="category-box-content">
-                                    <h3>{{ by_functional.industry }}</h3>
+                                    <h3>{{ by_functional.functional_area }}</h3>
                                     <p>Software Engineer, Web / Mobile Developer & More</p>
                                 </div>
                             </a>

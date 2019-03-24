@@ -35,8 +35,6 @@
                             {#                            </form>#}
 
                             <form method="get">
-                                <div class="well">
-                                    <div class="row">
 
                                         <div class="form">
                                             {{ filter.form.job_title.label_tag }}
@@ -49,21 +47,9 @@
                                             {% render_field filter.form.industry class="form-control" %}
                                         </div>
 
-                                        <div class="form-group col-sm-8 col-md-6">
-                                            {{ filter.form.groups.label_tag }}
-                                            <div>
-                                                {% for choice in filter.form.groups %}
-                                                    <label class="checkbox-inline">
-                                                        {{ choice.tag }} {{ choice.choice_label }}
-                                                    </label>
-                                                {% endfor %}
-                                            </div>
-                                        </div>
+                                    <div class="sidebar-widget">
+                                        <button class="button">Search</button>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">
-                                        <span class="glyphicon glyphicon-search"></span> Search
-                                    </button>
-                                </div>
                             </form>
                         </div>
 
