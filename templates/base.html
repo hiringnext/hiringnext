@@ -17,6 +17,9 @@
         ================================================== -->
         <link rel="stylesheet" href="{% static 'new_theme/css/style.css' %}">
         <link rel="stylesheet" href="{% static 'new_theme/css/colors/green.css' %}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+              integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+              crossorigin="anonymous">
 
     </head>
 {% endblock %}
@@ -34,7 +37,9 @@
 
                     <!-- Logo -->
                     <div id="logo">
-                        <a href="{% url 'index' %}"><img src="{% static 'new_theme/images/next-logo-logo-next-png-transparent-logo-next-images-pluspng-download.png' %}" alt=""></a>
+                        <a href="{% url 'index' %}"><img
+                                src="{% static 'new_theme/images/next-logo-logo-next-png-transparent-logo-next-images-pluspng-download.png' %}"
+                                alt=""></a>
                     </div>
 
                     <!-- Main Navigation -->
@@ -329,7 +334,8 @@
                             <div class="footer-rows-left">
                                 <div class="footer-row">
                                     <div class="footer-row-inner footer-logo">
-                                        <img src="{% static 'new_theme/images/next-logo-logo-next-png-transparent-logo-next-images-pluspng-download.png' %}" alt="">
+                                        <img src="{% static 'new_theme/images/next-logo-logo-next-png-transparent-logo-next-images-pluspng-download.png' %}"
+                                             alt="">
                                     </div>
                                 </div>
                             </div>
@@ -447,13 +453,13 @@
                     <div class="col-xl-4 col-lg-4 col-md-12">
                         <h3><i class="icon-feather-mail"></i> Sign Up For a Newsletter</h3>
                         <p>Weekly breaking news, analysis and cutting edge advices on job searching.</p>
-{#                        <form enctype="multipart/form-data" method="post"#}
-{#                              action="/newsletter/new-jobopening/subscribe/">#}
-{#                            {% csrf_token %}#}
-{#                            <label for="id_email_field">E-mail:</label> <input type="email" name="email_field"#}
-{#                                                                               required="" id="id_email_field">#}
-{#                            <button id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>#}
-{#                        </form>#}
+                        {#                        <form enctype="multipart/form-data" method="post"#}
+                        {#                              action="/newsletter/new-jobopening/subscribe/">#}
+                        {#                            {% csrf_token %}#}
+                        {#                            <label for="id_email_field">E-mail:</label> <input type="email" name="email_field"#}
+                        {#                                                                               required="" id="id_email_field">#}
+                        {#                            <button id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>#}
+                        {#                        </form>#}
                         <form action="/newsletter/new-jobopening/subscribe/" method="get" class="newsletter">
                             <input type="text" name="fname" placeholder="Enter your email address">
                             <button type="submit"><i class="icon-feather-arrow-right"></i></button>

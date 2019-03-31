@@ -4,6 +4,7 @@ from jobopening.views import JobopeningListView, JobopeningDetailView, IndustryL
     FunctionalAreaListView, TagIndexView, LocationListView, IndexListView, job_search_filter
 from django.conf.urls import url
 from jobopening.views import job_submit, apply, job_search, contact_us
+from .models import Jobopening, Industry
 
 
 urlpatterns = [

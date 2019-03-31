@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load humanize %}
+{% load bootstrap3 %}
 {% load widget_tweaks %}
 
 
@@ -27,29 +28,28 @@
                     <div class="sidebar-container">
 
                         <div class="sidebar-widget">
-                            {#                            <form method="get" class="form">#}
-                            {#                                {% filter.form %}#}
-                            {#                                {% buttons %}#}
-                            {#                                    <button type="submit" class="btn btn-primary"> Search </button>#}
-                            {#                                {% endbuttons %}#}
-                            {#                            </form>#}
 
                             <form method="get">
 
-                                        <div class="form">
-                                            {{ filter.form.job_title.label_tag }}
-                                            {% render_field filter.form.job_title class="form-control" %}
-                                            <br>
-                                            {{ filter.form.job_location.label_tag }}
-                                            {% render_field filter.form.job_location class="form-control" %}
-                                            <br>
-                                            {{ filter.form.industry.label_tag }}
-                                            {% render_field filter.form.industry class="form-control" %}
-                                        </div>
+                                <div class="form">
 
-                                    <div class="sidebar-widget">
-                                        <button class="button">Search</button>
-                                    </div>
+                                    {% render_field filter.form.job_title class="form-control" placeholder=filter.form.job_title.label %}
+
+                                    <br>
+                                    {{ filter.form.job_location.label_tag }}
+                                    {% render_field filter.form.job_location class="selectpicker" data-live-search="true" %}
+
+                                    <br>
+
+                                    {{ filter.form.industry.label_tag }}
+                                    {% render_field filter.form.industry class="selectpicker" data-live-search="true" %}
+                                    <br>
+
+                                </div>
+
+                                <div class="sidebar-widget">
+                                    <button class="button">Search</button>
+                                </div>
                             </form>
                         </div>
 
@@ -160,11 +160,7 @@
                 </div>
                 <div class="col-xl-9 col-lg-8 content-left-offset">
 
-                    {% if query %}
-                        <h3 class="page-title">Search Results by "{{ query | capfirst }}"</h3>
-                    {% else %}
-                        <h3 class="page-title">All Active Jobs</h3>
-                    {% endif %}
+                    <h3 class="page-title">All Active Jobs({{ filter.qs.count }})</h3>
 
                     <div class="notify-box margin-top-15">
                         <div class="switch-container">
@@ -179,8 +175,8 @@
 
                     <div class="listings-container margin-top-35">
                         {#                        {% for job in filter.qs %}#}
-                        {#                        #}
-                        {% for job in filter.qs %}
+
+                        {% for job in object_list %}
 
                             <!-- Job Listing -->
                             <a href="{{ job.get_absolute_url }}" class="job-listing">
@@ -239,45 +235,46 @@
 
 
                         <!-- Pagination -->
-                        {% if is_paginated %}
-                            <div class="clearfix"></div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <!-- Pagination -->
-                                    <div class="pagination-container margin-top-30 margin-bottom-60">
-                                        <nav class="pagination">
-                                            <ul>
-                                                {% if page_obj.has_previous %}
-                                                    <li class="pagination-arrow"><a
-                                                            href="?page={{ page_obj.previous_page_number }}"><i
-                                                            class="icon-material-outline-keyboard-arrow-left"></i></a>
-                                                    </li>
-                                                {% endif %}
 
-                                                {% for i in paginator.page_range %}
-                                                    <li {% if page_obj.number == i %}
-                                                    {% endif %}>
-                                                        <a href="?page={{ i }}">{{ i }}</a>
-                                                    </li>
-                                                {% endfor %}
 
-                                                {% if page_obj.has_next %}
-                                                    <li class="pagination-arrow"><a
-                                                            href="?page={{ page_obj.next_page_number }}"><i
-                                                            class="icon-material-outline-keyboard-arrow-right"></i></a>
-                                                    </li>
-                                                {% endif %}
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
+                        <div class="col-md-12">
+
+
+                            <!-- Pagination -->
+                            <div class="pagination-container margin-top-30 margin-bottom-60">
+                                <nav class="pagination">
+                                    <ul>
+
+                                        {% bootstrap_pagination page_obj %}
+
+{#                                        {% if page_obj.has_previous %}#}
+{#                                            <li class="pagination-arrow"><a#}
+{#                                                    href="?page={{ page_obj.previous_page_number }}"><i#}
+{#                                                    class="icon-material-outline-keyboard-arrow-left"></i></a>#}
+{#                                            </li>#}
+{#                                        {% endif %}#}
+{##}
+{#                                        {% for i in paginator.page_range %}#}
+{#                                            <li {% if page_obj.number == i %}#}
+{#                                            {% endif %}>#}
+{#                                                <a href="?page={{ i }}">{{ i }}</a>#}
+{#                                            </li>#}
+{#                                        {% endfor %}#}
+{##}
+{#                                        {% if page_obj.has_next %}#}
+{#                                            <li class="pagination-arrow"><a#}
+{#                                                    href="?page={{ page_obj.next_page_number }}"><i#}
+{#                                                    class="icon-material-outline-keyboard-arrow-right"></i></a>#}
+{#                                            </li>#}
+{#                                        {% endif %}#}
+                                    </ul>
+                                </nav>
                             </div>
-                            </div>
-                            <!-- Pagination / End -->
-                        {% endif %}
+                        </div>
 
+                        <!-- Pagination / End -->
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>

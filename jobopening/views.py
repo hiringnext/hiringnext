@@ -5,8 +5,8 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic import DetailView
 from django.views.generic.edit import FormMixin, FormView
-from django.views.generic.list import ListView
-from django_filters.views import FilterView
+from django.views.generic.list import ListView, MultipleObjectMixin
+from django_filters.views import FilterView, FilterMixin
 from taggit.models import Tag
 
 from ecommerce.choice.job_location import JOB_LOCATION_CHOICES
@@ -14,10 +14,12 @@ from ecommerce.forms import ContactForm
 from employer.models import CompanyProfile
 from jobseeker.forms import ReferCandidateForm
 from jobseeker.models import Jobseeker
-from .filters import JobFilter
+from .filters import JobFilter, IndustryJobFilter
 from .forms import JobopeningForm, JobApplyForm
 from .models import Jobopening, ApplicationQuestions, JobLocation, Industry, FunctionalArea
-
+from django.core.paginator import Paginator
+from django.core.paginator import EmptyPage
+from django.core.paginator import PageNotAnInteger
 
 class TagMixin(object):
     def get_context_data(self, kwargs):
@@ -50,27 +52,19 @@ class IndexListView(TagMixin, ListView):
 
         return context
 
-    def get_queryset(self):
-        queryset_list = Jobopening.objects.all()
-        query = self.request.GET.get("q")
-        if query:
-            queryset_list = queryset_list.filter(
-                Q(job_title__icontains=query) |
-                Q(company_name__company__icontains=query)
-            ).distinct()
-        return queryset_list
 
-
-class JobopeningListView(TagMixin, FormMixin, ListView):
+class JobopeningListView(TagMixin, FormMixin, FilterView):
     model = Jobopening
     form_class = ReferCandidateForm
-    context_object_name = 'opening'
+
     template_name = "new_theme/jobs-list-layout-2.html"
+    filterset_class = JobFilter
     paginate_by = 5
     ordering = ['-job_created']
 
     def get_context_data(self, **kwargs):
         context = super(JobopeningListView, self).get_context_data(kwargs)
+
         context.update({
             'industry': Industry.objects.all(),
             'function_area': FunctionalArea.objects.all(),
@@ -82,6 +76,8 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
             'query': self.request.GET.get('q')
         })
         return context
+
+
 
     def POST(self, request, form):
         form = form(request.POST or None)
@@ -97,16 +93,6 @@ class JobopeningListView(TagMixin, FormMixin, ListView):
         return render(request, 'new_theme/jobs-list-layout-2.html', context)
 
 
-        # queryset_list = Jobopening.objects.all()
-        # query = self.request.GET.get("q")
-        # if query:
-        #     queryset_list = queryset_list.filter(
-        #         Q(job_title__icontains=query)
-        #     )
-        #
-        # return queryset_list
-
-
 def job_search_filter(request):
     job_list = Jobopening.objects.all()
     job_filter = JobFilter(request.GET, queryset=job_list)
@@ -115,41 +101,29 @@ def job_search_filter(request):
 
 class IndustryListView(DetailView):
     model = Industry
-    queryset = Industry.objects.all()
-    template_name = 'industry/industry_list.html'
+    filterset_class = JobFilter
+    paginate_by = 3
+    template_name = 'industry/industry_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(IndustryListView, self).get_context_data(**kwargs)
         context.update({
+            'filter': JobFilter(self.request.GET, queryset=self.get_queryset()),
             'main_industry': Industry.objects.all(),
             'jobopening': Jobopening.objects.all(),
             'function_area': FunctionalArea.objects.all(),
             # 'location': JobLocation.objects.all(),
             'questions': ApplicationQuestions.objects.all(),
-            'industry': Industry.objects.all(),
-            'location': JobLocation.objects.all(),
+            'job_location': JobLocation.objects.all(),
             'query': self.request.GET.get('q')
 
         })
         return context
 
-    def POST(self, request, form):
-        form = form(request.POST or None)
-        context = {
-            "form": form,
-        }
-
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/job/')
-
-            # if a GET (or any other method) we'll create a blank form
-        return render(request, 'job_list.html', context)
 
 
 class FunctionalAreaListView(DetailView):
     model = Industry
-    queryset = FunctionalArea.objects.all()
     form_class = ReferCandidateForm
     template_name = 'functional_area/jobs-list-functional-area.html'
 
@@ -297,16 +271,17 @@ def job_submit(request):
 
 @login_required()
 def apply(request):
-    job_apply_form = ApplyForm(request.POST or None)
-    context = {
-        "form": ApplyForm,
-    }
-    # if this is a POST request we need to process the form data
-    if job_apply_form.is_valid():
-        job_apply_form.save()
-        return HttpResponseRedirect('/')
-    # if a GET (or any other method) we'll create a blank form
-    return render(request, 'apply_form.html', context)
+    # job_apply_form = ApplyForm(request.POST or None)
+    # context = {
+    #     "form": ApplyForm,
+    # }
+    # # if this is a POST request we need to process the form data
+    # if job_apply_form.is_valid():
+    #     job_apply_form.save()
+    #     return HttpResponseRedirect('/')
+    # # if a GET (or any other method) we'll create a blank form
+    # return render(request, 'apply_form.html', context)
+    pass
 
 
 class JobApplyListView(DetailView):

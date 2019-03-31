@@ -97,8 +97,6 @@ A
 runtime,f/2/f2e18ffc17e2595362b5468aac34221e09934bf8
 A
 ecommerce/wsgi.py,f/e/fe1bf6f3c7fe2bab1247f1276af7e2c132581459
-U
-%templates/industry/industry_list.html,a/9/a932536d91f0f8c2f655a047b34bceb4f039282d
 M
 templates/tag/tag_detail.html,1/6/16a21a78e604ce81a62388add90ef1a1aeda6dc1
 E

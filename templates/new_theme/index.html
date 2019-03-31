@@ -73,7 +73,7 @@
                                 <label for="intro-keywords" class="field-title ripple-effect">What job you
                                     want ?</label>
 
-                                {% render_field filter.form.job_title class="form-control" placeholder=filter.form.job_title.label %}
+                                {% render_field filter.form.job_title class="intro-keywords" placeholder=filter.form.job_title.label %}
 
                             </div>
 
@@ -81,7 +81,7 @@
 
                                 <label for="intro-keywords" class="field-title ripple-effect">Where ?</label>
 
-                                {% render_field filter.form.job_location class="selectpicker" %}
+                                {% render_field filter.form.job_location class="selectpicker" data-live-search="true" %}
 
                             </div>
 
@@ -89,11 +89,9 @@
 
                                 <label for="intro-keywords" class="field-title ripple-effect">Industry</label>
 
-                                {% render_field filter.form.industry class="selectpicker" %}
+                                {% render_field filter.form.industry class="selectpicker" data-live-search="true" %}
 
                             </div>
-
-
                             <!-- Button -->
                             <div class="intro-search-button">
                                 <button class="button ripple-effect">Search</button>
